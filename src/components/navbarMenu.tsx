@@ -27,7 +27,7 @@ export default function MenuPopupState({title, subs} : SelectComponentProps) {
 					<Button
 						variant="text"
 						{...bindTrigger(popupState)}
-						className="flex items-center align-middle text-foundation-purple-purple-400 font-text-xs-medium hover:bg-none"
+						className="flex items-center align-middle text-foundation-purple-purple-400 capitalize gap-3 font-text-xs-medium hover:bg-none"
 					>
 						{title}
 						<Image src={chevronDown2} alt="" />

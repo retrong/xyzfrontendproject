@@ -1,12 +1,13 @@
 "use client"
 
+import MenuPopupState from '@/components/navbarMenu';
 import { sidebarItems } from '@/data';
 import { motion } from "framer-motion";
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React, { useState } from 'react';
-import { closeButton, hamburger, xyz } from '../../../../../public';
+import { closeButton, hamburger, profileimage, xyz } from '../../../../../public';
 
 export default function Sidebar() {
 
@@ -40,6 +41,17 @@ export default function Sidebar() {
             },
         },
     };
+
+    const company = [
+			{
+				children: 'Gfams',
+				link: '#',
+			},
+			{
+				children: 'Asap',
+				link: '#',
+			},
+		];
 
 	return (
 		<>
@@ -125,7 +137,14 @@ export default function Sidebar() {
 				<div className="self-stretch flex flex-row items-start justify-end py-0 pr-[45.2px] pl-[45px] text-base text-foundation-grey-grey-800 mq450:pl-5 mq450:pr-5 mq450:box-border">
 					<div className="flex-1 rounded-2xl bg-white flex flex-col items-start justify-center pt-[9.5px] pb-[9.3px] pr-[16.3px] pl-12 gap-[8px] z-[1] mq450:pl-5 mq450:box-border">
 						<div className="relative font-semibold">Change Company</div>
-						{/* <Select className="self-stretch h-8 bg-[transparent] [border:none] flex flex-row items-center justify-between py-[6.5px] pr-[41px] pl-10 box-border font-text-xs-medium text-base text-foundation-purple-purple-400 w-auto" /> */}
+						<div className="flex gap-6 align-middle items-center font-text-xs-medium text-base text-foundation-purple-purple-400 w-auto">
+							<Image
+								src={profileimage}
+								alt=""
+								className="w-[28px] h-[28px] object-contain"
+							/>
+							<MenuPopupState title="Company" subs={company} />
+						</div>
 					</div>
 				</div>
 			</motion.div>
