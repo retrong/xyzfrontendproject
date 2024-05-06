@@ -34,8 +34,23 @@ body {
   }
 } */
 
+body {
+  @apply leading-[normal] m-0;
+};
+
 *{
     font-family: 'Inter', sans-serif;
     box-sizing: border-box;
     scroll-behavior: smooth;
-}
+    text-decoration: none;
+    color: inherit;
+
+};
+
+*,
+::before,
+::after {
+  border-width: 0;
+};
+
+
