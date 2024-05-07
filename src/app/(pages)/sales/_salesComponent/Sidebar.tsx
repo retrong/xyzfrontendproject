@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import { chevronDown2, chevrondownWite, closeButton, hamburger, profileimage, xyz } from '../../../../../public';
 
@@ -17,7 +17,6 @@ export default function Sidebar() {
 
     // logic to help manage hover state and image switch on hover
     const [hoveredIndex, setHoveredIndex] = useState(null);
-    const [isToggled, setIsToggled] = useState(true);
 
     const handleMouseEnter = (index : any) => {
         setHoveredIndex(index);
@@ -67,6 +66,16 @@ export default function Sidebar() {
         },
     };
 
+    useEffect(() => {
+        if(isTab){
+            // mobile
+           setIsOpen(false) 
+        }else{
+            // desktop
+            setIsOpen(true)
+        }
+    }, [isTab])
+
 
     const company = [
 			{
@@ -81,13 +90,16 @@ export default function Sidebar() {
 
 	return (
 		<>
+            <div
+                onClick={() => setIsOpen(false)}
+                className={`mq750:fixed hidden inset-0 max-h-screen z-[998] bg-black/50 ${isOpen ? "block" : "hidden"} `}
+            ></div>
 			<motion.div
 				variants={Siderbar_animation}
 				animate={isOpen ? 'open' : 'closed'}
-				className={` h-auto self-stretch bg-foundation-purple-purple-400 flex flex-col items-end justify-start pt-11 px-[23.5px] pb-[34.3px] box-border gap-[290.9px] max-w-[80%] mq450:gap-[145px] mq450:pt-5 mq450:pb-5 mq450:box-border mq450:min-w-full mq1050:pt-[29px] mq1050:pb-[22px] mq1050:box-border mq750:absolute z-[999] ${
-					isToggled ? 'flex' : 'hidden'
-				}`}
-			>
+				className={` h-auto self-stretch bg-foundation-purple-purple-400 flex flex-col items-end justify-start pt-11 px-[23.5px] pb-[34.3px] box-border gap-[290.9px] max-w-[80%] mq450:gap-[145px] mq450:pt-5 mq450:pb-5 mq450:box-border mq450:min-w-full mq1050:pt-[29px] mq1050:pb-[22px] mq1050:box-border mq750:absolute z-[999] 
+                `}
+                >
 				<div className="w-auto h-[1024px] relative bg-foundation-purple-purple-400 hidden max-w-full" />
 				<div className="self-stretch flex flex-col items-start justify-start gap-[44.5px] max-w-full mq450:gap-[22px]">
 					<div className="mq750:flex hidden justify-end items-end w-full gap-0">
@@ -95,21 +107,8 @@ export default function Sidebar() {
 							src={closeButton}
 							loading="lazy"
 							alt=""
-							width={26}
-							height={26}
-							onClick={() => setIsToggled(!isToggled)}
-							className="z-[999] flex justify-end cursor-pointer h-[26px] w-[26px]"
-						/>
-					</div>
-					<div>
-						<Image
-							src={hamburger}
-							loading="lazy"
-							alt=""
-							width={26}
-							height={26}
-							onClick={() => setIsToggled(isToggled)}
-							className="mq750:flex hidden justify-end cursor-pointer h-[26px] w-[26px]"
+							onClick={() => setIsOpen(!isOpen)}
+							className="z-[999] flex justify-end cursor-pointer h-[30px] w-[30px] object-contain"
 						/>
 					</div>
 					<div className="self-stretch flex flex-row items-start justify-center py-0 px-5 overflow-x-hidden whitespace-pre">
@@ -205,6 +204,9 @@ export default function Sidebar() {
 					/>
 				</motion.div>
 			</motion.div>
+            <div>
+                <Image src={hamburger} alt='' className='w-[40px] h-[40px] object-contain m-3 mq750:block hidden' onClick={() => setIsOpen(true)}/>
+            </div>
 		</>
 	);
 }
