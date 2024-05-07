@@ -5,6 +5,7 @@ import cashMultiple from './cashmultiple.svg';
 import chart from './chart.svg';
 import chevrondown from './chevrondown-1@2x.png';
 import chevronDown2 from './chevrondown.svg';
+import chevrondownWite from './chevrondownWhite.svg';
 import closeButton from './close-button.svg';
 import profileimage from './ellipse-2319-1@2x.png';
 import filecogoutline from './filecogoutline.svg';
@@ -45,7 +46,7 @@ export {
     alerticon, alertnotificatonicon,
     arrowexpand, call2action, cart,
     cashMultiple,
-    chart, chevronDown2, chevrondown, closeButton, filecogoutline, filtervariant,
+    chart, chevronDown2, chevrondown, chevrondownWite, closeButton, filecogoutline, filtervariant,
     gift,
     group1,
     group11, hamburger, inputProcess,
