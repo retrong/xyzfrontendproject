@@ -65,6 +65,11 @@ const config: Config = {
 			mq450: {
 				raw: 'screen and (max-width: 450px)',
 			},
+            mq850: "850px"
+            // mq1125: '1300px',
+            // mq1050: '1050px',
+            // mq750: '750px',
+            // mq450: '450px',
 		},
 	},
 	corePlugins: {
