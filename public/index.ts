@@ -41,6 +41,7 @@ import vector169 from './vector-16-9.svg';
 import vector251 from './vector-25-1.svg';
 import vector27 from './vector-27.svg';
 import xyz from './xyz2@2x.png';
+import logoxyz from './xyz3.svg';
 
 export {
     alerticon, alertnotificatonicon,
@@ -50,8 +51,7 @@ export {
     gift,
     group1,
     group11, hamburger, inputProcess,
-    linkimg,
-    plus,
+    linkimg, logoxyz, plus,
     plusWhite,
     profileimage,
     sort,
@@ -64,8 +64,7 @@ export {
     vector1615,
     vector162,
     vector1621,
-    vector163,
-    vector164,
+    vector163, vector164,
     vector165,
     vector166,
     vector167,

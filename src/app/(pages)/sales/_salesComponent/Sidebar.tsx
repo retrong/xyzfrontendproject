@@ -97,7 +97,7 @@ export default function Sidebar() {
 			<motion.div
 				variants={Siderbar_animation}
 				animate={isOpen ? 'open' : 'closed'}
-				className={` h-auto self-stretch bg-foundation-purple-purple-400 flex flex-col items-end justify-start pt-11 px-[23.5px] pb-[34.3px] box-border gap-[290.9px] max-w-[80%] mq450:gap-[145px] mq450:pt-5 mq450:pb-5 mq450:box-border mq450:min-w-full mq1050:pt-[29px] mq1050:pb-[22px] mq1050:box-border mq750:absolute z-[999] 
+				className={` h-[100%] self-stretch bg-foundation-purple-purple-400 flex flex-col items-end justify-start pt-11 px-[23.5px] pb-[34.3px] box-border gap-[290.9px] max-w-[80%] mq450:gap-[145px] mq450:pt-5 mq450:pb-5 mq450:box-border mq450:min-w-full mq1050:pt-[29px] mq1050:pb-[22px] mq1050:box-border mq750:absolute z-[999] 
                 `}
                 >
 				<div className="w-auto h-[1024px] relative bg-foundation-purple-purple-400 hidden max-w-full" />
@@ -111,7 +111,7 @@ export default function Sidebar() {
 							className="z-[999] flex justify-end cursor-pointer h-[30px] w-[30px] object-contain"
 						/>
 					</div>
-					<div className="self-stretch flex flex-row items-start justify-center py-0 px-5 overflow-x-hidden whitespace-pre">
+					<div className="self-stretch flex flex-row items-start justify-center py-0 px-5 mt-8 overflow-x-hidden whitespace-pre">
 						<Image
 							className="h-10 w-[108px] relative object-cover z-[1] min-w-max"
 							loading="lazy"
@@ -161,8 +161,8 @@ export default function Sidebar() {
 					</div>
 				</div>
 				<div className="flex justify-center items-center w-full ">
-					<div className=" flex w-auto flex-row items-start justify-center py-0 text-base text-foundation-grey-grey-800 mq450:pl-5 mq450:pr-5 mq450:box-border overflow-x-hidden whitespace-pre">
-						<div className=" flex-1 rounded-2xl bg-white flex flex-col items-start justify-center pt-[9.5px] pb-[9.3px] px-4 gap-[8px] z-[1] mq450:pl-5 mq450:box-border overflow-x-hidden whitespace-pre">
+					<div className=" flex w-[70%] flex-row py-0 text-base text-foundation-grey-grey-800 mq450:pl-5 mq450:pr-5 mq450:box-border overflow-x-hidden whitespace-pre">
+						<div className=" flex-1 rounded-2xl  bg-white flex flex-col items-center justify-center pt-[9.5px] pb-[9.3px] px-4 gap-[8px] z-[1] mq450:pl-5 mq450:box-border overflow-x-hidden whitespace-pre flex-wrap">
 							<div className="relative font-semibold">Change Company</div>
 							<div className="flex gap-0 align-middle items-center font-text-xs-medium text-base text-foundation-purple-purple-400 w-auto">
 								<Image
