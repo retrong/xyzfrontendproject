@@ -24,6 +24,7 @@ const config: Config = {
 				'foundation-black-black-400': '#434343',
 				'foundation-purple-purple-400': '#8133f1',
 				'foundation-purple-purple-300': '#9654f4',
+				'foundation-black-black-500': '#141414',
 				'foundation-purple-purple-200': '#b78af7',
 				'gray-2': '#bdbdbd',
 				'foundation-grey-grey-700': '#939292',
@@ -65,16 +66,16 @@ const config: Config = {
 			mq450: {
 				raw: 'screen and (max-width: 450px)',
 			},
-            mq850: "850px"
-            // mq1125: '1300px',
-            // mq1050: '1050px',
-            // mq750: '750px',
-            // mq450: '450px',
+			mq850: '850px',
+			// mq1125: '1300px',
+			// mq1050: '1050px',
+			// mq750: '750px',
+			// mq450: '450px',
 		},
 	},
 	corePlugins: {
 		preflight: false,
 	},
-	plugins: [require("tailwind-scrollbar")],
+	plugins: [require('tailwind-scrollbar')],
 };
 export default config;
