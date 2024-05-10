@@ -1,5 +1,6 @@
 import alerticon from './alerticon.svg';
 import arrowexpand from './arrowexpand.svg';
+import cameralogo from './camera@2x.png';
 import cart from './cartoutline.svg';
 import cashMultiple from './cashmultiple.svg';
 import chart from './chart.svg';
@@ -10,16 +11,34 @@ import closeButton from './close-button.svg';
 import profileimage from './ellipse-2319-1@2x.png';
 import filecogoutline from './filecogoutline.svg';
 import filtervariant from './filtervariant.svg';
+import featureChart from './Frame 22.svg';
+import featureGraph from './Frame 29.svg';
+import crmImage from './Frame 38.svg';
+import heroframe from './framearc.svg';
+import guageChart from './GAUGE CHART.svg';
 import gift from './giftoutline.svg';
+import featureData from './Group 6.svg';
+import accountChart from './Group 7.svg';
 import group11 from './group-1-1.svg';
 import group1 from './group-1.svg';
 import alertnotificatonicon from './group-1000005263.svg';
+import oracle from './group1.svg';
+import samsung from './group3.svg';
+import segment from './group5.svg';
+import proton from './group6.svg';
 import hamburger from './hamburger.svg';
 import inputProcess from './input-processor.svg';
 import linkimg from './link.svg';
+import herologo from './logo@2x.png';
+import macbookmock from './Macbook Pro 16 mockup.svg';
+import mackbooklogo from './macbook-pro-16@2x.png';
 import call2action from './morevertical.svg';
+import morphesus from './morphesus.svg';
 import plusWhite from './plus-white.svg';
 import plus from './plus.svg';
+import mockscreen from './screen-mockup-replace-fill@2x.png';
+import monday from './segment.svg';
+import heroshadow from './shadow@2x.png';
 import sort from './sort.svg';
 import treeRoot from './tree-root-x.svg';
 import valueTransformer from './value-transformer-chain-x.svg';
@@ -42,28 +61,19 @@ import vector251 from './vector-25-1.svg';
 import vector27 from './vector-27.svg';
 import xyz from './xyz2@2x.png';
 import logoxyz from './xyz3.svg';
+import zepline from './zepline.svg';
 
 export {
-    alerticon, alertnotificatonicon,
-    arrowexpand, call2action, cart,
-    cashMultiple,
-    chart, chevronDown2, chevrondown, chevrondownWite, closeButton, filecogoutline, filtervariant,
-    gift,
-    group1,
-    group11, hamburger, inputProcess,
-    linkimg, logoxyz, plus,
+    accountChart, alerticon, alertnotificatonicon, arrowexpand, call2action, cameralogo, cart, cashMultiple, chart, chevronDown2, chevrondown, chevrondownWite, closeButton, crmImage, featureChart, featureData,
+    featureGraph, filecogoutline, filtervariant, gift, group1,
+    group11, guageChart, hamburger, heroframe, herologo, heroshadow, inputProcess, linkimg, logoxyz, macbookmock, mackbooklogo, mockscreen, monday, morphesus, oracle, plus,
     plusWhite,
-    profileimage,
-    sort,
-    treeRoot,
-    valueTransformer,
-    vector161,
+    profileimage, proton, samsung, segment, sort,
+    treeRoot, valueTransformer, vector161,
     vector1610, vector1611,
     vector1612,
     vector1613,
-    vector1615,
-    vector162,
-    vector1621,
+    vector1615, vector162, vector1621,
     vector163, vector164,
     vector165,
     vector166,
@@ -72,6 +82,6 @@ export {
     vector169,
     vector251,
     vector27,
-    xyz
+    xyz, zepline
 };
 
