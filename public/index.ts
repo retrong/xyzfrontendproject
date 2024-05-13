@@ -1,4 +1,5 @@
 import alerticon from './alerticon.svg';
+import apostrophy from './apostrophy.svg';
 import arrowexpand from './arrowexpand.svg';
 import cameralogo from './camera@2x.png';
 import cart from './cartoutline.svg';
@@ -8,6 +9,7 @@ import chevrondown from './chevrondown-1@2x.png';
 import chevronDown2 from './chevrondown.svg';
 import chevrondownWite from './chevrondownWhite.svg';
 import closeButton from './close-button.svg';
+import ellipse from './Ellipse 56.svg';
 import profileimage from './ellipse-2319-1@2x.png';
 import filecogoutline from './filecogoutline.svg';
 import filtervariant from './filtervariant.svg';
@@ -17,6 +19,7 @@ import crmImage from './Frame 38.svg';
 import heroframe from './framearc.svg';
 import guageChart from './GAUGE CHART.svg';
 import gift from './giftoutline.svg';
+import group269 from './Group 269.svg';
 import featureData from './Group 6.svg';
 import accountChart from './Group 7.svg';
 import group11 from './group-1-1.svg';
@@ -27,6 +30,7 @@ import samsung from './group3.svg';
 import segment from './group5.svg';
 import proton from './group6.svg';
 import hamburger from './hamburger.svg';
+import imagetes from './image-61@2x.png';
 import inputProcess from './input-processor.svg';
 import linkimg from './link.svg';
 import herologo from './logo@2x.png';
@@ -40,6 +44,7 @@ import mockscreen from './screen-mockup-replace-fill@2x.png';
 import monday from './segment.svg';
 import heroshadow from './shadow@2x.png';
 import sort from './sort.svg';
+import stars from './stars.svg';
 import treeRoot from './tree-root-x.svg';
 import valueTransformer from './value-transformer-chain-x.svg';
 import vector161 from './vector-16-1.svg';
@@ -59,22 +64,72 @@ import vector168 from './vector-16-8.svg';
 import vector169 from './vector-16-9.svg';
 import vector251 from './vector-25-1.svg';
 import vector27 from './vector-27.svg';
+import vector from './vector2.svg';
+import wave from './wave.svg';
 import xyz from './xyz2@2x.png';
 import logoxyz from './xyz3.svg';
 import zepline from './zepline.svg';
 
 export {
-    accountChart, alerticon, alertnotificatonicon, arrowexpand, call2action, cameralogo, cart, cashMultiple, chart, chevronDown2, chevrondown, chevrondownWite, closeButton, crmImage, featureChart, featureData,
-    featureGraph, filecogoutline, filtervariant, gift, group1,
-    group11, guageChart, hamburger, heroframe, herologo, heroshadow, inputProcess, linkimg, logoxyz, macbookmock, mackbooklogo, mockscreen, monday, morphesus, oracle, plus,
+    accountChart,
+    alerticon,
+    alertnotificatonicon,
+    apostrophy,
+    arrowexpand,
+    call2action,
+    cameralogo,
+    cart,
+    cashMultiple,
+    chart,
+    chevronDown2,
+    chevrondown,
+    chevrondownWite,
+    closeButton,
+    crmImage,
+    ellipse,
+    featureChart,
+    featureData,
+    featureGraph,
+    filecogoutline,
+    filtervariant,
+    gift,
+    group1,
+    group11, group269, guageChart,
+    hamburger,
+    heroframe,
+    herologo,
+    heroshadow,
+    imagetes,
+    inputProcess,
+    linkimg,
+    logoxyz,
+    macbookmock,
+    mackbooklogo,
+    mockscreen,
+    monday,
+    morphesus,
+    oracle,
+    plus,
     plusWhite,
-    profileimage, proton, samsung, segment, sort,
-    treeRoot, valueTransformer, vector161,
-    vector1610, vector1611,
+    profileimage,
+    proton,
+    samsung,
+    segment,
+    sort,
+    stars,
+    treeRoot,
+    valueTransformer,
+    vector,
+    vector161,
+    vector1610,
+    vector1611,
     vector1612,
     vector1613,
-    vector1615, vector162, vector1621,
-    vector163, vector164,
+    vector1615,
+    vector162,
+    vector1621,
+    vector163,
+    vector164,
     vector165,
     vector166,
     vector167,
@@ -82,6 +137,8 @@ export {
     vector169,
     vector251,
     vector27,
-    xyz, zepline
+    wave,
+    xyz,
+    zepline
 };
 

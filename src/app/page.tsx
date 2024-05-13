@@ -5,6 +5,7 @@ import Hero from '@/components/_landingpgComponents/hero';
 import Navbar from '@/components/_landingpgComponents/navbar';
 import Product from '@/components/_landingpgComponents/product';
 import Report from '@/components/_landingpgComponents/report';
+import TestimonyCarousel from '@/components/_landingpgComponents/testimonyCarousel';
 import Image from 'next/image';
 import React from 'react';
 import { heroframe } from '../../public';
@@ -12,7 +13,7 @@ import { heroframe } from '../../public';
 export default function LandingPage() {
   return (
 		<section className=" bg-white w-full overflow-hidden h-full">
-			<div className="bg-foundation-grey-grey-50 px-12 py-[10px] w-[100%] mq450:px-4 fixed z-[998]">
+			<div className="bg-foundation-grey-grey-50 px-16 py-[10px] w-[100%] mq450:px-6 fixed z-[998]">
 				<Navbar />
 			</div>
 			<div className="flex flex-wrap">
@@ -39,6 +40,9 @@ export default function LandingPage() {
 			</div>
 			<div className="bg-foundation-grey-grey-50 w-full overflow-hidden">
 				<AnalyticsAndReport />
+			</div>
+			<div className="w-full overflow-hidden">
+				<TestimonyCarousel />
 			</div>
 		</section>
 	);

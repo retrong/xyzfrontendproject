@@ -31,7 +31,7 @@ export default function SideBar() {
 					toggle ? 'flex' : 'hidden'
 				} p-6 bg-main flex-flex-col border-2 fixed h-[100%] top-0 bg-foundation-purple-purple-400 right-0 z-[100] w-[70%]`}
 			>
-				<ul className="list-none flex flex-col px-6 py-4 w-full mt-12 gap-6 items-end text-[24px] leading-[28px]">
+				<ul className="list-none flex flex-col px-6 py-4 w-full mt-12 gap-7 items-end text-[24px] leading-[28px]">
 					{navLinks.map((nav, index) => (
 						<li
 							key={nav.id}
@@ -42,12 +42,12 @@ export default function SideBar() {
 							<Link href={nav.link}>{nav.title}</Link>
 						</li>
 					))}
-					<div className="flex items-center justify-center text-white font-normal gap-[16px]">
-						<NavButton styles="bg-foundation-purple-purple-400 text-white hover:bg-foundation-purple-purple-200 active:hover:bg-foundation-purple-purple-100">
-							Sign Up
-						</NavButton>
+					<div className="flex flex-wrap flex-row items-center justify-end text-white font-normal gap-[20px] text-nowrap whitespace-nowrap">
 						<NavButton styles=" hover:bg-foundation-purple-purple-200 bg-white hover:text-white text-foundation-purple-purple-400 active:hover:bg-foundation-purple-purple-100">
 							Login
+						</NavButton>
+						<NavButton styles="bg-foundation-purple-purple-100 text-white hover:bg-foundation-purple-purple-200 active:hover:bg-foundation-purple-purple-100">
+							Sign Up
 						</NavButton>
 					</div>
 				</ul>
