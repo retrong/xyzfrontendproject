@@ -25,6 +25,7 @@ const config: Config = {
 				'foundation-purple-purple-400': '#8133f1',
 				'foundation-purple-purple-300': '#9654f4',
 				'foundation-black-black-500': '#141414',
+				'foundation-purple-purple-900': '#290064',
 				'foundation-purple-purple-200': '#b78af7',
 				'gray-2': '#bdbdbd',
 				'foundation-grey-grey-700': '#939292',
