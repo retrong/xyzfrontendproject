@@ -3,6 +3,8 @@ import Crm from '@/components/_landingpgComponents/CRM';
 import CTA from '@/components/_landingpgComponents/CTA';
 import FAQ from '@/components/_landingpgComponents/FAQ';
 import Features from '@/components/_landingpgComponents/features';
+import Footer from '@/components/_landingpgComponents/footer';
+import GetInTouch from '@/components/_landingpgComponents/GetInTouch';
 import Hero from '@/components/_landingpgComponents/hero';
 import Navbar from '@/components/_landingpgComponents/navbar';
 import PriceAndPricing from '@/components/_landingpgComponents/plansAndPricing';
@@ -55,6 +57,12 @@ export default function LandingPage() {
 			</div>
 			<div className="w-full bg-white overflow-hidden">
 				<FAQ />
+			</div>
+			<div className="w-full bg-white overflow-hidden">
+				<GetInTouch />
+			</div>
+			<div className="w-full bg-foundation-purple-purple-900 overflow-hidden">
+				<Footer />
 			</div>
 		</section>
 	);

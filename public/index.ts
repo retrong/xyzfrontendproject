@@ -1,6 +1,7 @@
 import alerticon from './alerticon.svg';
 import apostrophy from './apostrophy.svg';
 import arrowexpand from './arrowexpand.svg';
+import avatar from './Avatar group.svg';
 import cameralogo from './camera@2x.png';
 import cart from './cartoutline.svg';
 import cashMultiple from './cashmultiple.svg';
@@ -73,10 +74,9 @@ import wave from './wave.svg';
 import xyz from './xyz2@2x.png';
 import logoxyz from './xyz3.svg';
 import zepline from './zepline.svg';
+
 export {
-    accountChart, alerticon, alertnotificatonicon,
-    apostrophy, arrow, arrowexpand,
-    call2action,
+    accountChart, alerticon, alertnotificatonicon, apostrophy, arrow, arrowexpand, avatar, call2action,
     cameralogo,
     cart,
     cashMultiple,
