@@ -37,10 +37,12 @@ import linkimg from './link.svg';
 import herologo from './logo@2x.png';
 import macbookmock from './Macbook Pro 16 mockup.svg';
 import mackbooklogo from './macbook-pro-16@2x.png';
+import minuscircle from './minuscircle.svg';
 import call2action from './morevertical.svg';
 import morphesus from './morphesus.svg';
 import plusWhite from './plus-white.svg';
 import plus from './plus.svg';
+import pluscircle from './pluscircle.svg';
 import rightArrow from './right arrow.svg';
 import mockscreen from './screen-mockup-replace-fill@2x.png';
 import monday from './segment.svg';
@@ -71,10 +73,8 @@ import wave from './wave.svg';
 import xyz from './xyz2@2x.png';
 import logoxyz from './xyz3.svg';
 import zepline from './zepline.svg';
-
 export {
-    accountChart, alerticon,
-    alertnotificatonicon,
+    accountChart, alerticon, alertnotificatonicon,
     apostrophy, arrow, arrowexpand,
     call2action,
     cameralogo,
@@ -103,14 +103,12 @@ export {
     linkimg,
     logoxyz,
     macbookmock,
-    mackbooklogo,
-    mockscreen,
+    mackbooklogo, minuscircle, mockscreen,
     monday,
     morphesus,
     oracle,
     plus,
-    plusWhite,
-    profileimage,
+    plusWhite, pluscircle, profileimage,
     proton, rightArrow, samsung,
     segment,
     sort,

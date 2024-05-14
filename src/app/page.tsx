@@ -1,6 +1,7 @@
 import AnalyticsAndReport from '@/components/_landingpgComponents/analytics';
 import Crm from '@/components/_landingpgComponents/CRM';
 import CTA from '@/components/_landingpgComponents/CTA';
+import FAQ from '@/components/_landingpgComponents/FAQ';
 import Features from '@/components/_landingpgComponents/features';
 import Hero from '@/components/_landingpgComponents/hero';
 import Navbar from '@/components/_landingpgComponents/navbar';
@@ -51,6 +52,9 @@ export default function LandingPage() {
 			</div>
 			<div className="w-full bg-foundation-purple-purple-900 overflow-hidden">
 				<CTA />
+			</div>
+			<div className="w-full bg-white overflow-hidden">
+				<FAQ />
 			</div>
 		</section>
 	);
