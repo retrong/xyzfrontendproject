@@ -85,7 +85,7 @@ export default function SalesCalculationSection() {
 					Top Selling Product
 				</h2>
 				<div className="self-stretch flex flex-row items-center justify-start gap-[4px] text-foundation-grey-grey-800">
-					<Button>Plastics</Button>
+					<Button styles=''>Plastics</Button>
 					<div className="relative inline-block min-w-[125px]">
 						10000 units sold
 					</div>
