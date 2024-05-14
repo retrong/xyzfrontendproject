@@ -1,8 +1,10 @@
 import AnalyticsAndReport from '@/components/_landingpgComponents/analytics';
 import Crm from '@/components/_landingpgComponents/CRM';
+import CTA from '@/components/_landingpgComponents/CTA';
 import Features from '@/components/_landingpgComponents/features';
 import Hero from '@/components/_landingpgComponents/hero';
 import Navbar from '@/components/_landingpgComponents/navbar';
+import PriceAndPricing from '@/components/_landingpgComponents/plansAndPricing';
 import Product from '@/components/_landingpgComponents/product';
 import Report from '@/components/_landingpgComponents/report';
 import TestimonyCarousel from '@/components/_landingpgComponents/testimonyCarousel';
@@ -43,6 +45,12 @@ export default function LandingPage() {
 			</div>
 			<div className="w-full overflow-hidden">
 				<TestimonyCarousel />
+			</div>
+			<div className="w-full bg-white overflow-hidden">
+				<PriceAndPricing />
+			</div>
+			<div className="w-full bg-foundation-purple-purple-900 overflow-hidden">
+				<CTA />
 			</div>
 		</section>
 	);

@@ -9,6 +9,7 @@ import chevrondown from './chevrondown-1@2x.png';
 import chevronDown2 from './chevrondown.svg';
 import chevrondownWite from './chevrondownWhite.svg';
 import closeButton from './close-button.svg';
+import arrow from './directionarrow.svg';
 import ellipse from './Ellipse 56.svg';
 import profileimage from './ellipse-2319-1@2x.png';
 import filecogoutline from './filecogoutline.svg';
@@ -40,6 +41,7 @@ import call2action from './morevertical.svg';
 import morphesus from './morphesus.svg';
 import plusWhite from './plus-white.svg';
 import plus from './plus.svg';
+import rightArrow from './right arrow.svg';
 import mockscreen from './screen-mockup-replace-fill@2x.png';
 import monday from './segment.svg';
 import heroshadow from './shadow@2x.png';
@@ -71,17 +73,14 @@ import logoxyz from './xyz3.svg';
 import zepline from './zepline.svg';
 
 export {
-    accountChart,
-    alerticon,
+    accountChart, alerticon,
     alertnotificatonicon,
-    apostrophy,
-    arrowexpand,
+    apostrophy, arrow, arrowexpand,
     call2action,
     cameralogo,
     cart,
     cashMultiple,
-    chart,
-    chevronDown2,
+    chart, chevronDown2,
     chevrondown,
     chevrondownWite,
     closeButton,
@@ -112,8 +111,7 @@ export {
     plus,
     plusWhite,
     profileimage,
-    proton,
-    samsung,
+    proton, rightArrow, samsung,
     segment,
     sort,
     stars,
