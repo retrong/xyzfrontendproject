@@ -1,6 +1,7 @@
 import alerticon from './alerticon.svg';
 import apostrophy from './apostrophy.svg';
 import arrowexpand from './arrowexpand.svg';
+import authImage from './authimage.png';
 import avatar from './Avatar group.svg';
 import cameralogo from './camera@2x.png';
 import cart from './cartoutline.svg';
@@ -13,6 +14,7 @@ import closeButton from './close-button.svg';
 import arrow from './directionarrow.svg';
 import ellipse from './Ellipse 56.svg';
 import profileimage from './ellipse-2319-1@2x.png';
+import facebookicon from './facebook.svg';
 import filecogoutline from './filecogoutline.svg';
 import filtervariant from './filtervariant.svg';
 import featureChart from './Frame 22.svg';
@@ -21,6 +23,7 @@ import crmImage from './Frame 38.svg';
 import heroframe from './framearc.svg';
 import guageChart from './GAUGE CHART.svg';
 import gift from './giftoutline.svg';
+import googleicon from './google.svg';
 import group269 from './Group 269.svg';
 import featureData from './Group 6.svg';
 import accountChart from './Group 7.svg';
@@ -77,27 +80,22 @@ import logoxyz from './xyz3.svg';
 import zepline from './zepline.svg';
 
 export {
-    accountChart, alerticon, alertnotificatonicon, apostrophy, arrow, arrowexpand, avatar, call2action,
-    cameralogo,
-    cart, cashMultiple,
-    chart, chevronDown2,
+    accountChart, alerticon, alertnotificatonicon, apostrophy, arrow, arrowexpand, authImage, avatar, call2action, cameralogo,
+    cart, cashMultiple, chart, chevronDown2,
     chevrondown,
     chevrondownWite,
     closeButton,
     crmImage,
-    ellipse,
-    featureChart,
+    ellipse, facebookicon, featureChart,
     featureData,
     featureGraph,
     filecogoutline,
     filtervariant,
-    gift,
-    group1,
+    gift, googleicon, group1,
     group11, group269, guageChart,
     hamburger,
     heroframe,
-    herologo,
-    heroshadow,
+    herologo, heroshadow,
     imagetes,
     inputProcess,
     linkimg,

@@ -1,6 +1,7 @@
 "use client"
 
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 import { logoxyz, mapmarker } from '../../../public';
 import DynamicSelect from '../molecules/select';
@@ -10,24 +11,12 @@ const footerLinks = [
 		title: 'product',
 		links: [
 			{
-				name: 'Content',
-				link: '#',
+				name: 'Features',
+				link: '#features',
 			},
 			{
-				name: 'How it Works',
-				link: '#',
-			},
-			{
-				name: 'Create',
-				link: '#',
-			},
-			{
-				name: 'Explore',
-				link: '#',
-			},
-			{
-				name: 'Terms & Services',
-				link: '#',
+				name: 'Pricing',
+				link: '#pricing',
 			},
 		],
 	},
@@ -35,24 +24,8 @@ const footerLinks = [
 		title: 'Company',
 		links: [
 			{
-				name: 'Help Center',
-				link: 'https://www.hoobank.com/help-center/',
-			},
-			{
-				name: 'Partners',
-				link: 'https://www.hoobank.com/partners/',
-			},
-			{
-				name: 'Suggestions',
-				link: 'https://www.hoobank.com/suggestions/',
-			},
-			{
-				name: 'Blog',
-				link: 'https://www.hoobank.com/blog/',
-			},
-			{
-				name: 'Newsletters',
-				link: 'https://www.hoobank.com/newsletters/',
+				name: 'About us',
+				link: '#about',
 			},
 		],
 	},
@@ -60,12 +33,12 @@ const footerLinks = [
 		title: 'Resources',
 		links: [
 			{
-				name: 'Our Partner',
-				link: 'https://www.hoobank.com/our-partner/',
+				name: 'Blog',
+				link: '#',
 			},
 			{
-				name: 'Become a Partner',
-				link: 'https://www.hoobank.com/become-a-partner/',
+				name: 'FAQ',
+				link: '#faq'
 			},
 		],
 	},
@@ -73,24 +46,16 @@ const footerLinks = [
 		title: 'social',
 		links: [
 			{
-				name: 'Help Center',
-				link: 'https://www.hoobank.com/help-center/',
+				name: 'Twitter',
+				link: '#',
 			},
 			{
-				name: 'Partners',
-				link: 'https://www.hoobank.com/partners/',
+				name: 'Linkedln',
+				link: '#',
 			},
 			{
-				name: 'Suggestions',
-				link: 'https://www.hoobank.com/suggestions/',
-			},
-			{
-				name: 'Blog',
-				link: 'https://www.hoobank.com/blog/',
-			},
-			{
-				name: 'Newsletters',
-				link: 'https://www.hoobank.com/newsletters/',
+				name: 'Facebook',
+				link: '#',
 			},
 		],
 	},
@@ -98,24 +63,16 @@ const footerLinks = [
 		title: 'legal',
 		links: [
 			{
-				name: 'Help Center',
-				link: 'https://www.hoobank.com/help-center/',
+				name: 'Terms',
+				link: '#',
 			},
 			{
 				name: 'Partners',
-				link: 'https://www.hoobank.com/partners/',
+				link: '#',
 			},
 			{
-				name: 'Suggestions',
-				link: 'https://www.hoobank.com/suggestions/',
-			},
-			{
-				name: 'Blog',
-				link: 'https://www.hoobank.com/blog/',
-			},
-			{
-				name: 'Newsletters',
-				link: 'https://www.hoobank.com/newsletters/',
+				name: 'Contacts',
+				link: '#',
 			},
 		],
 	},
@@ -133,7 +90,7 @@ export default function Footer() {
 							<h4 className="font-medium text-[16px] my-0 leading-[27px] text-foundation-grey-grey-600 capitalize">
 								{footerlink.title}
 							</h4>
-							<ul className="list-none mt-2 ms-0 ps-0">
+							<ul className="list-none mt-4 ms-0 ps-0 flex flex-col gap-4">
 								{footerlink.links.map((link, index) => (
 									<li
 										key={link.name}
@@ -141,17 +98,17 @@ export default function Footer() {
 											footerlink.links.length - 1 ? 'mb-2' : 'mb-0'
 										} text-foundation-grey-grey-200 hover:text-foundation-purple-purple-400 active:bg-foundation-purple-purple-100 `}
 									>
-										{link.name}
+										<Link href={link.link}>{link.name}</Link>
 									</li>
 								))}
 							</ul>
 						</div>
 					))}
 				</div>
-				<div className="flex flex-col items-center justify-center">
+				<div className="flex flex-col items-center justify-center mt-4">
 					<div className="border-[1px] border-foundation-purple-purple-400 border-solid rounded-lg mb-10">
 						<div className="flex flex-row gap-8 px-4 py-2">
-							<p className='my-0'>Language</p>
+							<p className="my-0">Language</p>
 						</div>
 					</div>
 					<div className="flex flex-row gap-2 text-white items-start justify-center align-middle">
@@ -166,7 +123,7 @@ export default function Footer() {
 						</h2>
 					</div>
 				</div>
-				<div className=" h-[1px] bg-whitesmoke w-full my-8" />
+				<div className=" h-[1px] bg-foundation-grey-grey-200 w-full my-8" />
 				<div className="flex flex-row justify-between items-center align-middle">
 					<Image
 						src={logoxyz}

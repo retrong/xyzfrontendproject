@@ -11,6 +11,7 @@ export default function Crm() {
 						src={crmImage}
 						alt=""
 						className="w-fit mq450:w-[350px] h-fit object-contain"
+						loading="lazy"
 					/>
 				</div>
 				<div className="flex flex-row flex-wrap justify-start items-start">

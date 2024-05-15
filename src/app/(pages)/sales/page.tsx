@@ -1,5 +1,4 @@
 import MenuPopupState from '@/components/navbarMenu';
-import Select from '@mui/material/Select';
 import React from 'react';
 import SalesCalculationSection from './_salesComponent/sales-calculation-section';
 import SalesDistributionChart from './_salesComponent/salesDistribution';

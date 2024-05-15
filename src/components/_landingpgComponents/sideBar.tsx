@@ -23,6 +23,7 @@ export default function SideBar() {
 				src={toggle ? closeButton : hamburger}
 				alt="Hamburger"
 				className="w-[35px] h-[35px] object-contain cursor-pointer z-[998]"
+				loading="lazy"
 				onClick={() => setToggle((prev) => !prev)}
 			/>
 

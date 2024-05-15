@@ -10,7 +10,12 @@ export default function GetInTouch() {
 				<div className=" self-stretch flex justify-center items-center align-middle">
 					<div className="w-full max-w-[768px] flex flex-col flex-wrap justify-center items-center gap-[28px] text-[24px]">
 						<div className="flex flex-col flex-wrap justify-center items-center gap-[8px]">
-                            <Image src={avatar} alt='' className='w-[140px] h-[80px] object-contain mb-5'/>
+							<Image
+								src={avatar}
+								alt=""
+								className="w-[140px] h-[80px] object-contain mb-5"
+								loading="lazy"
+							/>
 							<h4 className="font-normal my-0">Still have questions?</h4>
 							<p className="text-base text-foundation-grey-grey-900 relative max-w-[972px] my-0">
 								{`Have questions or need assistance? Get in touch with our support

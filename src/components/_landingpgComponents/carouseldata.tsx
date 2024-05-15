@@ -53,11 +53,13 @@ export default function CarouselData({img, content, contentName, contentTitle}: 
 							src={apostrophy}
 							alt="apostrophy"
 							className="w-[31px] h-[27px] object-contain"
+							loading="lazy"
 						/>
 						<Image
 							src={stars}
 							alt="apostrophy"
 							className="w-[145px] h-[29px] object-contain"
+							loading="lazy"
 						/>
 					</div>
 					<div className="w-[379px] inline-block text-foundation-black-black-500 text-[24px] mb-8 mt-3">
@@ -75,18 +77,27 @@ export default function CarouselData({img, content, contentName, contentTitle}: 
 
 export function CustomArrow ({onClick, direction} : (any)) {
     return (
-        <button
-            onClick={onClick}
-            className={`absolute top-1/2 transform rounded-full -translate-y-1/2 z-10 ${
-                direction === 'prev' ? 'left-4' : 'right-4'
-            } flex align-middle items-center cursor-pointer transition-opacity border-none !shadow-none duration-300 bg-transparent hover:opacity-75`}
-        >
-            {direction === 'prev' ? (
-                <Image src={arrow} alt='' className='w-[64px] h-[64px] object-cover'/>
-            ) : (
-                <Image src={rightArrow} alt='' className='w-[64px] h-[64px] object-contain'/>
-
-            )}
-        </button>
-	);
+			<button
+				onClick={onClick}
+				className={`absolute top-1/2 transform rounded-full -translate-y-1/2 z-10 ${
+					direction === 'prev' ? 'left-4' : 'right-4'
+				} flex align-middle items-center cursor-pointer transition-opacity border-none !shadow-none duration-300 bg-transparent hover:opacity-75`}
+			>
+				{direction === 'prev' ? (
+					<Image
+						src={arrow}
+						alt=""
+						className="w-[64px] h-[64px] object-cover"
+						loading="lazy"
+					/>
+				) : (
+					<Image
+						src={rightArrow}
+						alt=""
+						className="w-[64px] h-[64px] object-contain"
+						loading="lazy"
+					/>
+				)}
+			</button>
+		);
 }

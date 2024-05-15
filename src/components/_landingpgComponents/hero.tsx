@@ -28,31 +28,41 @@ export default function Hero() {
 						className="absolute h-[1.08%] w-[101.7%] top-[98.69%] right-[-0.02%] bottom-[0.22%] left-[-1.68%] max-w-full overflow-hidden max-h-full object-cover"
 						alt=""
 						src={heroshadow}
+						loading="lazy"
 					/>
 					<Image
 						className="absolute h-[99.42%] w-[98.13%] top-[0%] right-[0.92%] bottom-[0.58%] left-[0.94%] max-w-full overflow-hidden max-h-full object-cover"
 						alt=""
 						src={mackbooklogo}
+						loading="lazy"
 					/>
 					<Image
 						className="absolute h-[0.79%] w-[0.46%] top-[1.67%] right-[49.44%] bottom-[97.54%] left-[50.1%] max-w-full overflow-hidden max-h-full object-cover"
 						alt=""
 						src={cameralogo}
+						loading="lazy"
 					/>
 					<Image
 						className="absolute h-[1.27%] w-[5.51%] top-[92.25%] right-[46.91%] bottom-[6.48%] left-[47.58%] max-w-full overflow-hidden max-h-full object-cover"
 						alt=""
 						src={herologo}
+						loading="lazy"
 					/>
 					<Image
 						className="absolute h-[88.32%] w-[78.71%] top-[3.09%] right-[10.54%] bottom-[8.59%] left-[10.74%] max-w-full overflow-hidden max-h-full object-cover"
 						alt=""
 						src={mockscreen}
+						loading="lazy"
 					/>
 				</div>
-                <div className='w-[100%] h-[100%] overflow-hidden relative mq1050:flex hidden justify-center items-center'>
-                    <Image src={macbookmock} alt='' className='w-[600px] mq750:w-[500px] mq450:w-[300px] h-auto object-contain'/>
-                </div>
+				<div className="w-[100%] h-[100%] overflow-hidden relative mq1050:flex hidden justify-center items-center">
+					<Image
+						src={macbookmock}
+						alt=""
+						className="w-[600px] mq750:w-[500px] mq450:w-[300px] h-auto object-contain"
+						loading="lazy"
+					/>
+				</div>
 			</div>
 		</div>
 	);
