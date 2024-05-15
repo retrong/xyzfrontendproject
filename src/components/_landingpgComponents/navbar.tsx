@@ -13,23 +13,23 @@ export const navLinks = [
 	},
 	{
 		title: 'Features',
-		link: '/',
-		id: '',
+		link: '',
+		id: '#features',
 	},
 	{
 		title: 'About Us',
-		link: '/a',
-		id: '',
+		link: '#about',
+		id: '#about',
 	},
 	{
 		title: 'Pricing',
-		link: '/b',
-        id: "",
+		link: '',
+        id: "#pricing",
 	},
 	{
 		title: 'FAQ',
-		link: '/c',
-        id: "",
+		link: '',
+        id: "#faq",
 	},
 ];
 
@@ -49,7 +49,7 @@ export default function Navbar() {
 								key={nav.title}
 								className="gap-[32px] flex hover:text-foundation-black-black-400 hover:font-bold text-foundation-black-black-400 cursor-pointer"
 							>
-								<Link href={nav.link}>{nav.title}</Link>
+								<Link href={nav.id}>{nav.title}</Link>
 							</li>
 						))}
 					</ul>

@@ -38,6 +38,7 @@ import linkimg from './link.svg';
 import herologo from './logo@2x.png';
 import macbookmock from './Macbook Pro 16 mockup.svg';
 import mackbooklogo from './macbook-pro-16@2x.png';
+import mapmarker from './mapmarkeroutline.svg';
 import minuscircle from './minuscircle.svg';
 import call2action from './morevertical.svg';
 import morphesus from './morphesus.svg';
@@ -78,8 +79,7 @@ import zepline from './zepline.svg';
 export {
     accountChart, alerticon, alertnotificatonicon, apostrophy, arrow, arrowexpand, avatar, call2action,
     cameralogo,
-    cart,
-    cashMultiple,
+    cart, cashMultiple,
     chart, chevronDown2,
     chevrondown,
     chevrondownWite,
@@ -103,7 +103,7 @@ export {
     linkimg,
     logoxyz,
     macbookmock,
-    mackbooklogo, minuscircle, mockscreen,
+    mackbooklogo, mapmarker, minuscircle, mockscreen,
     monday,
     morphesus,
     oracle,

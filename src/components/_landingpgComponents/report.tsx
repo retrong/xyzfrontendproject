@@ -4,7 +4,7 @@ import { accountChart } from '../../../public';
 
 export default function Report() {
   return (
-		<div className="justify-center flex items-center align-middle">
+		<section id='about' className="justify-center flex items-center align-middle">
 			<div className=" flex flex-1 flex-col justify-between mq750:justify-center mq750:items-center items-center align-middle text-left text-[40px] px-16 mq1050:px-16 gap-6 mq850:flex-row mq750:px-6 py-6 max-w-[1200px]">
                 
 				<div className="flex flex-row flex-wrap justify-start items-start">
@@ -28,6 +28,6 @@ export default function Report() {
 					/>
 				</div>
 			</div>
-		</div>
+		</section>
 	);
 }

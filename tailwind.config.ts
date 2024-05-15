@@ -14,6 +14,7 @@ const config: Config = {
 				'foundation-grey-grey-50': '#fafafa',
 				'foundation-grey-grey-200': '#e9e8e8',
 				'foundation-grey-grey-900': '#575757',
+				'foundation-grey-grey-600': '#bcbbbb',
 				whitesmoke: '#eaecf0',
 				gray1: {
 					'100': '#939292',

@@ -18,7 +18,7 @@ const pricingCard = [
 
 export default function PriceAndPricing() {
   return (
-		<section className="w-full h-full py-14 px-16 mq750:px-6 flex justify-center items-center">
+		<section id='pricing' className="w-full h-full py-14 px-16 mq750:px-6 flex justify-center items-center">
 			<div className="item-center flex flex-col flex-wrap text-center justify-start text-foundation-black-black-500">
 				<div className="max-w-[1197px] w-auto justify-center items-center flex-col flex text-center text-wrap gap-[14px] mb-12 mq750:mb-6">
 					<h2 className=" font-normal text-[32px] m-0 inline-block">
