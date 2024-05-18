@@ -53,4 +53,14 @@ body {
   border-width: 0;
 };
 
+/* Auth error styling starts */
+.error-message {
+    color: rgb(208, 53, 53);
+    font-size: 12px;
+    font-weight: 400;
+    font-family: monospace;
+    opacity: 0.7;
+}
+
+/* Auth error styling ends */
 

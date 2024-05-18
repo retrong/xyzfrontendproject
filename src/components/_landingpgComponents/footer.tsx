@@ -129,6 +129,7 @@ export default function Footer() {
 						src={logoxyz}
 						alt=""
 						className="w-[108px] h-10 object-contain"
+						loading="lazy"
 					/>
 					<h3 className="w-[293px] relative leading-[24px] inline-block shrink-0 my-0 text-[#667085] whitespace-nowrap">
 						© 2024 XYZ. All rights reserved.

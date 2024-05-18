@@ -56,6 +56,7 @@ import sort from './sort.svg';
 import stars from './stars.svg';
 import treeRoot from './tree-root-x.svg';
 import valueTransformer from './value-transformer-chain-x.svg';
+import vector102 from './vector-102.svg';
 import vector161 from './vector-16-1.svg';
 import vector1610 from './vector-16-10.svg';
 import vector1611 from './vector-16-11.svg';
@@ -80,8 +81,7 @@ import logoxyz from './xyz3.svg';
 import zepline from './zepline.svg';
 
 export {
-    accountChart, alerticon, alertnotificatonicon, apostrophy, arrow, arrowexpand, authImage, avatar, call2action, cameralogo,
-    cart, cashMultiple, chart, chevronDown2,
+    accountChart, alerticon, alertnotificatonicon, apostrophy, arrow, arrowexpand, authImage, avatar, call2action, cameralogo, cart, cashMultiple, chart, chevronDown2,
     chevrondown,
     chevrondownWite,
     closeButton,
@@ -113,8 +113,7 @@ export {
     stars,
     treeRoot,
     valueTransformer,
-    vector,
-    vector161,
+    vector, vector102, vector161,
     vector1610,
     vector1611,
     vector1612,

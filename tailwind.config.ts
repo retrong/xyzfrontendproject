@@ -29,6 +29,8 @@ const config: Config = {
 				'foundation-purple-purple-900': '#290064',
 				'foundation-purple-purple-200': '#b78af7',
 				'gray-2': '#bdbdbd',
+				'gray-700': '#515151',
+				'gray-500': '#8a8a8a',
 				'foundation-grey-grey-700': '#939292',
 				'system-colors-primary-line-divider': '#3347e6',
 				'foundation-grey-grey-800': '#727171',
@@ -39,7 +41,7 @@ const config: Config = {
 			},
 			spacing: {},
 			fontFamily: {
-				'secondary-text': 'Inter',
+				inter: 'Inter',
 			},
 		},
 		fontSize: {
@@ -69,6 +71,9 @@ const config: Config = {
 				raw: 'screen and (max-width: 450px)',
 			},
 			mq850: '850px',
+			mq360: {
+				raw: 'screen and (max-width: 360px)',
+			},
 			// mq1125: '1300px',
 			// mq1050: '1050px',
 			// mq750: '750px',
