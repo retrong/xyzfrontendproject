@@ -9,27 +9,27 @@ export const navLinks = [
 	{
 		title: 'Home',
 		link: '#',
-		id: '',
+		id: '#',
 	},
 	{
 		title: 'Features',
 		link: '',
-		id: 'features',
+		id: '#features',
 	},
 	{
 		title: 'About Us',
-		link: '#about',
-		id: 'about',
+		link: '/aboutus',
+		id: '/aboutus',
 	},
 	{
 		title: 'Pricing',
 		link: '',
-        id: "pricing",
+        id: "#pricing",
 	},
 	{
 		title: 'FAQ',
 		link: '',
-        id: "faq",
+        id: "#faq",
 	},
 ];
 
@@ -37,12 +37,14 @@ export default function Navbar() {
   return (
 		<div className="w-full h-auto max-w-[1400px] justify-center items-center flex flex-wrap flex-1 align-middle text-left">
 			<div className="flex flex-row items-center align-middle justify-between w-[1200px]">
-				<Image
-					src={logoxyz}
-					alt=""
-					className="mq850:w-[108px] w-[90px] h-auto object-contain"
-					loading="lazy"
-				/>
+                <Link href={"#"}>
+                    <Image
+                        src={logoxyz}
+                        alt=""
+                        className="mq850:w-[108px] w-[90px] h-auto object-contain"
+                        loading="lazy"
+                    />
+                </Link>
 				<div className="hidden flex-row justify-center item-center mq850:flex">
 					<ul className=" font-normal flex-row list-none w-full flex gap-[32px]">
 						{navLinks.map((nav, index) => (
@@ -50,7 +52,7 @@ export default function Navbar() {
 								key={nav.title}
 								className="gap-[32px] flex hover:text-foundation-black-black-400 hover:font-bold text-foundation-black-black-400 cursor-pointer"
 							>
-								<a href={`#${nav.id}`}>{nav.title}</a>
+								<a href={`${nav.id}`}>{nav.title}</a>
 							</li>
 						))}
 					</ul>
