@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 import { cameralogo, heroframe, herologo, heroshadow, macbookmock, mackbooklogo, mockscreen } from '../../../public';
 import NavButton from './navButton';
@@ -17,9 +18,11 @@ export default function Hero() {
 					help you achieve your goals.
 				</p>
 				<div>
-					<NavButton styles="bg-foundation-purple-purple-400 hover:bg-foundation-purple-purple-200 active:bg-foundation-purple-purple-100 text-white">
-						Get Started
-					</NavButton>
+                    <Link href={'/signup'}>
+                        <NavButton styles="bg-foundation-purple-purple-400 hover:bg-foundation-purple-purple-200 active:bg-foundation-purple-purple-100 text-white">
+                            Get Started
+                        </NavButton>
+                    </Link>
 				</div>
 			</div>
 			<div className="flex justify-center shrink flex-1 w-full">

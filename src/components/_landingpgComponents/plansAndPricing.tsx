@@ -1,6 +1,5 @@
+import Link from 'next/link';
 import React from 'react';
-import Button from '../molecules/button';
-import NavButton from './navButton';
 
 const pricingCard = [
 	{
@@ -18,7 +17,10 @@ const pricingCard = [
 
 export default function PriceAndPricing() {
   return (
-		<section id='pricing' className="w-full h-full py-14 px-16 mq750:px-6 flex justify-center items-center">
+		<section
+			id="pricing"
+			className="w-full h-full py-14 px-16 mq750:px-6 flex justify-center items-center"
+		>
 			<div className="item-center flex flex-col flex-wrap text-center justify-start text-foundation-black-black-500">
 				<div className="max-w-[1197px] w-auto justify-center items-center flex-col flex text-center text-wrap gap-[14px] mb-12 mq750:mb-6">
 					<h2 className=" font-normal text-[32px] m-0 inline-block">
@@ -48,9 +50,11 @@ export default function PriceAndPricing() {
 											{price.content}
 										</p>
 										<div className="py-2 inline-block">
-											<button className="bg-foundation-purple-purple-400 border-none hover:bg-foundation-purple-purple-100 py-4 px-4 text-foundation-white-white-400 rounded-[16px]">
-												Choose Plan
-											</button>
+											<Link href={'#'}>
+												<button className="bg-foundation-purple-purple-400 border-none hover:bg-foundation-purple-purple-100 py-4 px-4 cursor-pointer text-foundation-white-white-400 rounded-[16px]">
+													Choose Plan
+												</button>
+											</Link>
 										</div>
 									</div>
 								</div>
@@ -72,9 +76,11 @@ export default function PriceAndPricing() {
 										business size and scale.
 									</p>
 									<div className="py-2 inline-block">
-										<button className="bg-foundation-purple-purple-400 text-foundation-white-white-400 border-none hover:bg-foundation-purple-purple-100 py-4 px-4 rounded-2xl">
-											Choose Plan
-										</button>
+										<Link href={'#'}>
+                                            <button className="bg-foundation-purple-purple-400 text-foundation-white-white-400 border-none hover:bg-foundation-purple-purple-100 py-4 px-4 cursor-pointer rounded-2xl">
+                                                Choose Plan
+                                            </button>
+                                        </Link>
 									</div>
 								</div>
 							</div>

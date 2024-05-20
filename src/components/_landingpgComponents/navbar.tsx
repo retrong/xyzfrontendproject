@@ -56,12 +56,16 @@ export default function Navbar() {
 					</ul>
 				</div>
 				<div className="mq850:flex hidden items-center justify-center text-white font-normal gap-[16px] ">
-					<NavButton styles="bg-foundation-purple-purple-400 text-white hover:bg-foundation-purple-purple-200 active:hover:bg-foundation-purple-purple-100">
-						Sign Up
-					</NavButton>
-					<NavButton styles=" hover:bg-foundation-purple-purple-200 bg-white hover:text-white text-foundation-purple-purple-400 active:hover:bg-foundation-purple-purple-100">
-						Login
-					</NavButton>
+                    <Link href={'/signup'}>
+                        <NavButton styles="bg-foundation-purple-purple-400 text-white hover:bg-foundation-purple-purple-200 active:hover:bg-foundation-purple-purple-100">
+                            Sign Up
+                        </NavButton>
+                    </Link>
+                    <Link href={'/login'}>
+                        <NavButton styles=" hover:bg-foundation-purple-purple-200 bg-white hover:text-white text-foundation-purple-purple-400 active:hover:bg-foundation-purple-purple-100">
+                            Login
+                        </NavButton>
+                    </Link>
 				</div>
 				<div className=" mq850:hidden flex">
 					<SideBar />
