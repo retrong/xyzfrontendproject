@@ -5,7 +5,7 @@ import {
     authImage,
     logoxyz,
 } from '../../../../../public';
-import OtpInputField from '../_components/otpInput';
+import OtpInputField from '../../../../components/otpInput';
 
 export default function VerifyEmail() {
 	return (
