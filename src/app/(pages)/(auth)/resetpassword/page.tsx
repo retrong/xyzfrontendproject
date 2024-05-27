@@ -7,7 +7,7 @@ import {
     logoxyz,
 } from '../../../../../public';
 
-export default function SignUp() {
+export default function ResetPassword() {
 	return (
 		<section className="min-h-screen bg-foundation-white-white-400 flex justify-center items-center text-gray-500">
 			<div className="max-w-[1400px] flex mq750:flex-col flex-row justify-center items-start gap-4 mq850:gap-0 py-6 px-6 mq750:px-6 w-full">
