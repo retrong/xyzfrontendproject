@@ -1,69 +1,189 @@
+"use client"
+
 import NavButton from '@/components/_landingpgComponents/navButton';
+import { FormState, signUpFormSchema } from '@/lib/api/definition';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { useMutation } from '@tanstack/react-query';
 import Image from 'next/image';
-import React from 'react';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import React, { useState } from 'react';
+import { SubmitHandler, useForm } from 'react-hook-form';
+import { object, string, TypeOf, z } from 'zod';
 import { authImage, facebookicon, googleicon, logoxyz, vector102 } from '../../../../../public';
+import * as signup from '../_api/signupApi';
+import PasswordInput from '../_components/passwordInput';
+import { emailRegex } from '../RegexFile';
+
+export type SignupData = TypeOf<typeof signUpFormSchema>;
 
 export default function SignUp() {
+
+    const router = useRouter();
+
+    const {handleSubmit, register, reset, formState: {errors}} = useForm<SignupData>({
+        resolver: zodResolver(signUpFormSchema),
+    });
+
+    const mutation = useMutation({
+        mutationFn: (data: SignupData) => {
+            return signup.store(data);
+        },
+        onSuccess: (data) => {
+            console.log("data submitted", data)
+            alert("User account created");
+            reset();
+        },
+        onError: (error) => {
+            console.error('Error signing up', error)
+        }
+    });
+
+    const onSubmit: SubmitHandler<SignupData> = (data) => {
+        mutation.mutate(data);
+    }
+
+    // const router = useRouter();
+    // const [error, setError] = useState<string | null>(null);
+
+    // const {
+    //     register,
+    //     handleSubmit,
+    //     reset,
+    //     formState: { errors },
+    // } = useForm<SignupData>({ resolver: zodResolver(signUpFormSchema) });
+
+    // const onSubmit = async (data: SignupData) => {
+    //     try {
+    //         // Send a post to the backend to register the user
+    //         const response = await fetch(
+    //             'https://nrs11lkk-44301.uks1.devtunnels.ms/api/User/register',
+    //             {
+    //                 method: 'POST',
+    //                 headers: {
+    //                     'Content-Type': 'application/json',
+    //                 },
+    //                 body: JSON.stringify(data),
+    //             }
+    //         );
+
+    //         if (response.ok) {
+    //             // if the user is not already registered
+    //             // const errorData = await response.json();
+    //             // setError(errorData.error);
+    //             console.log("Registered")
+    //             router.push('/')
+    //             reset();
+
+    //         } else {
+    //             // if user is already registered
+    //             const errorData = await response.json();
+	// 			setError(errorData.error);
+    //             console.error(error, "not sent")
+    //         }
+    //     } catch (error) {
+    //         console.error('Error:', error);
+    //         setError('An unexpected error occured');
+    //     }
+    // };
   return (
 		<section className="min-h-screen bg-foundation-white-white-400 flex justify-center items-center text-gray-500">
 			<div className="max-w-[1400px] flex mq750:flex-col flex-row gap-4 mq850:gap-0 justify-center items-start py-6 px-6 mq750:px-6 w-full">
 				<div className="flex h-auto mq750:w-full flex-col w-1/2 justify-between items-start text-start px-6 mq750:px-0 py-2 mq750:py-0 container">
 					<div className=" mq850:mb-8 mb-4">
-						<Image
-							src={logoxyz}
-							alt=""
-							className="w-[98px] h-10 object-contain"
-						/>
+						<Link href={'/'}>
+							<Image
+								src={logoxyz}
+								alt=""
+								className="w-[98px] h-10 object-contain"
+							/>
+						</Link>
 					</div>
 					<div className="flex flex-col w-full justify-center items-center text-base font-inter mq850:my-8 my-4">
-						<div className="max-w-[950px] mq750:w-full flex flex-col justify-start text-start items-center">
+						<div className="max-w-[450px] mq750:w-full flex flex-col justify-start text-start items-center">
 							<h2 className=" w-full font-normal text-start text-gray-700 mb-7">
 								Create your XYZ account
 							</h2>
-							<form className="w-full">
+							<form className="w-full" onSubmit={handleSubmit(onSubmit)}>
 								<div>
-									<label className="block mb-4">
+									<label htmlFor="email" className="block mb-4">
 										<span className=" text-foundation-grey-grey-900">
 											Email Address
 										</span>
 										<input
 											type="email"
+											id="email"
 											placeholder="Enter your email address"
 											className="px-4 py-4 mt-2 placeholder:text-foundation-grey-grey-700 w-full rounded-lg border-[1px] border-solid border-[#d0d0d0]"
-											// {...register('email', {
-											// 	required: true,
-											// 	pattern: emailRegex,
-											// })}
+											{...register('email', {
+												required: true,
+												pattern: emailRegex,
+											})}
 										/>
 										{/* error handler */}
-										{/* {error.email && (
-											<span className="error-message px-2">
-												email is required
+										{errors.email && (
+											<span
+												role="alert"
+												className="error-message px-2 text-[14px] text-red-400"
+											>
+												{errors.email.message}
 											</span>
-										)} */}
+										)}
 									</label>
-									<label className=" block mb-6">
+									<label htmlFor="password" className=" block mb-6">
 										<span className=" text-foundation-grey-grey-900">
 											Password
 										</span>
-										<input
+										{/* <input
 											type="password"
+											id="password"
 											placeholder="Create a password"
 											className="px-4 py-4 mt-2 placeholder:text-foundation-grey-grey-700 w-full rounded-lg border-[1px] border-solid border-[#d0d0d0] active:border-foundation-purple-purple-400 focus:border-foundation-purple-purple-400 focus:border-2 "
-											// {...register('password', {
-											// 	required: true,
-											// 	pattern: '',
-											// })}
+											{...register('password', {
+												required: true,
+											})}
+											aria-invalid={!!errors.password}
+										/> */}
+										<PasswordInput
+											id="password"
+											placeholder="Create password"
+											register={register('password')}
+											error={errors.password?.message}
 										/>
 										{/* error handler */}
-										{/* {error.password && (
-											<span className="error-message px-2">
-												password is required
+										{errors.password && (
+											<span
+												role="alert"
+												className="error-message px-2 text-[14px] text-red-400"
+											>
+												{errors.password.message}
 											</span>
-										)} */}
+										)}
+									</label>
+									<label htmlFor="confirmPassword" className=" block mb-6">
+										<span className=" text-foundation-grey-grey-900">
+											Confirm Password
+										</span>
+										<PasswordInput
+											id="password"
+											placeholder="Confirm password"
+											register={register('confirmPassword')}
+											error={errors.password?.message}
+										/>
+										{/* error handler */}
+										{errors.confirmPassword && (
+											<span
+												role="alert"
+												className="error-message px-2 text-[14px] text-red-400"
+											>
+												{errors.confirmPassword.message}
+											</span>
+										)}
 									</label>
 								</div>
-								<NavButton styles="w-full mb-6 mt-2 bg-foundation-purple-purple-400 text-white hover:bg-foundation-purple-purple-200 active:bg-foundation-purple-purple-100">
+								<NavButton
+									styles="w-full mb-6 mt-2 bg-foundation-purple-purple-400 text-white hover:bg-foundation-purple-purple-200 active:bg-foundation-purple-purple-100"
+								>
 									Sign Up
 								</NavButton>
 								<p className="text-base text-gray-700 text-center my-0">
@@ -111,8 +231,8 @@ export default function SignUp() {
 					<Image
 						src={authImage}
 						alt=""
-						className="max-w-[1050px] h-full object-contain my-0"
-						layout="responsive"
+						className="max-w-[1050px] w-full h-full object-contain my-0"
+						// layout="responsive"
 					/>
 				</div>
 			</div>

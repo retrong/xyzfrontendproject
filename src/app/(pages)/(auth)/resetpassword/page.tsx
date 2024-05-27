@@ -1,5 +1,6 @@
 import NavButton from '@/components/_landingpgComponents/navButton';
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 import {
     authImage,
@@ -12,11 +13,13 @@ export default function SignUp() {
 			<div className="max-w-[1400px] flex mq750:flex-col flex-row justify-center items-start gap-4 mq850:gap-0 py-6 px-6 mq750:px-6 w-full">
 				<div className="flex h-full mq750:w-full flex-col w-1/2 justify-start items-start text-start px-6 mq750:px-0 py-2 mq750:py-0 container">
 					<div className=" mq850:mb-8 mb-4">
-						<Image
-							src={logoxyz}
-							alt=""
-							className="w-[98px] h-10 object-contain"
-						/>
+						<Link href={'/'}>
+							<Image
+								src={logoxyz}
+								alt=""
+								className="w-[98px] h-10 object-contain"
+							/>
+						</Link>
 					</div>
 					<div className="flex flex-col w-full align-middle justify-center items-center text-base font-inter mq850:my-8 my-4">
 						<div className="max-w-[350px] mq750:w-full flex flex-col justify-start text-start items-center">
@@ -53,7 +56,6 @@ export default function SignUp() {
 								<NavButton styles="w-full mb-6 mt-2 bg-foundation-purple-purple-400 text-white hover:bg-foundation-purple-purple-200 active:bg-foundation-purple-purple-100">
 									Submit
 								</NavButton>
-								
 							</form>
 						</div>
 					</div>
@@ -65,8 +67,7 @@ export default function SignUp() {
 					<Image
 						src={authImage}
 						alt=""
-						className="max-w-[1050px] h-full object-contain my-0"
-						layout="responsive"
+						className="max-w-[1050px] w-full h-full object-contain my-0"
 					/>
 				</div>
 			</div>
