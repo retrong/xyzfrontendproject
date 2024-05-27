@@ -1,7 +1,6 @@
 "use client"
 
 import React, { FC, useEffect, useRef, useState } from "react";
-import '../app/(pages)/(auth)/_components/otpfield.css';
 
 interface Props {}
 
