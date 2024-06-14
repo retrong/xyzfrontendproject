@@ -41,12 +41,12 @@ const steps = [
 		name: 'Address',
 		fields: ['country', 'state', 'city', 'street', 'zip'],
 	},
-	{ id: 'Step 3', name: 'Complete' },
-	{
-		id: 'Step 5',
-		name: 'Address',
-		fields: ['country', 'state', 'city', 'street', 'zip'],
-	},
+	{ id: 'Step 4', name: 'Complete' },
+	// {
+	// 	id: 'Step 5',
+	// 	name: 'Address',
+	// 	fields: ['country', 'state', 'city', 'street', 'zip'],
+	// },
 ];
 
 export default function Form() {
