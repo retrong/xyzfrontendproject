@@ -69,7 +69,10 @@ body {
 .spin-button-none::-webkit-outer-spin-button,
 .spin-button-none::-webkit-inner-spin-button {
     -webkit-appearance: none;
+    -moz-appearance: none;
     appearance: none;
+    -moz-appearance: textfield;
+    
 }
 
 .spin-button-none {
@@ -77,3 +80,41 @@ body {
     appearance: none; /* Standard syntax for other browsers */
 }
 /* verify email styling start */
+
+
+/* stepper styling starts here  */
+
+/* styles/globals.css */
+.stepper-container {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin-bottom: 5px;
+  width: 100%;
+}
+
+.step {
+  width: 30px;
+  height: 6px;
+  /* border: 1px solid #bcbbbb; */
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  margin: 5px 0;
+  background-color:#e9e8e8;
+  color: #999;
+  cursor: pointer;
+}
+
+.step.active {
+  background-color: #b78af7;
+}
+
+.step-buttons {
+  margin-top: 20px;
+}
+
+.prev-btn,
+.next-btn {
+  margin-right: 10px;
+}

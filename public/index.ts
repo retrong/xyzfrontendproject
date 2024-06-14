@@ -6,6 +6,7 @@ import authImage from './authimage.png';
 import avatar from './Avatar group.svg';
 import cameralogo from './camera@2x.png';
 import cart from './cartoutline.svg';
+import cashmultiple from './cash-multiple.svg';
 import cashMultiple from './cashmultiple.svg';
 import chart from './chart.svg';
 import chevrondown from './chevrondown-1@2x.png';
@@ -52,6 +53,7 @@ import pluscircle from './pluscircle.svg';
 import rightArrow from './right arrow.svg';
 import mockscreen from './screen-mockup-replace-fill@2x.png';
 import monday from './segment.svg';
+import setupLogo from './setuplogo.svg';
 import heroshadow from './shadow@2x.png';
 import sort from './sort.svg';
 import stars from './stars.svg';
@@ -88,8 +90,7 @@ export {
     apostrophy,
     arrow,
     arrowexpand,
-    authImage,
-    avatar,
+    authImage, avatar,
     call2action, cameralogo,
     cart,
     cashMultiple,
@@ -135,8 +136,7 @@ export {
     proton,
     rightArrow,
     samsung,
-    segment,
-    sort,
+    segment, setupLogo, sort,
     stars,
     treeRoot,
     valueTransformer,
