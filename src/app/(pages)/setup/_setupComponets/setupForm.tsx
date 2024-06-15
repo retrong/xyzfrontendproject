@@ -99,9 +99,6 @@ export default function Form() {
 
 	return (
 		<section className=" w-full flex flex-col justify-between">
-			{/* <div className="progress-bar">
-				<div className="progress" style={{ width: `${progressWidth}%` }}></div>
-			</div> */}
 			<div className="stepper-container w-full flex-row flex gap-3">
 				{steps.map((step, index) => (
 					<div
@@ -330,7 +327,7 @@ export default function Form() {
 											{...register('businessCountry')}
 											autoComplete="country-name"
 											className="block w-full rounded-md border border-solid py-3 px-3 text-foundation-grey-grey-900 shadow-sm outline-none border-foundation-grey-grey-600 placeholder:text-foundation-grey-grey-600
-                                             focus:border-2 focus:border-solid focus:border-foundation-purple-purple-100 focus:bg-foundation-grey-grey-50 sm:text-sm sm:leading-6"
+                                             focus:border-2 focus:border-solid focus:border-foundation-purple-purple-100 focus:bg-foundation-grey-grey-50 sm:text-sm sm:leading-6 bg-white"
 										>
 											<option>Select Country</option>
 											<option>United States</option>

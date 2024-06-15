@@ -79,6 +79,27 @@ body {
     -moz-appearance: textfield; /* Firefox */
     appearance: none; /* Standard syntax for other browsers */
 }
+
+/* Chrome, Safari, Edge, Opera */ 
+/* generic styling */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+  appearance: none;
+  margin: 0;
+}
+
+select {
+    background-color: #fff;
+}
+
+
 /* verify email styling start */
 
 
