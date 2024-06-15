@@ -14,7 +14,7 @@ import {
     profileimage,
     xyz,
 } from '../../../../../public';
-import ProgressSteps from './progressBar';
+// import ProgressSteps from './progressBar';
 
 
 export const setupItems = [
