@@ -95,6 +95,10 @@ input[type=number] {
   margin: 0;
 }
 
+input {
+    @apply outline-none border-foundation-grey-grey-600 placeholder:text-foundation-grey-grey-600 focus:border-2 focus:border-solid focus:border-foundation-purple-purple-100 focus:bg-foundation-grey-grey-50;
+}
+
 select {
     background-color: #fff;
 }
