@@ -3,7 +3,6 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 
-import { emailRegex, numberRegex } from '@/lib/regex';
 import { FormDataSchema } from '@/lib/setupSchema';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { SubmitHandler, useForm } from 'react-hook-form';
@@ -41,13 +40,10 @@ const steps = [
 		id: 'Step 3',
 		name: 'Report Information',
 		fields: [
-			'legalBusinessName',
-			'rcNumber',
-			'tinNumber',
-			'eiNumber',
-			'businessCountry',
-			'businessAddress',
-			'businessState',
+			'fiscalYear',
+			'taxYear',
+			'businessType',
+			'filingInformation',
 		],
 	},
 	{
@@ -65,6 +61,7 @@ const steps = [
 export default function Form() {
 	const [previousStep, setPreviousStep] = useState(0);
 	const [currentStep, setCurrentStep] = useState(0);
+    const [completedSteps, setCompletedSteps] = useState<boolean[]>(Array(steps.length).fill(false));
 	const delta = currentStep - previousStep;
 
 	const {
@@ -99,6 +96,11 @@ export default function Form() {
 			}
 			setPreviousStep(currentStep);
 			setCurrentStep((step) => step + 1);
+            setCompletedSteps((prev) => {
+            const newCompletedSteps = [...prev];
+            newCompletedSteps[currentStep] = true;
+            return newCompletedSteps;
+      });
 		}
 	};
 
@@ -118,11 +120,9 @@ export default function Form() {
 				{steps.map((step, index) => (
 					<div
 						key={index}
-						className={`step ${
-							index === currentStep
-								? 'active'
-								: 'bg-foundation-purple-purple-100'
-						}`}
+						className={`step ${index === currentStep ? 'active' : ''} ${
+							completedSteps[index] ? 'completed' : ''
+						} bg-foundation-purple-purple-100`}
 					></div>
 				))}
 			</div>
@@ -411,9 +411,7 @@ export default function Form() {
 											autoComplete="off"
 											className=" block w-full rounded-md border border-solid py-3 px-3 text-foundation-grey-grey-900 shadow-sm outline-none border-foundation-grey-grey-600 placeholder:text-foundation-grey-grey-600
                                              focus:border-2 focus:border-solid focus:border-foundation-purple-purple-100 focus:bg-foundation-grey-grey-50 sm:text-sm sm:leading-6"
-											{...register('alternativeNumber', {
-												pattern: numberRegex,
-											})}
+											{...register('alternativeNumber')}
 										/>
 										{errors.alternativeNumber?.message && (
 											<p className="mt-2 text-sm text-red-400">
@@ -963,9 +961,9 @@ export default function Form() {
                                              focus:border-2 focus:border-solid focus:border-foundation-purple-purple-100 focus:bg-foundation-grey-grey-50 sm:text-sm sm:leading-6"
 										>
 											<option value="null">Select your type of business</option>
-											<option value=""></option>
-											<option value=""></option>
-											<option value=""></option>
+											<option value="A">a</option>
+											<option value="B">b</option>
+											<option value="c">c</option>
 										</select>
 										{errors.businessType?.message && (
 											<p className="mt-2 text-sm text-red-400">
@@ -998,9 +996,9 @@ export default function Form() {
                                              focus:border-2 focus:border-solid focus:border-foundation-purple-purple-100 focus:bg-foundation-grey-grey-50 sm:text-sm sm:leading-6"
 										>
 											<option>Select filing information</option>
-											<option></option>
-											<option></option>
-											<option></option>
+											<option value="A">a</option>
+											<option value="B">b</option>
+											<option value="c">c</option>
 										</select>
 										{errors.filingInformation?.message && (
 											<p className="mt-2 text-sm text-red-400">

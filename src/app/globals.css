@@ -135,6 +135,10 @@ select {
   background-color: #b78af7;
 }
 
+.step.completed {
+  background-color: #b78af7;
+}
+
 .step-buttons {
   margin-top: 20px;
 }
