@@ -8,9 +8,9 @@ export const FormDataSchema = z.object({
 	street: z.string().min(1, 'Street is required'),
 	city: z.string().min(1, 'City is required'),
 	state: z.string().min(1, 'State is required'),
-	zip: z.string().min(1, 'Zip is required'),
+	zip: z.string().min(1, 'Zip is required').optional(),
 
-	businessName: z.string().min(2, 'Business Name is required'),
+	businessName: z.string().min(1, 'Business Name is required').trim(),
 	businessDescription: z.string().optional(),
 	businessWebsite: z.string().optional(),
 	businessAddress: z.string().min(1, 'Address is required'),
@@ -20,9 +20,9 @@ export const FormDataSchema = z.object({
 		.email({ message: 'please enter a valid email' })
 		.trim()
 		.optional(),
-	businessPhoneNumber: z.coerce.number().min(9, 'Phone Number is required'),
+	businessPhoneNumber: z.coerce.number().min(1, 'Phone Number is required'),
 	alternativeNumber: z.coerce.number().min(1).optional(),
-	faxNumber: z.string().min(1).optional(),
+	faxNumber: z.coerce.number().min(1).optional(),
 	language: z.string().min(1, 'Language is required'),
 	businessFacebook: z.string().optional(),
 	businessInstagram: z.string().optional(),
@@ -32,5 +32,25 @@ export const FormDataSchema = z.object({
 	tinNumber: z.string().min(1, 'Enter a valid Tax ID Number'),
 	businessState: z.string().min(1, 'State is required'),
 	eiNumber: z.string().min(1, 'Enter a valid Employee ID Number'),
-	snNumber: z.coerce.number().min(9, 'Enter a valid Social security Number').optional(),
+	snNumber: z.coerce
+		.number()
+		.min(1, 'Enter a valid Social security Number')
+		.optional(),
+
+	fiscalYear: z.coerce.date({
+		required_error: 'Please select a date and time',
+		invalid_type_error: "That's not a date!",
+	}),
+	taxYear: z.coerce.date({
+		required_error: 'Please select a date and time',
+		invalid_type_error: "That's not a date!",
+	}),
+	businessType: z.object({
+		value: z.string(),
+		label: z.string(),
+	}),
+	filingInformation: z.object({
+		value: z.string(),
+		label: z.string(),
+	}),
 });

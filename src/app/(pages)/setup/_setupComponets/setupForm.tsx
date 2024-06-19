@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 
+import { emailRegex, numberRegex } from '@/lib/regex';
 import { FormDataSchema } from '@/lib/setupSchema';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { SubmitHandler, useForm } from 'react-hook-form';
@@ -38,15 +39,27 @@ const steps = [
 	},
 	{
 		id: 'Step 3',
-		name: 'Address',
-		fields: ['country', 'state', 'city', 'street', 'zip'],
+		name: 'Report Information',
+		fields: [
+			'legalBusinessName',
+			'rcNumber',
+			'tinNumber',
+			'eiNumber',
+			'businessCountry',
+			'businessAddress',
+			'businessState',
+		],
 	},
-	{ id: 'Step 4', name: 'Complete' },
-	// {
-	// 	id: 'Step 5',
-	// 	name: 'Address',
-	// 	fields: ['country', 'state', 'city', 'street', 'zip'],
-	// },
+	{
+		id: 'Step 4',
+		name: 'Complete',
+		fields: ['additionalField1', 'additionalField2', 'additionalField3'],
+	},
+	{
+		id: 'Step 5',
+		name: 'Summary',
+		fields: [],
+	},
 ];
 
 export default function Form() {
@@ -64,6 +77,8 @@ export default function Form() {
 	} = useForm<Inputs>({
 		resolver: zodResolver(FormDataSchema),
 	});
+
+    const methods = useForm();
 
 	const processForm: SubmitHandler<Inputs> = (data) => {
 		console.log(data);
@@ -364,7 +379,9 @@ export default function Form() {
 										<input
 											type="number"
 											id="businessPhoneNumber"
-											autoComplete="off"
+											maxLength={12}
+											minLength={9}
+											autoComplete="tel"
 											placeholder="Enter your business Phone number"
 											className="block w-full rounded-md border border-solid py-3 px-3 text-foundation-grey-grey-900 shadow-sm outline-none border-foundation-grey-grey-600 placeholder:text-foundation-grey-grey-600
                                              focus:border-2 focus:border-solid focus:border-foundation-purple-purple-100 focus:bg-foundation-grey-grey-50 sm:text-sm sm:leading-6"
@@ -386,13 +403,17 @@ export default function Form() {
 									</label>
 									<div className="mt-[2px]">
 										<input
-											type="number"
+											type="tel"
 											id="alternativeNumber"
+											maxLength={12}
+											minLength={9}
 											placeholder="Enter your alternative business phone number"
-											autoComplete="tel"
+											autoComplete="off"
 											className=" block w-full rounded-md border border-solid py-3 px-3 text-foundation-grey-grey-900 shadow-sm outline-none border-foundation-grey-grey-600 placeholder:text-foundation-grey-grey-600
                                              focus:border-2 focus:border-solid focus:border-foundation-purple-purple-100 focus:bg-foundation-grey-grey-50 sm:text-sm sm:leading-6"
-											{...register('alternativeNumber')}
+											{...register('alternativeNumber', {
+												pattern: numberRegex,
+											})}
 										/>
 										{errors.alternativeNumber?.message && (
 											<p className="mt-2 text-sm text-red-400">
@@ -838,6 +859,162 @@ export default function Form() {
 				)}
 
 				{currentStep === 2 && (
+					<motion.div
+						initial={{ x: delta >= 0 ? '50%' : '-50%', opacity: 0 }}
+						animate={{ x: 0, opacity: 1 }}
+						transition={{ duration: 0.3, ease: 'easeInOut' }}
+					>
+						<h2 className="text-base font-semibold leading-7 text-foundation-black-black-400 my-0">
+							Report Information
+						</h2>
+
+						<div className="mt-2 grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-6">
+							{/* Fiscal year Tax year */}
+							<div className="flex flex-row w-full gap-10">
+								<div className=" w-full">
+									<label
+										htmlFor="fiscalYear"
+										className="w-fit h-fit flex font-inter text-sm font-medium leading-6 text-foundation-grey-grey-800 gap-[1px]"
+									>
+										Fiscal Year{' '}
+										<span>
+											<FaAsterisk
+												size={6}
+												color="red"
+												opacity={0.7}
+												className="mb-1"
+											/>
+										</span>
+									</label>
+									<div className="mt-[2px]">
+										<input
+											type="date"
+											id="fiscalYear"
+											autoComplete="organization-title"
+											placeholder="Enter your business name on Govt document"
+											className="block w-full rounded-md border border-solid py-3 px-3 text-foundation-grey-grey-900 shadow-sm outline-none border-foundation-grey-grey-600 placeholder:text-foundation-grey-grey-600
+                                             focus:border-2 focus:border-solid focus:border-foundation-purple-purple-100 focus:bg-foundation-grey-grey-50 sm:text-sm sm:leading-6"
+											{...register('fiscalYear')}
+										/>
+										{errors.fiscalYear?.message && (
+											<p className="mt-2 text-sm text-red-400">
+												{errors.fiscalYear.message}
+											</p>
+										)}
+									</div>
+								</div>
+								<div className="w-full">
+									<label
+										htmlFor="taxYear"
+										className="w-fit h-fit flex font-inter text-sm font-medium leading-6 text-foundation-grey-grey-800 gap-[1px]"
+									>
+										Tax Year{' '}
+										<span>
+											<FaAsterisk
+												size={6}
+												color="red"
+												opacity={0.7}
+												className="mb-1"
+											/>
+										</span>
+									</label>
+									<div className="mt-[2px]">
+										<input
+											type="date"
+											id="taxYear"
+											placeholder="Write a brief description of your business"
+											autoComplete="off"
+											className=" block w-full rounded-md border border-solid py-3 px-3 text-foundation-grey-grey-900 shadow-sm outline-none border-foundation-grey-grey-600 placeholder:text-foundation-grey-grey-600
+                                             focus:border-2 focus:border-solid focus:border-foundation-purple-purple-100 focus:bg-foundation-grey-grey-50 sm:text-sm sm:leading-6 placeholder:uppercase"
+											{...register('taxYear')}
+										/>
+										{errors.taxYear?.message && (
+											<p className="mt-2 text-sm text-red-400">
+												{errors.taxYear.message}
+											</p>
+										)}
+									</div>
+								</div>
+							</div>
+
+							{/* Business Type and filling information */}
+							<div className="flex flex-col w-full gap-10">
+								<div className=" w-full mq850:w-[48%]">
+									<label
+										htmlFor="businessType"
+										className="w-fit h-fit flex font-inter text-sm font-medium leading-6 text-foundation-grey-grey-800 gap-[1px]"
+									>
+										Business Type
+										<span>
+											<FaAsterisk
+												size={6}
+												color="red"
+												opacity={0.7}
+												className="mb-1"
+											/>
+										</span>
+									</label>
+									<div className="mt-[2px]">
+										<select
+											id="businessType"
+											{...register('businessType')}
+											autoComplete="off"
+											className="block w-full rounded-md border border-solid py-3 px-3 text-foundation-grey-grey-900 shadow-sm outline-none border-foundation-grey-grey-600 placeholder:text-foundation-grey-grey-600
+                                             focus:border-2 focus:border-solid focus:border-foundation-purple-purple-100 focus:bg-foundation-grey-grey-50 sm:text-sm sm:leading-6"
+										>
+											<option value="null">Select your type of business</option>
+											<option value=""></option>
+											<option value=""></option>
+											<option value=""></option>
+										</select>
+										{errors.businessType?.message && (
+											<p className="mt-2 text-sm text-red-400">
+												{errors.businessType.message}
+											</p>
+										)}
+									</div>
+								</div>
+								<div className="w-full mq850:w-[48%]">
+									<label
+										htmlFor="filingInformation"
+										className="w-fit h-fit flex font-inter text-sm font-medium leading-6 text-foundation-grey-grey-800 gap-[1px]"
+									>
+										Filling Information
+										<span>
+											<FaAsterisk
+												size={6}
+												color="red"
+												opacity={0.7}
+												className="mb-1"
+											/>
+										</span>
+									</label>
+									<div className="mt-[2px]">
+										<select
+											id="filingInformation"
+											{...register('filingInformation')}
+											autoComplete="country-name"
+											className="block w-full rounded-md border border-solid py-3 px-3 text-foundation-grey-grey-900 shadow-sm outline-none border-foundation-grey-grey-600 placeholder:text-foundation-grey-grey-600
+                                             focus:border-2 focus:border-solid focus:border-foundation-purple-purple-100 focus:bg-foundation-grey-grey-50 sm:text-sm sm:leading-6"
+										>
+											<option>Select filing information</option>
+											<option></option>
+											<option></option>
+											<option></option>
+										</select>
+										{errors.filingInformation?.message && (
+											<p className="mt-2 text-sm text-red-400">
+												{errors.filingInformation.message}
+											</p>
+										)}
+									</div>
+								</div>
+							</div>
+						</div>
+					</motion.div>
+				)}
+
+				{currentStep === 3 && (
 					<>
 						<h2 className="text-base font-semibold leading-7 text-gray-900">
 							Complete
