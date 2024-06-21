@@ -1,5 +1,15 @@
 import { z } from 'zod';
 
+// schema for select element
+const optionSchema = z.union([
+    z.string(),
+    z.object({
+        value: z.string(),
+        label: z.string()
+    })
+]);
+
+
 export const FormDataSchema = z.object({
 	firstName: z.string().min(1, 'First name is required'),
 	lastName: z.string().min(1, 'Last name is required'),
@@ -45,12 +55,15 @@ export const FormDataSchema = z.object({
 		required_error: 'Please select a date and time',
 		invalid_type_error: "That's not a date!",
 	}),
-	businessType: z.object({
-		value: z.string(),
-		label: z.string(),
-	}),
-	filingInformation: z.object({
-		value: z.string(),
-		label: z.string(),
-	}),
+	businessType: optionSchema,
+	filingInformation: optionSchema,
+
+	taxConsultantName: z.string().min(1, {message:'Tax Consultant Name is required'}).trim().optional(),
+	contactPerson: z.string().min(1, {message:'Contact person Name is required'}).trim().optional(),
+	taxConsultantAddress: z.string().min(1, 'Tax Consultant Address is required'),
+	auditorName: z.string().min(1, {message:'Auditor Name is required'}).trim().optional(),
+	auditorAddress: z.string().min(1, 'Auditor Address Address is required'),
+	legalConsultantAddress: z.string().min(1, 'Legal Consultant Address is required'),
+	legalConsultantName: z.string().min(1, {message:'Tax Consultant Name is required'}).trim().optional(),
+
 });
