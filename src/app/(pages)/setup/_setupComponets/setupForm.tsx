@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 
-import { filingInformation } from '@/data/setupData';
+import { businessType, filingInformation } from '@/data/setupData';
 import { FormDataSchema } from '@/lib/setupSchema';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { FormProvider, SubmitHandler, useForm } from 'react-hook-form';
@@ -165,7 +165,7 @@ export default function Form() {
 							</h2>
 							<div className="mt-2 grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-6">
 								{/* Business name and description */}
-								<div className="flex flex-row w-full gap-10">
+								<div className="flex mq850:flex-row flex-col w-full gap-10">
 									<div className=" w-full">
 										<label
 											htmlFor="businessName"
@@ -227,7 +227,7 @@ export default function Form() {
 								</div>
 
 								{/* website and email address */}
-								<div className="flex flex-row w-full gap-10">
+								<div className="flex mq850:flex-row flex-col w-full gap-10">
 									<div className=" w-full">
 										<label
 											htmlFor="businessName"
@@ -279,7 +279,7 @@ export default function Form() {
 								</div>
 
 								{/* business address and country */}
-								<div className="flex flex-row w-full gap-10">
+								<div className="flex mq850:flex-row flex-col w-full gap-10">
 									<div className=" w-full">
 										<label
 											htmlFor="businessAddress"
@@ -350,7 +350,7 @@ export default function Form() {
 								</div>
 
 								{/* Phone number and alternative phone number */}
-								<div className="flex flex-row w-full gap-10">
+								<div className="flex mq850:flex-row flex-col w-full gap-10">
 									<div className=" w-full">
 										<label
 											htmlFor="businessPhoneNumber"
@@ -415,7 +415,7 @@ export default function Form() {
 
 								{/* Fax number and language  */}
 
-								<div className="flex flex-row w-full gap-10">
+								<div className="flex mq850:flex-row flex-col w-full gap-10">
 									<div className=" w-full">
 										<label
 											htmlFor="faxNumber"
@@ -479,7 +479,7 @@ export default function Form() {
 
 								{/* Facebook and Instagram handle */}
 
-								<div className="flex flex-row w-full gap-10">
+								<div className="flex mq850:flex-row flex-col w-full gap-10">
 									<div className=" w-full">
 										<label
 											htmlFor="businessFacebook"
@@ -545,7 +545,7 @@ export default function Form() {
 
 							<div className="mt-2 grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-6">
 								{/* legal Business name and description */}
-								<div className="flex flex-row w-full gap-10">
+								<div className="flex mq850:flex-row flex-col w-full gap-10">
 									<div className=" w-full">
 										<label
 											htmlFor="legalBusinessName"
@@ -607,7 +607,7 @@ export default function Form() {
 								</div>
 
 								{/* Rc Number and Tax ID Number */}
-								<div className="flex flex-row w-full gap-10">
+								<div className="flex mq850:flex-row flex-col w-full gap-10">
 									<div className=" w-full">
 										<label
 											htmlFor="rcNumber"
@@ -675,7 +675,7 @@ export default function Form() {
 								</div>
 
 								{/* business address and country */}
-								<div className="flex flex-row w-full gap-10">
+								<div className="flex mq850:flex-row flex-col w-full gap-10">
 									<div className=" w-full">
 										<label
 											htmlFor="businessAddress"
@@ -746,7 +746,7 @@ export default function Form() {
 								</div>
 
 								{/* Legal State */}
-								<div className="flex flex-row w-full gap-10">
+								<div className="flex mq850:flex-row flex-col w-full gap-10">
 									<div className=" mq850:w-[47.5%] w-full">
 										<label
 											htmlFor="businessState"
@@ -785,7 +785,7 @@ export default function Form() {
 								</div>
 
 								{/* EIN for payroll and SSN */}
-								<div className="flex flex-row w-full gap-10">
+								<div className="flex mq850:flex-row flex-col w-full gap-10">
 									<div className=" w-full">
 										<label
 											htmlFor="eiNumber"
@@ -859,7 +859,7 @@ export default function Form() {
 
 							<div className="mt-2 grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-6">
 								{/* Fiscal year Tax year */}
-								<div className="flex flex-row w-full gap-10">
+								<div className="flex mq850:flex-row flex-col w-full gap-10">
 									<div className=" w-full">
 										<label
 											htmlFor="fiscalYear"
@@ -928,77 +928,25 @@ export default function Form() {
 
 								{/* Business Type and filling information */}
 								<div className="flex flex-col w-full gap-10">
-									<div className=" w-full mq850:w-[48%]">
-										<label
-											htmlFor="businessType"
-											className="w-fit h-fit flex font-inter text-sm font-medium leading-6 text-foundation-grey-grey-800 gap-[1px]"
-										>
-											Business Type
-											<span>
-												<FaAsterisk
-													size={6}
-													color="red"
-													opacity={0.7}
-													className="mb-1"
-												/>
-											</span>
-										</label>
-										<div className="mt-[2px]">
-											<select
-												id="businessType"
-												{...register('businessType')}
-												autoComplete="off"
-												className="block w-full rounded-md border border-solid py-3 px-3 text-foundation-grey-grey-900 shadow-sm outline-none border-foundation-grey-grey-600 placeholder:text-foundation-grey-grey-600
-                                                focus:border-2 focus:border-solid focus:border-foundation-purple-purple-100 focus:bg-foundation-grey-grey-50 sm:text-sm sm:leading-6"
-											>
-												<option value="null">
-													Select your type of business
-												</option>
-												<option value="A">a</option>
-												<option value="B">b</option>
-												<option value="c">c</option>
-											</select>
-											{errors.businessType?.message && (
-												<p className="mt-2 text-sm text-red-400">
-													{errors.businessType.message}
-												</p>
-											)}
-										</div>
+									<div className="w-full mq850:w-[48%]">
+										<SelectElement
+											id="businessType"
+											label="Business Type"
+											options={businessType}
+											required
+											registerName="businessType"
+											error={errors.businessType?.message}
+										/>
 									</div>
 									<div className="w-full mq850:w-[48%]">
-										<label
-											htmlFor="filingInformation"
-											className="w-fit h-fit flex font-inter text-sm font-medium leading-6 text-foundation-grey-grey-800 gap-[1px]"
-										>
-											Filling Information
-											<span>
-												<FaAsterisk
-													size={6}
-													color="red"
-													opacity={0.7}
-													className="mb-1"
-												/>
-											</span>
-										</label>
-										<div className="mt-[2px]">
-											<select
-												id="filingInformation"
-												{...register('filingInformation')}
-												autoComplete="country-name"
-												className="block w-full rounded-md border border-solid py-3 px-3 text-foundation-grey-grey-900 shadow-sm outline-none border-foundation-grey-grey-600 placeholder:text-foundation-grey-grey-600
-                                                focus:border-2 focus:border-solid focus:border-foundation-purple-purple-100 focus:bg-foundation-grey-grey-50 sm:text-sm sm:leading-6"
-											>
-												<option>Select filing information</option>
-												<option value="A">a</option>
-												<option value="B">b</option>
-												<option value="c">c</option>
-											</select>
-											{errors.filingInformation?.message && (
-												<p className="mt-2 text-sm text-red-400">
-													{errors.filingInformation.message}
-												</p>
-											)}
-										</div>
+										<SelectElement
+											id="filingInformation"
+											label="Filing Information"
+											options={filingInformation}
+											required
+											registerName="filingInformation"
+											error={errors.filingInformation?.message}
+										/>
 									</div>
 								</div>
 							</div>
@@ -1021,10 +969,10 @@ export default function Form() {
 							animate={{ x: 0, opacity: 1 }}
 							transition={{ duration: 0.2, ease: 'easeInOut' }}
 						>
-							<h2 className="text-base font-semibold leading-7 text-foundation-black-black-400 my-0">
+							<h2 className="text-base font-semibold leading-7 text-foundation-black-black-400 my-0 mt-1">
 								Other Information
 							</h2>
-							<p className="text-sm font-normal text-foundation-black-black-400 my-0 mt-1">
+							<p className="text-sm font-normal text-foundation-black-black-400 my-0 mt-2">
 								Tax Consultation Information
 								<span>
 									<FaAsterisk
@@ -1037,7 +985,7 @@ export default function Form() {
 							</p>
 							<div className="mt-2 grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-6">
 								{/* Tax consultant Name and Contact person */}
-								<div className="flex flex-row w-full gap-10">
+								<div className="flex mq850:flex-row flex-col w-full gap-10">
 									<InputElement
 										id="taxConsultantName"
 										label="Tax Consultant Name"
@@ -1057,7 +1005,7 @@ export default function Form() {
 								</div>
 
 								{/* Consultant Address and document */}
-								<div className="flex flex-row w-full gap-10">
+								<div className="flex mq850:flex-row flex-col w-full gap-10">
 									<InputElement
 										id="taxConsultantAddress"
 										label="Address"
@@ -1082,7 +1030,7 @@ export default function Form() {
 								</p>
 
 								{/* Auditor Name and Contact Person */}
-								<div className="flex flex-row w-full gap-10">
+								<div className="flex mq850:flex-row flex-col w-full gap-10">
 									<InputElement
 										id="auditorName"
 										label="Auditor Name"
@@ -1102,7 +1050,7 @@ export default function Form() {
 								</div>
 
 								{/* Auditor and Contract Document */}
-								<div className="flex flex-row w-full gap-10">
+								<div className="flex mq850:flex-row flex-col w-full gap-10">
 									<InputElement
 										id="auditorAddress"
 										label="Address"
@@ -1128,7 +1076,7 @@ export default function Form() {
 
 								{/* Fax number and language  */}
 
-								<div className="flex flex-row w-full gap-10">
+								<div className="flex mq850:flex-row flex-col w-full gap-10">
 									<InputElement
 										id="legalConsultantName"
 										label="Auditor Name"
@@ -1147,9 +1095,9 @@ export default function Form() {
 									/>
 								</div>
 
-								{/* Facebook and Instagram handle */}
+								{/* Consultant Address and file upload */}
 
-								<div className="flex flex-row w-full gap-10">
+								<div className="flex mq850:flex-row flex-col w-full gap-10">
 									<InputElement
 										id="legalConsultantAddress"
 										label="Address"

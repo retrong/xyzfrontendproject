@@ -22,31 +22,31 @@ export const setupItems = [
 		icon: '/viewdashboardoutline.svg',
 		title: 'Business Setup & Information',
 		content: 'Manage your business information',
-		path: '/sales',
+		path: '/setup/businessinformation',
 		// subTitle: 'Overview',
 		isActive: true,
 	},
 	{
 		icon: '/mapmarkeroutline.svg',
-		path: '/sales/locationmanagement',
+		path: '/setup/price-payment',
 		title: 'Pricing & Payments',
 		content: 'Payment for plans and payment methods',
 	},
 	{
 		icon: '/chartboxoutline.svg',
-		path: '/sales/salesreport',
+		path: '/sales/2',
 		title: 'Manage your Account',
 		content: 'Your subscription and user type setup',
 	},
 	{
 		icon: '/borderinside.svg',
-		path: '/sales/ordermanagement',
+		path: '/sales/3',
 		title: 'Business Accounts',
 		content: 'Manage multiple accounts',
 	},
 	{
 		icon: '/tune.svg',
-		path: '/sales/preferences',
+		path: '/sales/4',
 		title: 'Admin Dashboard',
 		content: 'Manage multiple paid modules',
 	},
@@ -60,7 +60,6 @@ export default function SetupSidebar() {
 	// to animate the sidebar
 	let isTab = useMediaQuery({ query: '(max-width: 768px)' });
 
-	console.log(isTab, 'isTab');
 	const [isOpen, setIsOpen] = useState(isTab ? false : true);
 
 	const Siderbar_animation = isTab
@@ -130,7 +129,7 @@ export default function SetupSidebar() {
 			<motion.div
 				variants={Siderbar_animation}
 				animate={isOpen ? 'open' : 'closed'}
-				className={`self-stretch bg-foundation-purple-purple-400 flex flex-col items-end justify-start pt-11 px-[23.5px] py-[34.3px] box-border gap-[290.9px] max-w-[80%] mq450:gap-[145px] mq450:pt-5 mq450:pb-5 mq450:box-border mq450:min-w-full mq1050:pt-[29px] mq1050:pb-[22px] mq1050:box-border mq750:absolute z-[999] 
+				className={`self-stretch bg-foundation-purple-purple-400 flex flex-col items-end justify-start pt-11 mq850:px-[23.5px] px-2 py-[34.3px] box-border gap-[290.9px] max-w-[80%] mq450:gap-[145px] mq450:pt-5 mq450:pb-5 mq450:box-border mq450:min-w-full mq1050:pt-[29px] mq1050:pb-[22px] mq1050:box-border mq750:absolute z-[999] 
                 `}
 			>
 				{/* <div className="w-auto relative bg-foundation-purple-purple-400 hidden max-w-full" /> */}
@@ -144,7 +143,7 @@ export default function SetupSidebar() {
 							className="z-[999] flex justify-end cursor-pointer h-[30px] w-[30px] object-contain"
 						/>
 					</div>
-					<div className="self-stretch flex flex-col items-center gap-3 justify-center py-2 px-5 mt-8 overflow-x-hidden whitespace-pre">
+					<div className="self-stretch flex flex-col items-center gap-3 justify-center py-2 px-5 mt-4 overflow-x-hidden whitespace-pre">
 						<Image
 							className="h-10 w-[108px] relative object-contain z-[1]"
 							loading="lazy"
@@ -168,9 +167,9 @@ export default function SetupSidebar() {
 									key={index}
 									className={`self-stretch rounded-2xl ${
 										isActive
-											? 'text-foundation-purple-purple-400 '
+											? ' '
 											: ' text-inherit'
-									} flex flex-col items-start hover:text-foundation-purple-purple-100 justify-center py-[26.5px] px-4 mq450:pl-5 mq450:pr-5 mq450:box-border cursor-pointer overflow-x-hidden`}
+									} flex flex-col items-start hover:text-foundation-purple-purple-100 justify-center py-[26.5px] px-4 mq450:pl-2 mq450:pr-2 mq450:box-border cursor-pointer overflow-x-hidden`}
 								>
 									<div className="flex flex-row items-center justify-start gap-[30px] whitespace-pre overflow-x-hidden">
 										<Image
@@ -225,11 +224,11 @@ export default function SetupSidebar() {
 					}}
 					onClick={() => setIsOpen(!isOpen)}
 				>
-					<Image
+					{/* <Image
 						src={chevronDown2}
 						alt=""
 						className="w-[30px] h-[30px] object-contain rotate-90 align-middle"
-					/>
+					/> */}
 				</motion.div>
 			</motion.div>
 			<div>
