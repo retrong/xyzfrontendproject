@@ -7,8 +7,8 @@ import * as data from '@/data/setupData';
 import { PricePaymentSchema } from '@/lib/pricePaymentSchema';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { FormProvider, SubmitHandler, useForm } from 'react-hook-form';
-import { FaAsterisk } from 'react-icons/fa';
 import { z } from 'zod';
+import Pricing from '../price-payment/_priceComponent/pricing';
 import InputElement from './Input/InputElement';
 import SelectElement from './Input/SelectElement';
 import InputFileUpload from './Input/UploadInputElement';
@@ -41,11 +41,6 @@ const steps = [
 			'businessAddress',
 			'businessState',
 		],
-	},
-	{
-		id: 'Step 3',
-		name: 'Schedule',
-		fields: [''],
 	},
 ];
 
@@ -116,7 +111,7 @@ export default function PricePaymentForm() {
 	};
 
 	return (
-		<section className=" w-full flex flex-col mq850:flex-rowcol justify-between">
+		<section className=" w-full flex flex-col mq850:flex-col justify-between">
 			<div className="stepper-container w-full flex-row flex gap-3">
 				{steps.map((step, index) => (
 					<div
@@ -169,7 +164,7 @@ export default function PricePaymentForm() {
 								</div>
 							</div>
 
-							<div className="mt-2 grid flex-col mq850:flex-rowcols-1 gap-x-6 gap-y-4 sm:flex-col mq850:flex-rowcols-6">
+							<div className="mt-2 grid flex-col mq850:flex-rowcols-1 gap-x-6 gap-y-6 sm:flex-col mq850:flex-rowcols-6">
 								{/* Customer Plan and Number of users */}
 								<div className="flex flex-col mq850:flex-rowcol mq850:flex-row w-full gap-10">
 									<div className="w-full">
@@ -249,17 +244,30 @@ export default function PricePaymentForm() {
 									</div>
 								</div>
 							</div>
+							<p className="m-0 my-3">
+								<a
+									href="#"
+									className=" font-inter text-sm text-foundation-purple-purple-300"
+								>
+									Try our free plan Valid for 30 days with Limited Features
+								</a>
+							</p>
 						</motion.div>
 					)}
 					{currentStep === 1 && (
-						<>
-							<h2 className="text-base font-semibold leading-7 text-gray-900">
-								Schedule
-							</h2>
-							<p className="mt-1 text-sm leading-6 text-gray-600">
-								Schedule Component
-							</p>
-						</>
+						<div>
+							<div className="flex flex-col flex-wrap">
+								<h2 className=" font-[500] text-foundation-black-black-400 text-[20px] m-0">
+									Pricing
+								</h2>
+								<p className="font-normal text-[14px] text-foundation-grey-grey-700 m-0 mt-[14px]">
+									Our product pricing is calculated based on number of apps you
+									subscribe for and the number of users. You can subscribe for
+									an app by clicking on the checkbox.
+								</p>
+							</div>
+							<Pricing />
+						</div>
 					)}
 				</form>
 			</FormProvider>
@@ -271,7 +279,7 @@ export default function PricePaymentForm() {
 						type="button"
 						onClick={prev}
 						disabled={currentStep === 0}
-						className="rounded-xl bg-white px-4 py-3 text-sm font-semibold text-foundation-grey-grey-900 shadow-sm border border-solid border-foundation-grey-grey-900 hover:bg-foundation-purple-purple-400 hover:text-white disabled:cursor-not-allowed disabled:opacity-50 cursor-pointer"
+						className="rounded-xl bg-white px-4 py-3 text-sm font-semibold text-foundation-purple-purple-500 shadow-sm border-solid border-foundation-purple-purple-500 border-2 hover:bg-foundation-purple-purple-400 hover:text-white disabled:cursor-not-allowed disabled:opacity-50 cursor-pointer"
 					>
 						Prev
 					</button>
@@ -279,7 +287,7 @@ export default function PricePaymentForm() {
 						type="button"
 						onClick={next}
 						disabled={currentStep === steps.length - 1}
-						className="rounded-xl hover:bg-white px-4 py-3 text-sm font-semibold hover:text-foundation-grey-grey-900 shadow-sm border border-solid border-foundation-grey-grey-900 bg-foundation-purple-purple-400 text-white disabled:cursor-not-allowed disabled:opacity-50 cursor-pointer"
+						className="rounded-xl px-4 py-3 text-sm font-semibold shadow-sm border border-solid border-foundation-purple-purple-400 bg-foundation-purple-purple-400 hover:bg-foundation-purple-purple-300 text-white disabled:cursor-not-allowed disabled:opacity-50 cursor-pointer"
 					>
 						Next
 					</button>

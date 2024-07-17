@@ -8,7 +8,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
-import { chevronDown2, chevrondownWite, closeButton, hamburger, profileimage, xyz } from '../../../../../public';
+import { chevronDown2, closeButton, hamburger, profileimage, xyz } from '../../../../../public';
 
 export default function Sidebar() {
 
