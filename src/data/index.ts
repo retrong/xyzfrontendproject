@@ -12,7 +12,7 @@ export const sidebarItems = [
 	{
 		icon: '/mapmarkeroutline.svg',
 		iconHover: '/mapmarkeroutline1.svg',
-		path: '/sales/locationmanagement',
+		path: '/sales/location-management',
 		title: 'Location Management',
 	},
 	{
@@ -24,7 +24,7 @@ export const sidebarItems = [
 	{
 		icon: '/borderinside.svg',
 		iconHover: '/borderinside1.svg',
-		path: '/sales/ordermanagement',
+		path: '/sales/order-management',
 		title: 'Order Management',
 	},
 	{

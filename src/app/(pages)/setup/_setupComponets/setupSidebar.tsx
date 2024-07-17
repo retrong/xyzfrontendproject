@@ -8,10 +8,8 @@ import { usePathname } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import {
-    chevronDown2,
     closeButton,
     hamburger,
-    profileimage,
     xyz,
 } from '../../../../../public';
 // import ProgressSteps from './progressBar';
@@ -22,7 +20,7 @@ export const setupItems = [
 		icon: '/viewdashboardoutline.svg',
 		title: 'Business Setup & Information',
 		content: 'Manage your business information',
-		path: '/setup/businessinformation',
+		path: '/setup/business-information',
 		// subTitle: 'Overview',
 		isActive: true,
 	},
@@ -34,7 +32,7 @@ export const setupItems = [
 	},
 	{
 		icon: '/chartboxoutline.svg',
-		path: '/sales/2',
+		path: '/setup/manage-account',
 		title: 'Manage your Account',
 		content: 'Your subscription and user type setup',
 	},
@@ -58,7 +56,7 @@ export default function SetupSidebar() {
 
 
 	// to animate the sidebar
-	let isTab = useMediaQuery({ query: '(max-width: 768px)' });
+	let isTab = useMediaQuery({ query: '(max-width: 1060px)' });
 
 	const [isOpen, setIsOpen] = useState(isTab ? false : true);
 

@@ -4,35 +4,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-} */
 
 body {
   @apply leading-[normal] m-0;
@@ -44,7 +15,6 @@ body {
     scroll-behavior: smooth;
     text-decoration: none;
     color: inherit;
-
 };
 
 *,
@@ -104,11 +74,6 @@ select {
 }
 
 
-/* verify email styling start */
-
-
-/* stepper styling starts here  */
-
 /* styles/globals.css */
 .stepper-container {
   display: flex;
@@ -121,7 +86,6 @@ select {
 .step {
   width: 30px;
   height: 6px;
-  /* border: 1px solid #bcbbbb; */
   display: flex;
   justify-content: start;
   align-items: start;
@@ -153,4 +117,35 @@ select {
 
 input[type='date']::-webkit-calendar-picker-indicator {
   background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" viewBox="0 0 24 24"><path fill="%238133f1" d="M20 3h-1V1h-2v2H7V1H5v2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 18H4V8h16v13z"/></svg>');
+}
+
+/* price and payment checkbox styling */
+
+.custom-checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #8133f1;
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer;
+}
+
+.custom-checkbox:checked {
+  background-color: #8133f1;
+  position: relative;
+}
+
+.custom-checkbox:checked::before {
+  content: '\2713';
+  font-size: 14px;
+  color: white;
+  position: absolute;
+  right: 3px;
+  top: 0;
+}
+
+.pricing-setup p{
+    margin: 0;
 }
