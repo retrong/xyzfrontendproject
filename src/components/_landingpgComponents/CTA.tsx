@@ -18,7 +18,7 @@ export default function CTA() {
 					<div className="w-[100%] mt-4 self-stretch flex flex-row flex-wrap items-center justify-center gap-[16px]">
 						<input
 							type="email"
-							className="rounded-[16px] px-5 w-[652px] mq750:w-full py-4 placeholder:text-foundation-grey-grey-900"
+							className="rounded-[16px] px-5 w-[652px] mq750:w-full py-4 text-foundation-black-black-400 placeholder:text-foundation-grey-grey-900"
 							placeholder="Enter your email"
 						/>
 						<button className="bg-foundation-purple-purple-400 text-foundation-white-white-400 border-none hover:bg-foundation-purple-purple-100 py-4 px-6 cursor-pointer rounded-2xl whitespace-nowrap">
