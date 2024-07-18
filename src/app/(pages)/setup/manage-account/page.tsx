@@ -1,8 +1,6 @@
 "use client";
 
 import React from 'react';
-import SetupTable from '../_setupComponets/setupTable';
-import TableWithActions from '../_setupComponets/testTable';
 import ManageAccountForm from './_components/manageAccountForm';
 
 export default function ManageYourAccount() {
@@ -14,8 +12,6 @@ export default function ManageYourAccount() {
 					Invite, Edit & Delete Users
 				</p>
 			</div>
-            {/* <SetupTable />
-            <TableWithActions /> */}
             <ManageAccountForm/>
 
 			
