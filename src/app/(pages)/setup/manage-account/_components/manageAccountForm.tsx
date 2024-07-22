@@ -5,9 +5,13 @@ import * as data from '@/data/setupData';
 import { PricePaymentSchema } from '@/lib/pricePaymentSchema';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { FormProvider, SubmitHandler, useForm } from 'react-hook-form';
+import { FaAsterisk } from 'react-icons/fa';
 import { z } from 'zod';
 import InputElement from '../../_setupComponets/Input/InputElement';
 import SelectElement from '../../_setupComponets/Input/SelectElement';
+import InputFileUpload from '../../_setupComponets/Input/UploadInputElement';
+import ExampleWithProviders from '../../_setupComponets/userManagementTable';
+import PermissionTable from './permissionTable';
 
 type Inputs = z.infer<typeof PricePaymentSchema>;
 
@@ -15,28 +19,12 @@ const steps = [
 	{
 		id: 'Step 1',
 		name: 'Product Information',
-		fields: [
-			'customerPlan',
-			'numberOfUsers',
-			'paymentPlan',
-			'paymentMethod',
-			'orderHistory',
-			'renewalType',
-			'currencyType',
-		],
+		fields: [],
 	},
 	{
 		id: 'Step 2',
 		name: 'Legal Information',
-		fields: [
-			'legalBusinessName',
-			'rcNumber',
-			'tinNumber',
-			'eiNumber',
-			'businessCountry',
-			'businessAddress',
-			'businessState',
-		],
+		fields: [],
 	},
 	{
 		id: 'Step 3',
@@ -53,6 +41,38 @@ const steps = [
 		name: 'Schedule',
 		fields: [''],
 	},
+	{
+		id: 'Step 6',
+		name: 'Schedule',
+		fields: [''],
+	},
+	{
+		id: 'Step 7',
+		name: 'Schedule',
+		fields: [''],
+	},
+];
+
+export const gender = [
+	{ value: '', label: 'Select Gender' },
+	{ value: 'male', label: 'Male' },
+	{ value: 'female', label: 'Female' },
+	{ value: 'choose not to specify', label: 'choose not to specify' },
+];
+
+export const department = [
+	{ value: '', label: 'Select your Department' },
+	{ value: 'management', label: 'Management' },
+	{ value: 'sales', label: 'Sales' },
+	{ value: 'information', label: 'Information' },
+];
+
+export const maritalStatus = [
+	{ value: '', label: 'Select your marital Status' },
+	{ value: 'single', label: 'Single' },
+	{ value: 'married', label: 'Married' },
+	{ value: 'divorced', label: 'Divorced' },
+	{ value: 'choose not to specify', label: 'choose not to specify' },
 ];
 
 export default function ManageAccountForm() {
@@ -63,6 +83,11 @@ export default function ManageAccountForm() {
 	);
 	const delta = currentStep - previousStep;
 
+    // for the permission component
+    const [isOpen, setIsOpen] = useState(true)
+    const handleClick = () => {
+        setIsOpen(!isOpen)
+    }
 	const methods = useForm<Inputs>({
 		resolver: zodResolver(PricePaymentSchema),
 	});
@@ -75,17 +100,6 @@ export default function ManageAccountForm() {
 		trigger,
 		formState: { errors },
 	} = methods;
-
-	// const {
-	// 	register,
-	// 	handleSubmit,
-	// 	watch,
-	// 	reset,
-	// 	trigger,
-	// 	formState: { errors },
-	// } = useForm<Inputs>({
-	// 	resolver: zodResolver(FormDataSchema),
-	// });
 
 	const processForm: SubmitHandler<Inputs> = (data) => {
 		console.log(data);
@@ -122,7 +136,7 @@ export default function ManageAccountForm() {
 	};
 
 	return (
-		<section className=" w-full flex flex-col mq850:flex-col justify-between">
+		<section className="w-full flex flex-col mq850:flex-col justify-between">
 			<div className="stepper-container w-full flex-row flex gap-3">
 				{steps.map((step, index) => (
 					<div
@@ -144,127 +158,12 @@ export default function ManageAccountForm() {
 							animate={{ x: 0, opacity: 1 }}
 							transition={{ duration: 0.2, ease: 'easeInOut' }}
 						>
-							<h2 className="text-base font-semibold leading-7 text-foundation-black-black-400 my-0">
-								Product Information
-							</h2>
-
-							<div className="max-w-[450px] flex flex-row justify-between mt-2 mb-7">
-								<div className="flex flex-col mq850:flex-rowcol justify-center items-start text-start gap-2">
-									<h4 className="m-0 text-sm font-normal leading-5 text-foundation-black-black-400 my-0">
-										Product Name
-									</h4>
-									<p className="m-0 ml-2 text-foundation-grey-grey-700 text-xs">
-										XYZ
-									</p>
-								</div>
-								<div className="flex flex-col mq850:flex-rowcol justify-center items-start text-start gap-2">
-									<h4 className="m-0 text-sm font-normal leading-5 text-foundation-black-black-400 my-0">
-										Product Number
-									</h4>
-									<p className="m-0 ml-2 text-foundation-grey-grey-700 text-xs">
-										DES-125-1220
-									</p>
-								</div>
-								<div className="flex flex-col mq850:flex-rowcol justify-center items-start text-start gap-2">
-									<h4 className="m-0 text-sm font-normal leading-5 text-foundation-black-black-400 my-0">
-										Customer ID
-									</h4>
-									<p className="m-0 ml-2 text-foundation-grey-grey-700 text-xs">
-										CIDA10000
-									</p>
-								</div>
-							</div>
-
-							<div className="mt-2 grid flex-col mq850:flex-rowcols-1 gap-x-6 gap-y-6 sm:flex-col mq850:flex-rowcols-6">
-								{/* Customer Plan and Number of users */}
-								<div className="flex flex-col mq850:flex-rowcol mq850:flex-row w-full gap-10">
-									<div className="w-full">
-										<SelectElement
-											id="customerPlan"
-											label="Customer Plan"
-											options={data.customerPlan}
-											registerName="customerPlan"
-											error={errors.customerPlan?.message}
-										/>
-									</div>
-									<div className="w-full">
-										<SelectElement
-											id="numberOfUsers"
-											label="Number of Users"
-											options={data.numberOfUsers}
-											registerName="numberOfUsers"
-											error={errors.numberOfUsers?.message}
-										/>
-									</div>
-								</div>
-
-								{/* Payment plan and Payment method */}
-								<div className="flex flex-col mq850:flex-row w-full gap-10">
-									<div className="w-full">
-										<SelectElement
-											id="paymentPlan"
-											label="Payment Plan"
-											options={data.paymentPlan}
-											registerName="paymentPlan"
-											error={errors.paymentPlan?.message}
-										/>
-									</div>
-									<div className="w-full">
-										<SelectElement
-											id="paymentMethod"
-											label="Payment Method"
-											options={data.paymentMethod}
-											registerName="paymentMethod"
-											error={errors.paymentMethod?.message}
-										/>
-									</div>
-								</div>
-
-								{/* Order History and Renewal Type */}
-								<div className="flex flex-col mq850:flex-row mq850:flex-rowcol w-full gap-10">
-									<div className="w-full">
-										<SelectElement
-											id="orderHistory"
-											label="Order History"
-											options={data.orderHitory}
-											registerName="orderHistory"
-											error={errors.orderHistory?.message}
-										/>
-									</div>
-									<div className="w-full">
-										<SelectElement
-											id="renewalType"
-											label="Renewal Type"
-											options={data.renewalType}
-											registerName="renewalType"
-											error={errors.renewalType?.message}
-										/>
-									</div>
-								</div>
-
-								{/* Business Type and filling information */}
-								<div className="flex flex-col w-full gap-10">
-									<div className="w-full mq850:w-[47%]">
-										<SelectElement
-											id="currencyType"
-											label="Currency Type"
-											options={data.currencyType}
-											registerName="currencyType"
-											error={errors.currencyType?.message}
-										/>
-									</div>
-								</div>
-							</div>
+							<ExampleWithProviders />
 						</motion.div>
 					)}
 					{currentStep === 1 && (
 						<>
-							<h2 className="text-base font-semibold leading-7 text-gray-900">
-								Schedule
-							</h2>
-							<p className="mt-1 text-sm leading-6 text-gray-600">
-								Schedule Component
-							</p>
+							<ExampleWithProviders />
 						</>
 					)}
 					{currentStep === 2 && (
@@ -273,39 +172,451 @@ export default function ManageAccountForm() {
 							animate={{ x: 0, opacity: 1 }}
 							transition={{ duration: 0.2, ease: 'easeInOut' }}
 						>
-							<div className="mt-2 grid flex-col mq850:flex-rowcols-1 gap-x-6 gap-y-6 sm:flex-col mq850:flex-rowcols-6">
-								{/* Payment plan and Payment method */}
-								<div className="flex flex-col mq850:flex-row w-full gap-10">
-									<div className="w-full">
-										<SelectElement
-											id="paymentPlan"
-											label="Payment Plan"
-											options={data.paymentPlan}
-											registerName="paymentPlan"
-											error={errors.paymentPlan?.message}
-										/>
+							<div>
+								<div>
+									<h2 className="text-base m-0 font-semibold leading-7 text-foundation-black-black-400">
+										Manage Permissions
+									</h2>
+									<p className="mt-1 m-0 text-sm leading-6 text-foundation-grey-grey-800">
+										Manage Permissions for each role created.
+									</p>
+								</div>
+								<div className="flex justify-between items-center mt-2">
+									<h3 className="text-sm m-0 font-semibold leading-7 text-foundation-black-black-400">
+										Modules
+									</h3>
+									<p className="bg-foundation-purple-purple-100 px-[10px] py-1 rounded-full text-sm font-normal text-foundation-black-black-400">
+										Role: Admin
+									</p>
+								</div>
+								<div
+									className="flex flex-row justify-between items-center cursor-pointer"
+									onClick={handleClick}
+								>
+									<div className="flex items-center gap-[6px] text-center align-middle">
+										<div className="block rounded-full text-[30px] text-foundation-purple-purple-300">
+											{isOpen ? '-' : '+'}
+										</div>
+										<p className="text-sm font-normal text-foundation-black-black-400">
+											Customer Management
+										</p>
 									</div>
-									<div className="w-full">
-										<SelectElement
-											id="paymentMethod"
-											label="Payment Method"
-											options={data.paymentMethod}
-											registerName="paymentMethod"
-											error={errors.paymentMethod?.message}
-										/>
+									<div className="flex gap-16">
+										<label
+											htmlFor=""
+											className="flex items-center text-base gap-1"
+										>
+											<input type="checkbox" className="custom-checkbox" /> Full
+											Permission
+										</label>
+										<label
+											htmlFor=""
+											className="flex items-center text-base gap-1"
+										>
+											<input type="checkbox" className="custom-checkbox" />{' '}
+											Partial Permission
+										</label>
+										<label
+											htmlFor=""
+											className="flex items-center text-base gap-1"
+										>
+											<input type="checkbox" className="custom-checkbox" /> No
+											Permission
+										</label>
 									</div>
 								</div>
-
-								{/* Business Type and filling information */}
-								<div className="flex flex-col w-full gap-10">
-									<div className="w-full mq850:w-[47%]">
-										<SelectElement
-											id="currencyType"
-											label="Currency Type"
-											options={data.currencyType}
-											registerName="currencyType"
-											error={errors.currencyType?.message}
-										/>
+								{isOpen && <PermissionTable />}
+								<div className="flex flex-row justify-between items-center cursor-pointer">
+									<div className="flex items-center gap-[6px] text-center align-middle">
+										<div className="block rounded-full text-[30px] text-foundation-purple-purple-300">
+											+
+										</div>
+										<p className="text-sm font-normal text-foundation-black-black-400">
+											Product Management
+										</p>
+									</div>
+									<div className="flex gap-16">
+										<label
+											htmlFor=""
+											className="flex items-center text-base gap-1"
+										>
+											<input type="checkbox" className="custom-checkbox" /> Full
+											Permission
+										</label>
+										<label
+											htmlFor=""
+											className="flex items-center text-base gap-1"
+										>
+											<input type="checkbox" className="custom-checkbox" />{' '}
+											Partial Permission
+										</label>
+										<label
+											htmlFor=""
+											className="flex items-center text-base gap-1"
+										>
+											<input type="checkbox" className="custom-checkbox" /> No
+											Permission
+										</label>
+									</div>
+								</div>
+								<div
+									className="flex flex-row justify-between items-center cursor-pointer"
+									onClick={handleClick}
+								>
+									<div className="flex items-center gap-[6px] text-center align-middle">
+										<div className="block rounded-full text-[30px] text-foundation-purple-purple-300">
+											+
+										</div>
+										<p className="text-sm font-normal text-foundation-black-black-400">
+											Supplier Management
+										</p>
+									</div>
+									<div className="flex gap-16">
+										<label
+											htmlFor=""
+											className="flex items-center text-base gap-1"
+										>
+											<input type="checkbox" className="custom-checkbox" /> Full
+											Permission
+										</label>
+										<label
+											htmlFor=""
+											className="flex items-center text-base gap-1"
+										>
+											<input type="checkbox" className="custom-checkbox" />{' '}
+											Partial Permission
+										</label>
+										<label
+											htmlFor=""
+											className="flex items-center text-base gap-1"
+										>
+											<input type="checkbox" className="custom-checkbox" /> No
+											Permission
+										</label>
+									</div>
+								</div>
+								<div
+									className="flex flex-row justify-between items-center cursor-pointer"
+									onClick={handleClick}
+								>
+									<div className="flex items-center gap-[6px] text-center align-middle">
+										<div className="block rounded-full text-[30px] text-foundation-purple-purple-300">
+											+
+										</div>
+										<p className="text-sm font-normal text-foundation-black-black-400">
+											Warehouse Management
+										</p>
+									</div>
+									<div className="flex gap-16">
+										<label
+											htmlFor=""
+											className="flex items-center text-base gap-1"
+										>
+											<input type="checkbox" className="custom-checkbox" /> Full
+											Permission
+										</label>
+										<label
+											htmlFor=""
+											className="flex items-center text-base gap-1"
+										>
+											<input type="checkbox" className="custom-checkbox" />{' '}
+											Partial Permission
+										</label>
+										<label
+											htmlFor=""
+											className="flex items-center text-base gap-1"
+										>
+											<input type="checkbox" className="custom-checkbox" /> No
+											Permission
+										</label>
+									</div>
+								</div>
+								<div
+									className="flex flex-row justify-between items-center cursor-pointer"
+									onClick={handleClick}
+								>
+									<div className="flex items-center gap-[6px] text-center align-middle">
+										<div className="block rounded-full text-[30px] text-foundation-purple-purple-300">
+											+
+										</div>
+										<p className="text-sm font-normal text-foundation-black-black-400">
+											Sales Management
+										</p>
+									</div>
+									<div className="flex gap-16">
+										<label
+											htmlFor=""
+											className="flex items-center text-base gap-1"
+										>
+											<input type="checkbox" className="custom-checkbox" /> Full
+											Permission
+										</label>
+										<label
+											htmlFor=""
+											className="flex items-center text-base gap-1"
+										>
+											<input type="checkbox" className="custom-checkbox" />{' '}
+											Partial Permission
+										</label>
+										<label
+											htmlFor=""
+											className="flex items-center text-base gap-1"
+										>
+											<input type="checkbox" className="custom-checkbox" /> No
+											Permission
+										</label>
+									</div>
+								</div>
+								<div
+									className="flex flex-row justify-between items-center cursor-pointer"
+									onClick={handleClick}
+								>
+									<div className="flex items-center gap-[6px] text-center align-middle">
+										<div className="block rounded-full text-[30px] text-foundation-purple-purple-300">
+											+
+										</div>
+										<p className="text-sm font-normal text-foundation-black-black-400">
+											Account Management
+										</p>
+									</div>
+									<div className="flex gap-16">
+										<label
+											htmlFor=""
+											className="flex items-center text-base gap-1"
+										>
+											<input type="checkbox" className="custom-checkbox" /> Full
+											Permission
+										</label>
+										<label
+											htmlFor=""
+											className="flex items-center text-base gap-1"
+										>
+											<input type="checkbox" className="custom-checkbox" />{' '}
+											Partial Permission
+										</label>
+										<label
+											htmlFor=""
+											className="flex items-center text-base gap-1"
+										>
+											<input type="checkbox" className="custom-checkbox" /> No
+											Permission
+										</label>
+									</div>
+								</div>
+								<div
+									className="flex flex-row justify-between items-center cursor-pointer"
+									onClick={handleClick}
+								>
+									<div className="flex items-center gap-[6px] text-center align-middle">
+										<div className="block rounded-full text-[30px] text-foundation-purple-purple-300">
+											+
+										</div>
+										<p className="text-sm font-normal text-foundation-black-black-400">
+											Finance Management
+										</p>
+									</div>
+									<div className="flex gap-16">
+										<label
+											htmlFor=""
+											className="flex items-center text-base gap-1"
+										>
+											<input type="checkbox" className="custom-checkbox" /> Full
+											Permission
+										</label>
+										<label
+											htmlFor=""
+											className="flex items-center text-base gap-1"
+										>
+											<input type="checkbox" className="custom-checkbox" />{' '}
+											Partial Permission
+										</label>
+										<label
+											htmlFor=""
+											className="flex items-center text-base gap-1"
+										>
+											<input type="checkbox" className="custom-checkbox" /> No
+											Permission
+										</label>
+									</div>
+								</div>
+								<div
+									className="flex flex-row justify-between items-center cursor-pointer"
+									onClick={handleClick}
+								>
+									<div className="flex items-center gap-[6px] text-center align-middle">
+										<div className="block rounded-full text-[30px] text-foundation-purple-purple-300">
+											+
+										</div>
+										<p className="text-sm font-normal text-foundation-black-black-400">
+											Delivery Management
+										</p>
+									</div>
+									<div className="flex gap-16">
+										<label
+											htmlFor=""
+											className="flex items-center text-base gap-1"
+										>
+											<input type="checkbox" className="custom-checkbox" /> Full
+											Permission
+										</label>
+										<label
+											htmlFor=""
+											className="flex items-center text-base gap-1"
+										>
+											<input type="checkbox" className="custom-checkbox" />{' '}
+											Partial Permission
+										</label>
+										<label
+											htmlFor=""
+											className="flex items-center text-base gap-1"
+										>
+											<input type="checkbox" className="custom-checkbox" /> No
+											Permission
+										</label>
+									</div>
+								</div>
+								<div
+									className="flex flex-row justify-between items-center cursor-pointer"
+									onClick={handleClick}
+								>
+									<div className="flex items-center gap-[6px] text-center align-middle">
+										<div className="block rounded-full text-[30px] text-foundation-purple-purple-300">
+											+
+										</div>
+										<p className="text-sm font-normal text-foundation-black-black-400">
+											HRM Management
+										</p>
+									</div>
+									<div className="flex gap-16">
+										<label
+											htmlFor=""
+											className="flex items-center text-base gap-1"
+										>
+											<input type="checkbox" className="custom-checkbox" /> Full
+											Permission
+										</label>
+										<label
+											htmlFor=""
+											className="flex items-center text-base gap-1"
+										>
+											<input type="checkbox" className="custom-checkbox" />{' '}
+											Partial Permission
+										</label>
+										<label
+											htmlFor=""
+											className="flex items-center text-base gap-1"
+										>
+											<input type="checkbox" className="custom-checkbox" /> No
+											Permission
+										</label>
+									</div>
+								</div>
+								<div
+									className="flex flex-row justify-between items-center cursor-pointer"
+									onClick={handleClick}
+								>
+									<div className="flex items-center gap-[6px] text-center align-middle">
+										<div className="block rounded-full text-[30px] text-foundation-purple-purple-300">
+											+
+										</div>
+										<p className="text-sm font-normal text-foundation-black-black-400">
+											Payroll Management
+										</p>
+									</div>
+									<div className="flex gap-16">
+										<label
+											htmlFor=""
+											className="flex items-center text-base gap-1"
+										>
+											<input type="checkbox" className="custom-checkbox" /> Full
+											Permission
+										</label>
+										<label
+											htmlFor=""
+											className="flex items-center text-base gap-1"
+										>
+											<input type="checkbox" className="custom-checkbox" />{' '}
+											Partial Permission
+										</label>
+										<label
+											htmlFor=""
+											className="flex items-center text-base gap-1"
+										>
+											<input type="checkbox" className="custom-checkbox" /> No
+											Permission
+										</label>
+									</div>
+								</div>
+								<div
+									className="flex flex-row justify-between items-center cursor-pointer"
+									onClick={handleClick}
+								>
+									<div className="flex items-center gap-[6px] text-center align-middle">
+										<div className="block rounded-full text-[30px] text-foundation-purple-purple-300">
+											+
+										</div>
+										<p className="text-sm font-normal text-foundation-black-black-400">
+											Production Management
+										</p>
+									</div>
+									<div className="flex gap-16">
+										<label
+											htmlFor=""
+											className="flex items-center text-base gap-1"
+										>
+											<input type="checkbox" className="custom-checkbox" /> Full
+											Permission
+										</label>
+										<label
+											htmlFor=""
+											className="flex items-center text-base gap-1"
+										>
+											<input type="checkbox" className="custom-checkbox" />{' '}
+											Partial Permission
+										</label>
+										<label
+											htmlFor=""
+											className="flex items-center text-base gap-1"
+										>
+											<input type="checkbox" className="custom-checkbox" /> No
+											Permission
+										</label>
+									</div>
+								</div>
+								<div
+									className="flex flex-row justify-between items-center cursor-pointer"
+									onClick={handleClick}
+								>
+									<div className="flex items-center gap-[6px] text-center align-middle">
+										<div className="block rounded-full text-[30px] text-foundation-purple-purple-300">
+											+
+										</div>
+										<p className="text-sm font-normal text-foundation-black-black-400">
+											order Management
+										</p>
+									</div>
+									<div className="flex gap-16">
+										<label
+											htmlFor=""
+											className="flex items-center text-base gap-1"
+										>
+											<input type="checkbox" className="custom-checkbox" /> Full
+											Permission
+										</label>
+										<label
+											htmlFor=""
+											className="flex items-center text-base gap-1"
+										>
+											<input type="checkbox" className="custom-checkbox" />{' '}
+											Partial Permission
+										</label>
+										<label
+											htmlFor=""
+											className="flex items-center text-base gap-1"
+										>
+											<input type="checkbox" className="custom-checkbox" /> No
+											Permission
+										</label>
 									</div>
 								</div>
 							</div>
@@ -317,84 +628,354 @@ export default function ManageAccountForm() {
 							animate={{ x: 0, opacity: 1 }}
 							transition={{ duration: 0.2, ease: 'easeInOut' }}
 						>
-							<div className="mt-2 grid flex-col mq850:flex-rowcols-1 gap-x-6 gap-y-6 sm:flex-col mq850:flex-rowcols-6">
-								{/* Payment plan and Payment method */}
-								<div className="flex flex-col mq850:flex-row w-full gap-10">
-									<div className="w-full">
-										<SelectElement
-											id="paymentPlan"
-											label="Payment Plan"
-											options={data.paymentPlan}
-											registerName="paymentPlan"
-											error={errors.paymentPlan?.message}
-										/>
-									</div>
-									<div className="w-full">
-										<SelectElement
-											id="paymentMethod"
-											label="Payment Method"
-											options={data.paymentMethod}
-											registerName="paymentMethod"
-											error={errors.paymentMethod?.message}
-										/>
-									</div>
-								</div>
-
-								{/* Business Type and filling information */}
-								<div className="flex flex-col w-full gap-10">
-									<div className="w-full mq850:w-[47%]">
-										<SelectElement
-											id="currencyType"
-											label="Currency Type"
-											options={data.currencyType}
-											registerName="currencyType"
-											error={errors.currencyType?.message}
-										/>
-									</div>
-								</div>
-							</div>
+							<ExampleWithProviders />
 						</motion.div>
 					)}
 					{currentStep === 4 && (
 						<motion.div
 							initial={{ x: delta >= 0 ? '50%' : '-50%', opacity: 0 }}
 							animate={{ x: 0, opacity: 1 }}
-							transition={{ duration: 0.2, ease: 'easeInOut' }}
+							transition={{ duration: 0.3, ease: 'easeInOut' }}
 						>
-							<div className="mt-2 grid flex-col mq850:flex-rowcols-1 gap-x-6 gap-y-6 sm:flex-col mq850:flex-rowcols-6">
-								{/* Payment plan and Payment method */}
-								<div className="flex flex-col mq850:flex-row w-full gap-10">
-									<div className="w-full">
-										<SelectElement
-											id="paymentPlan"
-											label="Payment Plan"
-											options={data.paymentPlan}
-											registerName="paymentPlan"
-											error={errors.paymentPlan?.message}
-										/>
+							<h2 className="text-base font-semibold leading-7 text-foundation-black-black-400 my-0 mt-1">
+								Profile Information
+							</h2>
+							<p className="text-sm font-normal text-foundation-black-black-400 my-0 mt-2">
+								Create your work profile as a professional in the company
+							</p>
+							<div className="mt-2 grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-6">
+								<div className="flex mq850:flex-row flex-col w-full gap-10">
+									<InputElement
+										id="userFirstName"
+										label="First Name"
+										type="text"
+										required
+										placeholder="What is your First Name?"
+										registerName="userFirstName"
+										// error={errors.taxConsultantName?.message}
+									/>
+									<InputElement
+										id="userLastName"
+										label="LastName"
+										type="text"
+										required
+										placeholder="What is your Last Name?"
+										registerName="userLastName"
+										// error={errors.contactPerson?.message}
+									/>
+								</div>
+
+								{/*middle name and mother name */}
+								<div className="flex mq850:flex-row flex-col w-full gap-10">
+									<InputElement
+										id="userMiddleName"
+										label="Middle Name"
+										type="text"
+										placeholder="What is your middle name?"
+										registerName="userMiddleName"
+										// error={errors.taxConsultantAddress?.message}
+									/>
+									<InputElement
+										id="userMotherName"
+										label="Mother Name"
+										type="text"
+										placeholder="What is your mother's name"
+										registerName="userMotherName"
+										// error={errors.taxConsultantAddress?.message}
+									/>
+								</div>
+
+								{/* Staff ID no and role*/}
+								<div className="flex mq850:flex-row flex-col w-full gap-10">
+									<InputElement
+										id="userStaffId"
+										label="Staff I.D No."
+										type="text"
+										placeholder="Enter your Staff ID. No"
+										registerName="userStaffId"
+										// error={errors.auditorName?.message}
+									/>
+									<InputElement
+										id="userRole"
+										label="Role"
+										required
+										type="text"
+										placeholder="What is your role?"
+										registerName="userRole"
+										// error={errors.contactPerson?.message}
+									/>
+								</div>
+
+								{/* Email Adddress and gender*/}
+								<div className="flex mq850:flex-row flex-col w-full gap-10">
+									<InputElement
+										id="userEmailAddress"
+										label="Email Address"
+										required
+										type="text"
+										placeholder="Enter Your Email Address"
+										registerName="userEmailAddress"
+										// error={errors.auditorAddress?.message}
+									/>
+									<SelectElement
+										id="userGender"
+										label="Gender"
+										options={gender}
+										required
+										registerName="filingInformation"
+										// error={errors.userGender?.message}
+									/>
+								</div>
+
+								{/* Phone number and emergency number  */}
+
+								<div className="flex mq850:flex-row flex-col w-full gap-10">
+									<InputElement
+										id="userPhoneNumber"
+										label="Phone Number"
+										type="text"
+										placeholder="Enter your phone number"
+										registerName="legalConsultantName"
+										// error={errors.legalConsultantName?.message}
+									/>
+									<InputElement
+										id="userEmergencyNumber"
+										label="Emergency Contact Number"
+										type="text"
+										placeholder="Enter your emergency contact number"
+										registerName="userEmergencyNumber"
+										// error={errors.contactPerson?.message}
+									/>
+								</div>
+
+								{/* Current address */}
+
+								<div className="flex mq850:flex-row flex-col w-full gap-10">
+									<InputElement
+										id="userAddress"
+										label="Current Address"
+										type="text"
+										placeholder="Enter your current address"
+										registerName="userAddress"
+										// error={errors.legalConsultantAddress?.message}
+									/>
+								</div>
+							</div>
+						</motion.div>
+					)}
+					{currentStep === 5 && (
+						<motion.div
+							initial={{ x: delta >= 0 ? '50%' : '-50%', opacity: 0 }}
+							animate={{ x: 0, opacity: 1 }}
+							transition={{ duration: 0.3, ease: 'easeInOut' }}
+						>
+							<h2 className="text-base font-semibold leading-7 text-foundation-black-black-400 my-0 mt-1">
+								Profile Information
+							</h2>
+							<p className="text-sm font-normal text-foundation-black-black-400 my-0 mt-2">
+								Create your work profile as a professional in the company
+							</p>
+							<div className="mt-2 grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-6">
+								{/* Tax consultant Name and Contact person */}
+								<div className="flex mq850:flex-row flex-col w-full gap-10">
+									<SelectElement
+										id="userDepartment"
+										label="Department"
+										options={department}
+										required
+										registerName="userDepartment"
+										// error={errors.userGender?.message}
+									/>
+									<InputElement
+										id="userDesignation"
+										label="Your Designation"
+										type="text"
+										required
+										placeholder="What's your position in the compant?"
+										registerName="userDesignation"
+										// error={errors.contactPerson?.message}
+									/>
+								</div>
+
+								{/*middle name and mother name */}
+								<div className="flex mq850:flex-row flex-col w-full gap-10">
+									<div className=" w-full">
+										<label
+											htmlFor="DateOfBirth"
+											className="w-fit h-fit font-inter text-sm font-medium leading-6 text-foundation-grey-grey-800 gap-[1px]"
+										>
+											Date of Birth{' '}
+											<span>
+												<FaAsterisk
+													size={6}
+													color="red"
+													opacity={0.7}
+													className="mb-1"
+												/>
+											</span>
+											<input
+												type="date"
+												id="DateOfBirth"
+												className="block w-full rounded-md border border-solid py-3 px-3 mt-1 text-foundation-grey-grey-900 shadow-sm outline-none border-foundation-grey-grey-600 placeholder:text-foundation-grey-grey-600
+                                                focus:border-2 focus:border-solid focus:border-foundation-purple-purple-100 focus:bg-foundation-grey-grey-50 sm:text-sm sm:leading-6"
+												// {...register('fiscalYear')}
+											/>
+											{/* {errors.fiscalYear?.message && (
+												<p className="mt-2 text-sm text-red-400">
+													{errors.fiscalYear.message}
+												</p>
+											)} */}
+										</label>
 									</div>
-									<div className="w-full">
-										<SelectElement
-											id="paymentMethod"
-											label="Payment Method"
-											options={data.paymentMethod}
-											registerName="paymentMethod"
-											error={errors.paymentMethod?.message}
-										/>
+									<div className=" w-full">
+										<label
+											htmlFor="DateOfEmployment"
+											className="w-fit h-fit font-inter text-sm font-medium leading-6 text-foundation-grey-grey-800 gap-[1px]"
+										>
+											Date of Employment{' '}
+											<input
+												type="date"
+												id="DateOfEmployment"
+												className="block w-full rounded-md border border-solid py-3 px-3 mt-1 text-foundation-grey-grey-900 shadow-sm outline-none border-foundation-grey-grey-600 placeholder:text-foundation-grey-grey-600
+                                                focus:border-2 focus:border-solid focus:border-foundation-purple-purple-100 focus:bg-foundation-grey-grey-50 sm:text-sm sm:leading-6"
+												// {...register('fiscalYear')}
+											/>
+											{/* {errors.fiscalYear?.message && (
+												<p className="mt-2 text-sm text-red-400">
+													{errors.fiscalYear.message}
+												</p>
+											)} */}
+										</label>
 									</div>
 								</div>
 
-								{/* Business Type and filling information */}
-								<div className="flex flex-col w-full gap-10">
-									<div className="w-full mq850:w-[47%]">
-										<SelectElement
-											id="currencyType"
-											label="Currency Type"
-											options={data.currencyType}
-											registerName="currencyType"
-											error={errors.currencyType?.message}
-										/>
-									</div>
+								{/* Staff ID no and role*/}
+								<div className="flex mq850:flex-row flex-col w-full gap-10">
+									<SelectElement
+										id="maritalStatus"
+										label="Marital Status"
+										options={maritalStatus}
+										required
+										registerName="maritalStatus"
+										// error={errors.userGender?.message}
+									/>
+									<InputFileUpload id="Profile-picture" register={register} />
+								</div>
+
+								{/* Email Adddress and gender*/}
+								<div className="flex mq850:flex-row flex-col w-full gap-10">
+									<InputElement
+										id="userPermanentAddress"
+										label="Permananet Address"
+										required
+										type="text"
+										placeholder="Enter your Permananet Address"
+										registerName="userPermanentAddress"
+										// error={errors.auditorAddress?.message}
+									/>
+								</div>
+
+								{/* Phone number and emergency number  */}
+
+								<div className="flex mq850:flex-row flex-col w-full gap-10">
+									<InputElement
+										id="userQualification"
+										label="Qualification"
+										type="text"
+										placeholder="Enter your highest qualification"
+										registerName="userQualification"
+										// error={errors.legalConsultantName?.message}
+									/>
+									<InputElement
+										id="relavantExperience"
+										label="Relevant Work Experience"
+										type="text"
+										placeholder="Enter a relevant work qualification"
+										registerName="relavantExperience"
+										// error={errors.contactPerson?.message}
+									/>
+								</div>
+
+								{/* Current address */}
+
+								<div className="flex mq850:flex-row flex-col w-full gap-10">
+									<InputElement
+										id="otherInformation"
+										label="Other Information"
+										type="text"
+										placeholder="Enter any relevant information for profile."
+										registerName="otherInformation"
+										// error={errors.legalConsultantAddress?.message}
+									/>
+								</div>
+							</div>
+						</motion.div>
+					)}
+					{currentStep === 6 && (
+						<motion.div
+							initial={{ x: delta >= 0 ? '50%' : '-50%', opacity: 0 }}
+							animate={{ x: 0, opacity: 1 }}
+							transition={{ duration: 0.3, ease: 'easeInOut' }}
+						>
+							<h2 className="text-base font-semibold leading-7 text-foundation-black-black-400 my-0 mt-1">
+								Next of Kin Details
+							</h2>
+							<p className="text-sm font-normal text-foundation-black-black-400 my-0 mt-2">
+								Enter the necessary details for your Next of Kin
+							</p>
+							<div className="mt-2 grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-6">
+								<div className="flex mq850:flex-row flex-col w-full gap-10">
+									<InputElement
+										id="nameOfKin"
+										label="Name of Next of Kin"
+										type="text"
+										required
+										placeholder="What is the name of your Next of Kin?"
+										registerName="nameOfKin"
+										// error={errors.legalConsultantName?.message}
+									/>
+									<InputElement
+										id="kinRelationship"
+										label="Relationship"
+										type="text"
+										placeholder="What is your relationship with this person"
+										registerName="kinRelationship"
+										// error={errors.contactPerson?.message}
+									/>
+								</div>
+								{/* Email Adddress and gender*/}
+								<div className="flex mq850:flex-row flex-col w-full gap-10">
+									<InputElement
+										id="kinPermanentAddress"
+										label="Address of Next of Kin"
+										required
+										type="text"
+										placeholder="Enter your Permananet Address"
+										registerName="kinPermanentAddress"
+										// error={errors.auditorAddress?.message}
+									/>
+								</div>
+
+								{/* Phone number and emergency number  */}
+
+								<div className="flex mq850:flex-row flex-col w-full gap-10">
+									<InputElement
+										id="kinEmail"
+										label="Email Address"
+										type="text"
+										placeholder="What is your Next of Kin email address"
+										registerName="kinEmail"
+										// error={errors.legalConsultantName?.message}
+									/>
+									<InputElement
+										id="kinPhoneNumber"
+										label="Phone Number"
+										type="text"
+                                        required
+										placeholder="Enter Your Next of Kin phone number"
+										registerName="kinPhoneNumber"
+										// error={errors.contactPerson?.message}
+									/>
 								</div>
 							</div>
 						</motion.div>
