@@ -31,16 +31,8 @@ const steps = [
 	},
 	{
 		id: 'Step 2',
-		name: 'Legal Information',
-		fields: [
-			'legalBusinessName',
-			'rcNumber',
-			'tinNumber',
-			'eiNumber',
-			'businessCountry',
-			'businessAddress',
-			'businessState',
-		],
+		name: 'Pricing',
+		fields: [''],
 	},
 ];
 
@@ -65,16 +57,6 @@ export default function PricePaymentForm() {
 		formState: { errors },
 	} = methods;
 
-	// const {
-	// 	register,
-	// 	handleSubmit,
-	// 	watch,
-	// 	reset,
-	// 	trigger,
-	// 	formState: { errors },
-	// } = useForm<Inputs>({
-	// 	resolver: zodResolver(FormDataSchema),
-	// });
 
 	const processForm: SubmitHandler<Inputs> = (data) => {
 		console.log(data);
