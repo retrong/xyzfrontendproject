@@ -5,7 +5,7 @@ export type User = {
 	email: string;
     phoneNumber: string;
     status?: string;
-    createdDate: string;
+    createdDate: string | Date;
     role: string;
 	state: string;
 };

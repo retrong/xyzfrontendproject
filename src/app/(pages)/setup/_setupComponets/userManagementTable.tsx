@@ -109,7 +109,7 @@ const UserManagementTable = () => {
 				accessorKey: 'createdDate',
 				header: 'Created Date',
 				// Adjust formatting as needed
-				cell: ({ value }) => new Date(value).toLocaleDateString(),
+				Cell: ({ cell }) => new Date(cell.getValue<string>()).toLocaleDateString(),
 			},
 			{
 				accessorKey: 'status',
