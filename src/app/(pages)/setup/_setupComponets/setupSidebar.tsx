@@ -38,13 +38,13 @@ export const setupItems = [
 	},
 	{
 		icon: '/borderinside.svg',
-		path: '/sales/3',
+		path: '/setup/business-account',
 		title: 'Business Accounts',
 		content: 'Manage multiple accounts',
 	},
 	{
 		icon: '/tune.svg',
-		path: '/sales/4',
+		path: '/admin-setup/admin-dashboard',
 		title: 'Admin Dashboard',
 		content: 'Manage multiple paid modules',
 	},

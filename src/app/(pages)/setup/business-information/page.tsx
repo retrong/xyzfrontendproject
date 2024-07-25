@@ -1,5 +1,5 @@
 import React from 'react'
-import Form from '../_setupComponets/setupForm'
+import Form from './_component/setupForm'
 
 export default function BusinessInformation() {
   return (

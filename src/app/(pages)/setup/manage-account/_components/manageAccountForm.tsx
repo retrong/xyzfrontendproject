@@ -28,28 +28,28 @@ const steps = [
 	},
 	{
 		id: 'Step 3',
-		name: 'Schedule',
-		fields: [''],
+		// name: 'Schedule',
+		fields: [],
 	},
 	{
 		id: 'Step 4',
-		name: 'Schedule',
-		fields: [''],
+		// name: 'Schedule',
+		fields: [],
 	},
 	{
 		id: 'Step 5',
-		name: 'Schedule',
-		fields: [''],
+		// name: 'Schedule',
+		fields: [],
 	},
 	{
 		id: 'Step 6',
-		name: 'Schedule',
-		fields: [''],
+		// name: 'Schedule',
+		fields: [],
 	},
 	{
 		id: 'Step 7',
-		name: 'Schedule',
-		fields: [''],
+		// name: 'Schedule',
+		fields: [],
 	},
 ];
 
@@ -162,9 +162,13 @@ export default function ManageAccountForm() {
 						</motion.div>
 					)}
 					{currentStep === 1 && (
-						<>
+						<motion.div
+							initial={{ x: delta >= 0 ? '50%' : '-50%', opacity: 0 }}
+							animate={{ x: 0, opacity: 1 }}
+							transition={{ duration: 0.2, ease: 'easeInOut' }}
+						>
 							<ExampleWithProviders />
-						</>
+						</motion.div>
 					)}
 					{currentStep === 2 && (
 						<motion.div
@@ -971,7 +975,7 @@ export default function ManageAccountForm() {
 										id="kinPhoneNumber"
 										label="Phone Number"
 										type="text"
-                                        required
+										required
 										placeholder="Enter Your Next of Kin phone number"
 										registerName="kinPhoneNumber"
 										// error={errors.contactPerson?.message}
