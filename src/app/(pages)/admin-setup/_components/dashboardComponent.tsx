@@ -103,9 +103,9 @@ export default function DashboardComponent() {
   return (
 		<div className="py-2 flex flex-col">
 			<div className="h-[500px] overflow-y-auto scrollbar-thin scrollbar-track-primary scrollbar-thumb-plain scrollbar-thumb-current">
-				<div className="flex flex-wrap gap-4 pr-4">
-					{dashboardData.map((dashboard) => (
-						<div key={dashboard.id} className="w-full lg:w-[calc(50%-8px)] mq850:w-[calc(33.333%-11px)]">
+				<div className="w-[100%] flex flex-wrap">
+					<div className="grid mq1050:grid-cols-1 mq1125:grid-cols-2 grid-cols-3 gap-4 mq850:pr-3 pr-1 w-full">
+						{dashboardData.map((dashboard) => (
 							<DashboardCard
 								key={dashboard.id}
 								title={dashboard.title}
@@ -113,15 +113,17 @@ export default function DashboardComponent() {
 								content={dashboard.content}
 								icon={dashboard.icon}
 							/>
-						</div>
-					))}
+							// <div key={dashboard.id} className="lg:w-full flex-wrap w-[calc(50%-8px)] mq850:w-[calc(33.333%-11px)]">
+							// </div>
+						))}
+					</div>
 				</div>
 				<div className="w-[100%] flex flex-wrap"></div>
 			</div>
 
 			<div className="flex flex-col mt-4">
 				<h2 className=" font-medium text-[20px] m-0">Recent Updates</h2>
-                <RecentUpdateTable/>
+				<RecentUpdateTable />
 			</div>
 		</div>
 	);

@@ -1,7 +1,5 @@
 "use client"
 
-import Link from 'next/link';
-import path from 'path';
 import React, { useState } from 'react';
 import { FaExternalLinkAlt } from 'react-icons/fa';
 
@@ -44,18 +42,6 @@ const RecentUpdateTable: React.FC = () => {
 		},
 	]);
 
-	// const addNewRow = () => {
-	// 	const newRow: RecentUpdate = {
-	// 		id: rows.length + 1,
-	// 		period: '',
-	// 		startDate: '',
-	// 		endDate: '',
-	// 		accountingBasis: '',
-	// 		status: 'Open',
-	// 	};
-	// 	setRows([...rows, newRow]);
-	// };
-
 	const handleAction = (id: number) => {
 		// Implement action logic here
 		console.log(`Action for row ${id}`);
@@ -63,7 +49,7 @@ const RecentUpdateTable: React.FC = () => {
 
 	return (
 		<div className="w-full mq850:mt-5 mt-2">
-			<div className="scroll overflow-x-auto border-2 border-solid border-foundation-grey-grey-300 rounded-xl">
+			<div className="scroll min-w-[500px] scrollbar-thin scrollbar-track-primary scrollbar-thumb-plain scrollbar-thumb-current overflow-x-auto overflow-auto border-2 border-solid border-foundation-grey-grey-300 rounded-xl">
 				<table
 					style={{ borderSpacing: 0 }}
 					className="bg-white border border-gray-300 w-full text-sm"

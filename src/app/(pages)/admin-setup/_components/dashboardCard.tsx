@@ -12,8 +12,8 @@ interface DashboardCardProps {
 
 export default function DashboardCard({title, icon, content, path} : DashboardCardProps) {
   return (
-		<Link href={path} className='w-full'>
-			<div className="bg-foundation-purple-purple-400 hover:bg-foundation-purple-purple-200 rounded-xl max-h-[200px] px-6 py-6 text-white h-full">
+		<Link href={path} className=''>
+			<div className="bg-foundation-purple-purple-400 flex flex-col flex-wrap flex-1 text-wrap hover:bg-foundation-purple-purple-200 rounded-xl max-h-[200px] px-6 py-6 text-white h-full">
 				<div className="flex justify-between items-center">
 					<h3 className='font-medium text-[20px] leading-[20px] m-0'>{title}</h3>
 					<Image
