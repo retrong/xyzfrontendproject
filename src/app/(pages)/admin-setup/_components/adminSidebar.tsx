@@ -20,7 +20,7 @@ const sidebarItems = [
 		icon: '/admin-white.svg',
 		iconHover: '/admin-purple.svg',
 		title: 'Admin Dashboard',
-		path: 'admin-setup/admin-dashboard',
+		path: '/admin-setup/admin-dashboard',
 		// subTitle: 'Overview',
 		isActive: true,
 		content: 'Manage multiple paid modules',
@@ -28,28 +28,28 @@ const sidebarItems = [
 	{
 		icon: '/arrange-send-to-back-white.svg',
 		iconHover: '/arrange-send-to-back-purple.svg',
-		path: '#',
+		path: '/admin-setup/business-setup',
 		title: 'Business Setup & Info.',
 		content: 'Manage your business information',
 	},
 	{
 		icon: '/cash-multiple-white.svg',
 		iconHover: '/cash-multiple-purple.svg',
-		path: '#',
+		path: '/admin-setup/pricing-payment',
 		title: 'Pricing & Payments',
 		content: 'Payment for plans and payment methods',
 	},
 	{
 		icon: '/account-group-outline-white.svg',
 		iconHover: '/account-group-outline-purple.svg',
-		path: '#',
+		path: '/admin-setup/manage-account',
 		title: 'Manage your Account',
 		content: 'Your subscription and user type setup',
 	},
 	{
 		icon: '/account-cog-outline-white.svg',
 		iconHover: '/account-cog-outline-purple.svg',
-		path: '#',
+		path: '/admin-setup/business-account',
 		title: 'Business Accounts',
 		content: 'Manage multiple accounts',
 	},
@@ -151,7 +151,7 @@ export default function AdminSidebar() {
 			<motion.div
 				variants={Siderbar_animation}
 				animate={isOpen ? 'open' : 'closed'}
-				className={` h-[100%] self-stretch bg-foundation-purple-purple-400 flex flex-col items-end justify-start pt-11 px-[20px] pb-[34.3px] box-border gap-[290.9px] max-w-[80%] mq450:gap-[145px] mq450:pt-5 mq450:pb-5 mq450:box-border mq450:min-w-full mq1050:pt-[29px] mq1050:pb-[22px] mq1050:box-border mq750:absolute z-[999] 
+				className={`self-stretch bg-foundation-purple-purple-400 flex flex-col items-end justify-start pt-11 px-[20px] pb-[34.3px] box-border gap-[290.9px] max-w-[80%] mq450:gap-[145px] mq450:pt-5 mq450:pb-5 mq450:box-border mq450:min-w-full mq1050:pt-[29px] mq1050:pb-[22px] mq1050:box-border mq750:absolute z-[999] 
                 `}
 			>
 				<div className="w-auto h-[1024px] relative bg-foundation-purple-purple-400 hidden max-w-full" />
