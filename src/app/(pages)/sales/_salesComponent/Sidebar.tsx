@@ -97,7 +97,7 @@ export default function Sidebar() {
 			<motion.div
 				variants={Siderbar_animation}
 				animate={isOpen ? 'open' : 'closed'}
-				className={` h-[100%] self-stretch bg-foundation-purple-purple-400 flex flex-col items-end justify-start pt-11 px-[23.5px] pb-[34.3px] box-border gap-[290.9px] max-w-[80%] mq450:gap-[145px] mq450:pt-5 mq450:pb-5 mq450:box-border mq450:min-w-full mq1050:pt-[29px] mq1050:pb-[22px] mq1050:box-border mq750:absolute z-[999] 
+				className={`self-stretch bg-foundation-purple-purple-400 flex flex-col items-end justify-start pt-11 px-[23.5px] pb-[34.3px] box-border gap-[290.9px] max-w-[80%] mq450:gap-[145px] mq450:pt-5 mq450:pb-5 mq450:box-border mq450:min-w-full mq1050:pt-[29px] mq1050:pb-[22px] mq1050:box-border mq750:absolute z-[999] 
                 `}
                 >
 				<div className="w-auto h-[1024px] relative bg-foundation-purple-purple-400 hidden max-w-full" />
