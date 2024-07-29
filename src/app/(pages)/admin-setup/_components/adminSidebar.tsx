@@ -165,7 +165,7 @@ export default function AdminSidebar() {
 							className="z-[999] flex justify-end cursor-pointer h-[30px] w-[30px] object-contain"
 						/>
 					</div>
-					<div className="self-stretch flex flex-row items-start justify-center py-0 px-5 mt-8 overflow-x-hidden whitespace-pre">
+					<div className="self-stretch flex flex-row items-start justify-center py-0 px-5 overflow-x-hidden whitespace-pre">
 						<Image
 							className="h-10 w-[108px] relative object-cover z-[1] min-w-max"
 							loading="lazy"

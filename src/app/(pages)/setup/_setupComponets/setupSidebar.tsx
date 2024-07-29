@@ -131,7 +131,7 @@ export default function SetupSidebar() {
                 `}
 			>
 				{/* <div className="w-auto relative bg-foundation-purple-purple-400 hidden max-w-full" /> */}
-				<div className="self-stretch flex flex-col items-start justify-start gap-[34.5px] max-w-full mq450:gap-[22px]">
+				<div className="self-stretch flex flex-col items-start justify-start gap-[30px] max-w-full mq450:gap-[22px]">
 					<div className="mq750:flex hidden justify-end items-end w-full gap-0">
 						<Image
 							src={closeButton}
@@ -141,21 +141,21 @@ export default function SetupSidebar() {
 							className="z-[999] flex justify-end cursor-pointer h-[30px] w-[30px] object-contain"
 						/>
 					</div>
-					<div className="self-stretch flex flex-col items-center gap-3 justify-center py-2 px-5 mt-4 overflow-x-hidden whitespace-pre">
+					<div className="self-stretch flex flex-col items-center gap-3 justify-center py-0 px-5 overflow-x-hidden whitespace-pre">
 						<Image
 							className="h-10 w-[108px] relative object-contain z-[1]"
 							loading="lazy"
 							alt=""
 							src={xyz}
 						/>
-						<p className="mb-2 leading-[30px] font-normal font-inherit text-[35px] text-white whitespace-nowrap text-nowrap">
+						<p className="mb-2 leading-[30px] font-normal font-inherit text-[30px] text-white whitespace-nowrap text-nowrap">
 							Account Setup
 						</p>
 					</div>
 					<div className="self-stretch h-px flex flex-row items-start justify-start py-0 pr-3.5 pl-[15.5px] box-border max-w-full">
-						<div className="self-stretch flex-1 relative box-border max-w-full z-[1] border-[1px] border-solid border-white" />
+						<div className="self-stretch flex-1 relative box-border max-w-full z-[1] border-[1px] border-solid border-white/50" />
 					</div>
-					<div className="self-stretch flex flex-col items-start justify-start gap-[8px] z-[1] mb-10">
+					<div className="self-stretch flex flex-col items-start justify-start gap-[18px] z-[1] mb-10">
 						{setupItems.map((item, index) => {
 							const isActive = pathname === item.path;
 
@@ -167,9 +167,9 @@ export default function SetupSidebar() {
 										isActive
 											? ' '
 											: ' text-inherit'
-									} flex flex-col items-start hover:text-foundation-purple-purple-100 justify-center py-[26.5px] px-4 mq450:pl-2 mq450:pr-2 mq450:box-border cursor-pointer overflow-x-hidden`}
+									} flex flex-col items-start hover:text-foundation-purple-purple-100 justify-center py-[16px] px-4 mq450:pl-2 mq450:pr-2 mq450:box-border cursor-pointer overflow-x-hidden`}
 								>
-									<div className="flex flex-row items-center justify-start gap-[30px] whitespace-pre overflow-x-hidden">
+									<div className="flex flex-row items-center justify-start gap-[16px] whitespace-pre overflow-x-hidden">
 										<Image
 											width={500}
 											height={500}
@@ -179,8 +179,8 @@ export default function SetupSidebar() {
 											// src={item.icon}
 											src={item.icon}
 										/>
-										<div className="flex flex-col">
-											<h1 className="m-0 relative text-[20px] leading-[30px] font-normal text-nowrap whitespace-nowrap font-inherit mq450:text-base mq450:leading-[24px]">
+										<div className="flex flex-col gap-[2px]">
+											<h1 className="m-0 relative text-[18px] leading-[24px] font-normal text-nowrap whitespace-nowrap font-inherit mq450:text-base mq450:leading-[24px]">
 												<span
 													className={`${item.isActive ? 'font-medium' : ''}`}
 												>
@@ -188,7 +188,7 @@ export default function SetupSidebar() {
 												</span>
 											</h1>
 											<p
-												className={`m-0 text-white text-[14px] relative font-normal text-nowrap whitespace-nowrap ${
+												className={`m-0 text-foundation-grey-grey-200 text-[14px] leading-[20px] relative font-normal text-nowrap whitespace-nowrap ${
 													item.isActive ? 'font-medium' : ''
 												}`}
 											>

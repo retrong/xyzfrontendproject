@@ -14,7 +14,7 @@ export default function BusinessAccount() {
 				<div>
 					<a
 						href="#"
-						className=" text-base text-foundation-purple-purple-400 hover:text-foundation-purple-purple-300"
+						className="text-base text-foundation-purple-purple-400 hover:text-foundation-purple-purple-300"
 					>
 						<span>+</span>Add A New Company
 					</a>

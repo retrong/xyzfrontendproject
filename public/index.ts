@@ -13,6 +13,7 @@ import chevrondown from './chevrondown-1@2x.png';
 import chevronDown2 from './chevrondown.svg';
 import chevrondownWite from './chevrondownWhite.svg';
 import closeButton from './close-button.svg';
+import dashboardLogo from './dashboard-logo.svg';
 import arrow from './directionarrow.svg';
 import ellipse from './Ellipse 56.svg';
 import profileimage from './ellipse-2319-1@2x.png';
@@ -84,8 +85,7 @@ import logoxyz from './xyz3.svg';
 import zepline from './zepline.svg';
 
 export {
-    aboutusImg, accountChart,
-    alerticon,
+    aboutusImg, accountChart, alerticon,
     alertnotificatonicon,
     apostrophy,
     arrow,
@@ -99,8 +99,7 @@ export {
     chevrondown,
     chevrondownWite,
     closeButton,
-    crmImage,
-    ellipse,
+    crmImage, dashboardLogo, ellipse,
     facebookicon,
     featureChart,
     featureData,

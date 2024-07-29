@@ -12,6 +12,7 @@ import { z } from 'zod';
 import InputElement from '../../_setupComponets/Input/InputElement';
 import SelectElement from '../../_setupComponets/Input/SelectElement';
 import InputFileUpload from '../../_setupComponets/Input/UploadInputElement';
+import OwnershipInfo from './ownership-information';
 
 type Inputs = z.infer<typeof FormDataSchema>;
 
@@ -89,17 +90,6 @@ export default function Form() {
 		formState: { errors },
 	} = methods;
 
-	// const {
-	// 	register,
-	// 	handleSubmit,
-	// 	watch,
-	// 	reset,
-	// 	trigger,
-	// 	formState: { errors },
-	// } = useForm<Inputs>({
-	// 	resolver: zodResolver(FormDataSchema),
-	// });
-
 	const processForm: SubmitHandler<Inputs> = (data) => {
 		console.log(data);
 		reset();
@@ -133,8 +123,6 @@ export default function Form() {
 			setCurrentStep((step) => step - 1);
 		}
 	};
-
-    const progressWidth = ((currentStep + 1) / steps.length) * 100;
 
 
 	return (
@@ -961,6 +949,9 @@ export default function Form() {
 							<p className="mt-1 text-sm leading-6 text-gray-600">
 								Schedule Component
 							</p>
+                            <div>
+                                <OwnershipInfo />
+                            </div>
 						</>
 					)}
 					{currentStep === 4 && (
