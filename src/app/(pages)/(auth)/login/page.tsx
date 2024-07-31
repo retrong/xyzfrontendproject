@@ -83,15 +83,28 @@ export default function LogIn() {
 										Sign Up
 									</a>
 								</p>
-                                <p className="text-base text-gray-700 text-center my-4">
-                                    Forgotten password
-                                    <Link
-                                        href="/resetpassword"
-                                        className="text-foundation-purple-purple-400 hover:text-foundation-purple-purple-200"
-                                    >
-                                       {" "} Click to Reset
-                                    </Link>
-                                </p>
+								<p className="text-base text-gray-700 text-center my-4">
+									Forgotten password
+									<Link
+										href="/resetpassword"
+										className="text-foundation-purple-purple-400 hover:text-foundation-purple-purple-200"
+									>
+										{' '}
+										Click to Reset
+									</Link>
+								</p>
+
+								{/* testing path to access */}
+								<p className="text-base text-gray-700 text-center my-4">
+									Click to direct access
+									<Link
+										href="/setup/business-information"
+										className="text-foundation-purple-purple-400 hover:text-foundation-purple-purple-200"
+									>
+										{' '}
+										Setup page
+									</Link>
+								</p>
 								<div className="flex justify-center items-center">
 									<div className="w-[340px] relative h-10 text-[#d0d0d0] text-base my-8 flex justify-center items-center text-center">
 										<Image
