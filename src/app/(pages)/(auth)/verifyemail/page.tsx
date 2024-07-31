@@ -1,5 +1,6 @@
 import NavButton from '@/components/_landingpgComponents/navButton';
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 import {
     authImage,
@@ -31,15 +32,6 @@ export default function VerifyEmail() {
 							<form className="w-full">
 								<div>
 									<label className="block mb-4">
-										{/* <input
-											type="number"
-											placeholder=""
-											className="px-4 py-4 mt-2 placeholder:text-foundation-grey-grey-700 w-full rounded-lg border-[1px] border-solid border-[#d0d0d0]"
-											// {...register('email', {
-											// 	required: true,
-											// 	pattern: emailRegex,
-											// })}
-										/> */}
                                         <OtpInputField />
 										{/* error handler */}
 										{/* {error.email && (
@@ -49,13 +41,15 @@ export default function VerifyEmail() {
 										)} */}
 									</label>
 								</div>
-								<NavButton styles="w-full mb-6 mt-8 bg-foundation-purple-purple-400 text-white hover:bg-foundation-purple-purple-200 active:bg-foundation-purple-purple-100">
-									Submit Code
-								</NavButton>
+                                <Link href="/createnewpassword">
+                                    <NavButton styles="w-full mb-6 mt-8 bg-foundation-purple-purple-400 text-white hover:bg-foundation-purple-purple-200 active:bg-foundation-purple-purple-100">
+                                        Submit Code
+                                    </NavButton>
+                                </Link>
 								<p className="text-base text-gray-700 text-center my-0">
 									{`Didn't`} receive the code{' '}
 									<a
-										href="/login"
+										href="#"
 										className="text-foundation-purple-purple-400 hover:text-foundation-purple-purple-200"
 									>
 										Resend Code
