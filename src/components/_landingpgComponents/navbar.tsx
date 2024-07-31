@@ -8,7 +8,7 @@ import SideBar from './sideBar';
 export const navLinks = [
 	{
 		title: 'Home',
-		link: '#',
+		link: '/',
 		id: '#',
 	},
 	{
