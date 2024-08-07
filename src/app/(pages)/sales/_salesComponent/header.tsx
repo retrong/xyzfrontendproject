@@ -5,14 +5,14 @@ import { alertnotificatonicon, chevrondown, profileimage } from '../../../../../
 
 export default function Header() {
   return (
-		<section className="self-stretch bg-foundation-grey-grey-50 flex flex-row items-center justify-between py-[14.5px] px-12 box-border max-w-full gap-[20px] text-left text-5xl text-foundation-black-black-400 font-text-xs-medium mq750:flex-wrap mq750:pl-6 mq750:pr-6 mq750:box-border mb-2">
+		<section className="self-stretch bg-foundation-grey-grey-50 flex flex-row items-center justify-between py-[14.5px] px-12 box-border max-w-full gap-[20px] text-left text-5xl text-foundation-black-black-400 font-text-xs-medium md:flex-wrap md:pl-6 md:pr-6 md:box-border mb-2">
 			<div className="w-[486px] flex flex-col items-start justify-start gap-[8px] max-w-full">
-				<h1 className="m-0 relative text-inherit font-normal font-inherit mq450:text-lgi">
+				<h1 className="m-0 relative text-inherit font-normal font-inherit sm:text-lgi">
 					Sales Module
 				</h1>
 				<div className="self-stretch flex flex-col items-start justify-start max-w-full text-base">
 					<div className="self-stretch flex flex-row items-center justify-start max-w-full">
-						<div className="flex-1 flex flex-row items-center justify-start gap-[8px] max-w-full mq750:flex-wrap">
+						<div className="flex-1 flex flex-row items-center justify-start gap-[8px] max-w-full md:flex-wrap">
 							<Link
 								href="#"
 								className="m-0 hover:text-foundation-purple-purple-400 relative text-inherit font-normal font-inherit"

@@ -107,11 +107,11 @@ export default function SalesTrendChart() {
 				</h2>
 			</div>
 			<div className="self-stretch flex flex-row items-start justify-start pt-0 px-[18px] pb-[25.8px] box-border max-w-full text-xs text-gray1-100">
-				<div className="flex-1 flex flex-row items-start justify-start gap-[39px] max-w-full mq750:flex-wrap">
+				<div className="flex-1 flex flex-row items-start justify-start gap-[39px] max-w-full md:flex-wrap">
 					<div className="relative z-[1]">
 						A line Chart showing trends in sales
 					</div>
-					<div className="flex-1 flex flex-row items-start justify-start gap-[3.9px] min-w-[190px] text-foundation-black-black-400 mq450:flex-wrap">
+					<div className="flex-1 flex flex-row items-start justify-start gap-[3.9px] min-w-[190px] text-foundation-black-black-400 sm:flex-wrap">
 						<div className="flex-1 flex flex-row items-start justify-start py-0 pr-[4.1px] pl-0 box-border gap-[4px] min-w-[47px]">
 							<div className="flex flex-col items-start justify-start pt-[3px] px-0 pb-0">
 								<div className="w-[7.9px] h-[9px] relative rounded-[50%] bg-foundation-purple-purple-100 shrink-0 z-[1]" />
@@ -231,7 +231,7 @@ export default function SalesTrendChart() {
 				</div>
 			</div>
 			<div className="self-stretch flex flex-row items-start justify-start py-0 pr-3.5 pl-[14.6px] box-border max-w-full">
-				<div className="flex-1 flex flex-row items-start justify-between py-0 pr-px pl-0 box-border max-w-full gap-[20px] mq450:flex-wrap">
+				<div className="flex-1 flex flex-row items-start justify-between py-0 pr-px pl-0 box-border max-w-full gap-[20px] sm:flex-wrap">
 					<div className="flex flex-row items-start justify-start py-0 pr-[10.7px] pl-0 gap-[2.6px] text-right">
 						<div className="relative inline-block min-w-[6px] z-[1]">0</div>
 						<div className="flex flex-col items-start justify-start pt-0.5 px-0 pb-0 text-left">

@@ -18,23 +18,23 @@ import { heroframe } from '../../public';
 export default function LandingPage() {
   return (
 		<section className=" bg-white w-full overflow-hidden h-full">
-			<div className="bg-foundation-grey-grey-50 px-16 py-[10px] w-[100%] mq450:px-6 fixed z-[998]">
+			{/* <div className="bg-foundation-grey-grey-50 px-16 py-[10px] w-[100%] sm:px-6 fixed z-[998]">
 				<Navbar />
-			</div>
-			<div className="flex flex-wrap">
+			</div> */}
+			<div className="flex flex-wrap relative">
 				<Image
 					src={heroframe}
 					alt=""
-					className="absolute bottom-0 top-[650px] w-[100%] object-cover mq750:top-[500px] mq1050:h-[50%] mq750:h-[40%] mq450:h-[30%] mq450:top-[500px] h-[444px]"
+					className="absolute bottom-0 top-[650px] w-[100%] object-cover md:top-[500px] lg:h-[50%] md:h-[40%] sm:h-[30%] sm:top-[500px] h-[444px]"
 				/>
 				<Hero />
 			</div>
-			<div className="py-14 mq850:py-7 mt-24 mq850:mt-32 mq750:mt-12 mq450:mt-5">
+			<div className="py-14 2md:py-7 mt-24 2md:mt-32 md:mt-12 sm:mt-5 relative">
 				<Features />
 			</div>
 			<div className="bg-foundation-grey-grey-900 absolute z-[999] h-px w-full opacity-[0.3]" />
 
-			<div className="py-12 mq750:py-8">
+			<div className="py-12 md:py-8">
 				<Product />
 			</div>
 			<div className="bg-foundation-grey-grey-50 w-full overflow-hidden">
@@ -61,9 +61,9 @@ export default function LandingPage() {
 			<div className="w-full bg-white overflow-hidden">
 				<GetInTouch />
 			</div>
-			<div className="w-full bg-foundation-purple-purple-900 overflow-hidden">
+			{/* <div className="w-full bg-foundation-purple-purple-900 overflow-hidden">
 				<Footer />
-			</div>
+			</div> */}
 		</section>
 	);
 }

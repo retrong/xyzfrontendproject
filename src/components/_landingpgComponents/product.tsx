@@ -24,7 +24,7 @@ const featureCard = [
 
 export default function Product() {
   return (
-		<div className="w-full flex justify-center items-center text-left text-[40px] px-16 mq750:px-6">
+		<div className="w-full flex justify-center items-center text-left text-[40px] px-16 md:px-6">
 			<div className="flex flex-col items-center justify-start">
 				<div className="flex flex-col items-center justify-center gap-[16px]">
 					<div className=" text-foundation-black-black-400 text-center">
@@ -39,7 +39,7 @@ export default function Product() {
 						</h4>
 					</div>
 				</div>
-				<div className="flex flex-row flex-wrap justify-start mq750:justify-center items-start gap-[32px] text-[26px] mt-10">
+				<div className="flex flex-row flex-wrap justify-start md:justify-center items-start gap-[32px] text-[26px] mt-10">
 					{featureCard.map((feature) => (
 						<div
 							key={feature.title}

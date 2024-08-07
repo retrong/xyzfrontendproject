@@ -79,13 +79,13 @@ const footerLinks = [
 ];
 export default function Footer() {
   return (
-		<section className="w-full h-full py-14 px-24 mq750:px-6">
+		<section className="w-full h-full sm:py-8 py-14 px-24 md:px-6">
 			<div className=" text-foundation-white-white-400 flex justify-center flex-col">
-				<div className="flex flex-row justify-between flex-wrap w-full max-w-[1150px] gap-3">
+				<div className="flex flex-row justify-between flex-wrap w-full max-w-[1150px] gap-5">
 					{footerLinks.map((footerlink) => (
 						<div
 							key={footerlink.title}
-							className="flex flex-col mq450:my-0 my-2 text-start justify-start items-start"
+							className="flex flex-col sm:my-0 my-2 text-start justify-start items-start"
 						>
 							<h4 className="font-medium text-[16px] my-0 leading-[27px] text-foundation-grey-grey-600 capitalize">
 								{footerlink.title}
@@ -124,14 +124,14 @@ export default function Footer() {
 					</div>
 				</div>
 				<div className=" h-[1px] bg-foundation-grey-grey-200 w-full my-8" />
-				<div className="flex flex-row justify-between items-center align-middle">
+				<div className="flex flex-row sm:flex-col justify-between items-center align-middle gap-3">
 					<Image
 						src={logoxyz}
 						alt=""
 						className="w-[108px] h-10 object-contain"
 						loading="lazy"
 					/>
-					<h3 className="w-[293px] relative leading-[24px] inline-block shrink-0 my-0 text-[#667085] whitespace-nowrap">
+					<h3 className="max-w-[350px] leading-[24px] text-base inline-block shrink-0 my-0 text-[#667085] text-wrap">
 						© 2024 XYZ. All rights reserved.
 					</h3>
 				</div>

@@ -48,7 +48,7 @@ const RecentUpdateTable: React.FC = () => {
 	};
 
 	return (
-		<div className="w-full mq850:mt-5 mt-2">
+		<div className="w-full 2md:mt-5 mt-2">
 			<div className="scroll min-w-[500px] scrollbar-thin scrollbar-track-primary scrollbar-thumb-plain scrollbar-thumb-current overflow-x-auto overflow-auto border-2 border-solid border-foundation-grey-grey-300 rounded-xl">
 				<table
 					style={{ borderSpacing: 0 }}

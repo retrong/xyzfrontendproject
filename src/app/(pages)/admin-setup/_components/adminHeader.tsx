@@ -38,7 +38,7 @@ export default function AdminHeader() {
 	const headerContent = getHeaderContent();
 
 	return (
-		<section className="self-stretch bg-foundation-grey-grey-50 flex flex-row justify-start align-middle items-center py-[14.5px] mq850:px-12 px-4 box-border max-w-full text-left text-5xl gap-[20px] text-foundation-black-black-400 font-text-xs-medium mq750:flex-wrap mq750:box-border mb-2">
+		<section className="self-stretch bg-foundation-grey-grey-50 flex flex-row justify-start align-middle items-center py-[14.5px] 2md:px-12 px-4 box-border max-w-full text-left text-5xl gap-[20px] text-foundation-black-black-400 font-text-xs-medium md:flex-wrap md:box-border mb-2">
 			<div className="w-auto">
 				<Image
 					src={headerContent.imageSrc}

@@ -81,7 +81,7 @@ export default function SalesRevenueChart() {
 								</div>
 							</div>
 						</div>
-						<div className="self-stretch flex flex-row items-start justify-start gap-[22px] text-xs text-foundation-grey-grey-900 mq750:flex-wrap">
+						<div className="self-stretch flex flex-row items-start justify-start gap-[22px] text-xs text-foundation-grey-grey-900 md:flex-wrap">
 							<div className="flex-1 flex flex-col items-start justify-start pt-1 px-0 pb-0 box-border min-w-[165px]">
 								<div className="relative z-[1]">
 									A Bar Chart showing sales revenue over time
@@ -89,7 +89,7 @@ export default function SalesRevenueChart() {
 							</div>
 
 							{/* product indication */}
-							<div className="flex-1 rounded-2xl flex flex-row items-start justify-start gap-[4px] min-w-[159px] z-[1] text-foundation-black-black-400 mq450:flex-wrap">
+							<div className="flex-1 rounded-2xl flex flex-row items-start justify-start gap-[4px] min-w-[159px] z-[1] text-foundation-black-black-400 sm:flex-wrap">
 								<div className="flex flex-col items-start justify-start pt-[3.6px] px-0 pb-0">
 									<div className="w-[7.3px] h-[7.8px] relative rounded-[50%] bg-foundation-purple-purple-100" />
 								</div>
@@ -117,7 +117,7 @@ export default function SalesRevenueChart() {
 			{/* <div className="self-stretch flex flex-row items-start justify-end py-0 pr-4 pl-[23px] box-border max-w-full text-right text-4xs text-foundation-grey-grey-900">
 				<div className="flex-1 flex flex-col items-end justify-start gap-[3.3px] max-w-full">
 					<div className="self-stretch flex flex-row items-start justify-end py-0 pr-2.5 pl-0 box-border max-w-full">
-						<div className="flex-1 flex flex-row items-start justify-start gap-[4.6px] max-w-full mq750:flex-wrap">
+						<div className="flex-1 flex flex-row items-start justify-start gap-[4.6px] max-w-full md:flex-wrap">
 							<div className="w-[21.8px] flex flex-col items-start justify-start pt-[6.1px] px-0 pb-0 box-border">
 								<div className="self-stretch flex flex-col items-end justify-start gap-[14.2px]">
 									<div className="relative inline-block min-w-[19px] z-[1]">
@@ -179,7 +179,7 @@ export default function SalesRevenueChart() {
 							</div>
 						</div>
 					</div>
-					<div className="w-[506.6px] flex flex-row items-start justify-between gap-[20px] max-w-full text-left mq750:flex-wrap">
+					<div className="w-[506.6px] flex flex-row items-start justify-between gap-[20px] max-w-full text-left md:flex-wrap">
 						<div className="w-[20.2px] relative inline-block shrink-0 z-[1]">
 							0
 						</div>
@@ -212,7 +212,7 @@ export default function SalesRevenueChart() {
 								8.75
 							</div>
 						</div>
-						<div className="relative inline-block min-w-[10px] shrink-0 z-[1] mq750:w-full mq750:h-2.5">
+						<div className="relative inline-block min-w-[10px] shrink-0 z-[1] md:w-full md:h-2.5">
 							10
 						</div>
 					</div>

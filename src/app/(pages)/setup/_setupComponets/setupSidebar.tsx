@@ -120,19 +120,19 @@ export default function SetupSidebar() {
 		<>
 			<div
 				onClick={() => setIsOpen(false)}
-				className={`mq750:fixed hidden inset-0 max-h-screen z-[998] bg-black/50 ${
+				className={`md:fixed hidden inset-0 max-h-screen z-[998] bg-black/50 ${
 					isOpen ? 'block' : 'hidden'
 				} `}
 			></div>
 			<motion.div
 				variants={Siderbar_animation}
 				animate={isOpen ? 'open' : 'closed'}
-				className={`self-stretch bg-foundation-purple-purple-400 flex flex-col items-end justify-start pt-11 mq850:px-[23.5px] px-2 py-[34.3px] box-border gap-[290.9px] max-w-[80%] mq450:gap-[145px] mq450:pt-5 mq450:pb-5 mq450:box-border mq450:min-w-full mq1050:pt-[29px] mq1050:pb-[22px] mq1050:box-border mq750:absolute z-[999] 
+				className={`self-stretch bg-foundation-purple-purple-400 flex flex-col items-end justify-start pt-11 2md:px-[23.5px] px-2 py-[34.3px] box-border gap-[290.9px] max-w-[80%] sm:gap-[145px] sm:pt-5 sm:pb-5 sm:box-border sm:min-w-full lg:pt-[29px] lg:pb-[22px] lg:box-border md:absolute z-[999] 
                 `}
 			>
 				{/* <div className="w-auto relative bg-foundation-purple-purple-400 hidden max-w-full" /> */}
-				<div className="self-stretch flex flex-col items-start justify-start gap-[30px] max-w-full mq450:gap-[22px]">
-					<div className="mq750:flex hidden justify-end items-end w-full gap-0">
+				<div className="self-stretch flex flex-col items-start justify-start gap-[30px] max-w-full sm:gap-[22px]">
+					<div className="md:flex hidden justify-end items-end w-full gap-0">
 						<Image
 							src={closeButton}
 							loading="lazy"
@@ -167,7 +167,7 @@ export default function SetupSidebar() {
 										isActive
 											? ' '
 											: ' text-inherit'
-									} flex flex-col items-start hover:text-foundation-purple-purple-100 justify-center py-[16px] px-4 mq450:pl-2 mq450:pr-2 mq450:box-border cursor-pointer overflow-x-hidden`}
+									} flex flex-col items-start hover:text-foundation-purple-purple-100 justify-center py-[16px] px-4 sm:pl-2 sm:pr-2 sm:box-border cursor-pointer overflow-x-hidden`}
 								>
 									<div className="flex flex-row items-center justify-start gap-[16px] whitespace-pre overflow-x-hidden">
 										<Image
@@ -180,7 +180,7 @@ export default function SetupSidebar() {
 											src={item.icon}
 										/>
 										<div className="flex flex-col gap-[2px]">
-											<h1 className="m-0 relative text-[18px] leading-[24px] font-normal text-nowrap whitespace-nowrap font-inherit mq450:text-base mq450:leading-[24px]">
+											<h1 className="m-0 relative text-[18px] leading-[24px] font-normal text-nowrap whitespace-nowrap font-inherit sm:text-base sm:leading-[24px]">
 												<span
 													className={`${item.isActive ? 'font-medium' : ''}`}
 												>
@@ -203,7 +203,7 @@ export default function SetupSidebar() {
 				</div>
 				
 				<motion.div
-					className="absolute w-fit h-fit z-50 top-0 mt-5 float-right cursor-pointer mq1050:hidden block bg-white rounded-[50px]"
+					className="absolute w-fit h-fit z-50 top-0 mt-5 float-right cursor-pointer lg:hidden block bg-white rounded-[50px]"
 					animate={
 						isOpen
 							? {
@@ -233,7 +233,7 @@ export default function SetupSidebar() {
 				<Image
 					src={hamburger}
 					alt=""
-					className="w-[40px] h-[40px] object-contain m-1 mq750:block hidden"
+					className="w-[40px] h-[40px] object-contain m-1 md:block hidden"
 					onClick={() => setIsOpen(true)}
 				/>
 			</div>

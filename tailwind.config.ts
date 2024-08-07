@@ -55,29 +55,22 @@ const config: Config = {
 			inherit: 'inherit',
 		},
 		screens: {
-			lg: {
-				max: '1200px',
-			},
-			mq1125: {
+			xl: {
 				raw: 'screen and (max-width: 1300px)',
 			},
-			mq1050: {
+			lg: {
 				raw: 'screen and (max-width: 1050px)',
 			},
-			mq750: {
+            '2md': '850px',
+			md: {
 				raw: 'screen and (max-width: 750px)',
 			},
-			mq450: {
+			sm: {
 				raw: 'screen and (max-width: 450px)',
 			},
-			mq850: '850px',
-			mq360: {
+			ss: {
 				raw: 'screen and (max-width: 360px)',
 			},
-			// mq1125: '1300px',
-			// mq1050: '1050px',
-			// mq750: '750px',
-			// mq450: '450px',
 		},
 	},
 	corePlugins: {

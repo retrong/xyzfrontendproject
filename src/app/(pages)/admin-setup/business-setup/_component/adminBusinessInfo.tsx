@@ -156,7 +156,7 @@ export default function AdminBusinessForm() {
 							</h2>
 							<div className="mt-2 grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-6">
 								{/* Business name and description */}
-								<div className="flex mq850:flex-row flex-col w-full gap-10">
+								<div className="flex 2md:flex-row flex-col w-full gap-10">
 									<div className=" w-full">
 										<label
 											htmlFor="businessName"
@@ -218,7 +218,7 @@ export default function AdminBusinessForm() {
 								</div>
 
 								{/* website and email address */}
-								<div className="flex mq850:flex-row flex-col w-full gap-10">
+								<div className="flex 2md:flex-row flex-col w-full gap-10">
 									<div className=" w-full">
 										<label
 											htmlFor="businessName"
@@ -270,7 +270,7 @@ export default function AdminBusinessForm() {
 								</div>
 
 								{/* business address and country */}
-								<div className="flex mq850:flex-row flex-col w-full gap-10">
+								<div className="flex 2md:flex-row flex-col w-full gap-10">
 									<div className=" w-full">
 										<label
 											htmlFor="businessAddress"
@@ -341,7 +341,7 @@ export default function AdminBusinessForm() {
 								</div>
 
 								{/* Phone number and alternative phone number */}
-								<div className="flex mq850:flex-row flex-col w-full gap-10">
+								<div className="flex 2md:flex-row flex-col w-full gap-10">
 									<div className=" w-full">
 										<label
 											htmlFor="businessPhoneNumber"
@@ -406,7 +406,7 @@ export default function AdminBusinessForm() {
 
 								{/* Fax number and language  */}
 
-								<div className="flex mq850:flex-row flex-col w-full gap-10">
+								<div className="flex 2md:flex-row flex-col w-full gap-10">
 									<div className=" w-full">
 										<label
 											htmlFor="faxNumber"
@@ -470,7 +470,7 @@ export default function AdminBusinessForm() {
 
 								{/* Facebook and Instagram handle */}
 
-								<div className="flex mq850:flex-row flex-col w-full gap-10">
+								<div className="flex 2md:flex-row flex-col w-full gap-10">
 									<div className=" w-full">
 										<label
 											htmlFor="businessFacebook"
@@ -536,7 +536,7 @@ export default function AdminBusinessForm() {
 
 							<div className="mt-2 grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-6">
 								{/* legal Business name and description */}
-								<div className="flex mq850:flex-row flex-col w-full gap-10">
+								<div className="flex 2md:flex-row flex-col w-full gap-10">
 									<div className=" w-full">
 										<label
 											htmlFor="legalBusinessName"
@@ -598,7 +598,7 @@ export default function AdminBusinessForm() {
 								</div>
 
 								{/* Rc Number and Tax ID Number */}
-								<div className="flex mq850:flex-row flex-col w-full gap-10">
+								<div className="flex 2md:flex-row flex-col w-full gap-10">
 									<div className=" w-full">
 										<label
 											htmlFor="rcNumber"
@@ -666,7 +666,7 @@ export default function AdminBusinessForm() {
 								</div>
 
 								{/* business address and country */}
-								<div className="flex mq850:flex-row flex-col w-full gap-10">
+								<div className="flex 2md:flex-row flex-col w-full gap-10">
 									<div className=" w-full">
 										<label
 											htmlFor="businessAddress"
@@ -737,8 +737,8 @@ export default function AdminBusinessForm() {
 								</div>
 
 								{/* Legal State */}
-								<div className="flex mq850:flex-row flex-col w-full gap-10">
-									<div className=" mq850:w-[47.5%] w-full">
+								<div className="flex 2md:flex-row flex-col w-full gap-10">
+									<div className=" 2md:w-[47.5%] w-full">
 										<label
 											htmlFor="businessState"
 											className="w-fit h-fit flex font-inter text-sm font-medium leading-6 text-foundation-grey-grey-800 gap-[1px]"
@@ -776,7 +776,7 @@ export default function AdminBusinessForm() {
 								</div>
 
 								{/* EIN for payroll and SSN */}
-								<div className="flex mq850:flex-row flex-col w-full gap-10">
+								<div className="flex 2md:flex-row flex-col w-full gap-10">
 									<div className=" w-full">
 										<label
 											htmlFor="eiNumber"
@@ -850,7 +850,7 @@ export default function AdminBusinessForm() {
 
 							<div className="mt-2 grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-6">
 								{/* Fiscal year Tax year */}
-								<div className="flex mq850:flex-row flex-col w-full gap-10">
+								<div className="flex 2md:flex-row flex-col w-full gap-10">
 									<div className=" w-full">
 										<label
 											htmlFor="fiscalYear"
@@ -919,7 +919,7 @@ export default function AdminBusinessForm() {
 
 								{/* Business Type and filling information */}
 								<div className="flex flex-col w-full gap-10">
-									<div className="w-full mq850:w-[48%]">
+									<div className="w-full 2md:w-[48%]">
 										<SelectElement
 											id="businessType"
 											label="Business Type"
@@ -929,7 +929,7 @@ export default function AdminBusinessForm() {
 											error={errors.businessType?.message}
 										/>
 									</div>
-									<div className="w-full mq850:w-[48%]">
+									<div className="w-full 2md:w-[48%]">
 										<SelectElement
 											id="filingInformation"
 											label="Filing Information"
@@ -980,7 +980,7 @@ export default function AdminBusinessForm() {
 							</p>
 							<div className="mt-2 grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-6">
 								{/* Tax consultant Name and Contact person */}
-								<div className="flex mq850:flex-row flex-col w-full gap-10">
+								<div className="flex 2md:flex-row flex-col w-full gap-10">
 									<InputElement
 										id="taxConsultantName"
 										label="Tax Consultant Name"
@@ -1000,7 +1000,7 @@ export default function AdminBusinessForm() {
 								</div>
 
 								{/* Consultant Address and document */}
-								<div className="flex mq850:flex-row flex-col w-full gap-10">
+								<div className="flex 2md:flex-row flex-col w-full gap-10">
 									<InputElement
 										id="taxConsultantAddress"
 										label="Address"
@@ -1025,7 +1025,7 @@ export default function AdminBusinessForm() {
 								</p>
 
 								{/* Auditor Name and Contact Person */}
-								<div className="flex mq850:flex-row flex-col w-full gap-10">
+								<div className="flex 2md:flex-row flex-col w-full gap-10">
 									<InputElement
 										id="auditorName"
 										label="Auditor Name"
@@ -1045,7 +1045,7 @@ export default function AdminBusinessForm() {
 								</div>
 
 								{/* Auditor and Contract Document */}
-								<div className="flex mq850:flex-row flex-col w-full gap-10">
+								<div className="flex 2md:flex-row flex-col w-full gap-10">
 									<InputElement
 										id="auditorAddress"
 										label="Address"
@@ -1071,7 +1071,7 @@ export default function AdminBusinessForm() {
 
 								{/* Fax number and language  */}
 
-								<div className="flex mq850:flex-row flex-col w-full gap-10">
+								<div className="flex 2md:flex-row flex-col w-full gap-10">
 									<InputElement
 										id="legalConsultantName"
 										label="Auditor Name"
@@ -1092,7 +1092,7 @@ export default function AdminBusinessForm() {
 
 								{/* Consultant Address and file upload */}
 
-								<div className="flex mq850:flex-row flex-col w-full gap-10">
+								<div className="flex 2md:flex-row flex-col w-full gap-10">
 									<InputElement
 										id="legalConsultantAddress"
 										label="Address"

@@ -106,7 +106,7 @@ export default function SalesDistributionChart() {
 
 			{/* <div className="self-stretch flex flex-row items-start justify-start py-0 pr-[31px] pl-[39px] text-xs">
 				<div className="flex-1 flex flex-col items-start justify-start gap-[4.9px]">
-					<div className="self-stretch flex flex-row items-start justify-start gap-[25px] mq450:flex-wrap">
+					<div className="self-stretch flex flex-row items-start justify-start gap-[25px] sm:flex-wrap">
 						<div className="flex flex-col items-start justify-start gap-[8px]">
 							<div className="relative inline-block min-w-[61px] z-[1]">
 								Product 1

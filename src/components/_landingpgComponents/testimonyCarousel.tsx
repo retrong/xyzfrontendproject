@@ -61,9 +61,9 @@ export default class TestimonyCarousel extends Component {
         };
     
         return (
-            <section className="w-full h-full py-14 px-16 mq750:px-6">
+            <section className="w-full h-full py-14 px-16 md:px-6">
                 <div className="item-center text-center text-foundation-black-black-500">
-                    <div className="w-full justify-center flex-col flex text-center text-wrap gap-[14px] mb-12 mq750:mb-6">
+                    <div className="w-full justify-center flex-col flex text-center text-wrap gap-[14px] mb-12 md:mb-6">
                         <h2 className=" font-normal text-[32px] m-0 inline-block">Check what our clients are saying</h2>
                         <p className="text-foundation-grey-grey-900 text-base inline-block m-0">
                             Testimonals

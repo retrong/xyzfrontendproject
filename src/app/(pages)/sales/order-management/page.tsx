@@ -29,10 +29,10 @@ const SalesModuleOrderManagement: FunctionComponent = () => {
 
 	return (
 		<LocalizationProvider dateAdapter={AdapterDateFns}>
-            <div className="w-[994px] flex flex-row items-start justify-start py-0 px-[55px] box-border max-w-full mq1050:pl-[27px] mq1050:pr-[27px] mq1050:box-border">
+            <div className="w-[994px] flex flex-row items-start justify-start py-0 px-[55px] box-border max-w-full lg:pl-[27px] lg:pr-[27px] lg:box-border">
                 <div className="flex-1 rounded-2xl bg-foundation-purple-purple-400 flex flex-col items-start justify-start p-4 box-border max-w-full">
                     <div className="self-stretch flex flex-row items-center justify-start max-w-full">
-                        <nav className="m-0 flex-1 flex flex-row items-center justify-start gap-[8px] max-w-full whitespace-nowrap text-left text-base text-white font-text-xs-medium mq1050:flex-wrap">
+                        <nav className="m-0 flex-1 flex flex-row items-center justify-start gap-[8px] max-w-full whitespace-nowrap text-left text-base text-white font-text-xs-medium lg:flex-wrap">
                             <button className="cursor-pointer [border:none] p-2 bg-white rounded-lg flex flex-row items-center justify-start whitespace-nowrap hover:bg-gainsboro">
                                 <div className="relative text-base font-text-xs-medium text-foundation-purple-purple-400 text-left inline-block min-w-[112px]">
                                     Order Creation
@@ -63,12 +63,12 @@ const SalesModuleOrderManagement: FunctionComponent = () => {
                     </div>
                 </div>
             </div>
-            <section className="self-stretch flex flex-row items-start justify-start py-0 px-12 box-border max-w-full text-left text-5xl text-foundation-black-black-400 font-text-xs-medium mq1050:pl-6 mq1050:pr-6 mq1050:box-border">
-                <div className="flex-1 flex flex-row items-start justify-start pt-[31px] px-16 pb-[13px] box-border relative max-w-full mq750:pt-5 mq750:pb-5 mq750:box-border mq1050:pl-8 mq1050:pr-8 mq1050:box-border">
+            <section className="self-stretch flex flex-row items-start justify-start py-0 px-12 box-border max-w-full text-left text-5xl text-foundation-black-black-400 font-text-xs-medium lg:pl-6 lg:pr-6 lg:box-border">
+                <div className="flex-1 flex flex-row items-start justify-start pt-[31px] px-16 pb-[13px] box-border relative max-w-full md:pt-5 md:pb-5 md:box-border lg:pl-8 lg:pr-8 lg:box-border">
                     <div className="h-full w-full absolute !m-[0] top-[0px] right-[0px] bottom-[0px] left-[0px] rounded-2xl bg-gray1-200" />
                     <div className="flex-1 flex flex-col items-start justify-start gap-[16px] max-w-full z-[1]">
-                        <div className="self-stretch flex flex-row items-center justify-between gap-[20px] mq750:flex-wrap">
-                            <h2 className="m-0 w-[214px] relative text-inherit font-normal font-inherit inline-block shrink-0 mq450:text-lgi">
+                        <div className="self-stretch flex flex-row items-center justify-between gap-[20px] md:flex-wrap">
+                            <h2 className="m-0 w-[214px] relative text-inherit font-normal font-inherit inline-block shrink-0 sm:text-lgi">
                                 Order Creation
                             </h2>
                             <div
@@ -86,8 +86,8 @@ const SalesModuleOrderManagement: FunctionComponent = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="self-stretch flex flex-row items-end justify-between gap-[20px] text-base text-foundation-purple-purple-400 mq750:flex-wrap">
-                            <div className="flex flex-col items-start justify-start min-w-[214px] mq750:flex-1">
+                        <div className="self-stretch flex flex-row items-end justify-between gap-[20px] text-base text-foundation-purple-purple-400 md:flex-wrap">
+                            <div className="flex flex-col items-start justify-start min-w-[214px] md:flex-1">
                                 <div className="rounded-2xl flex flex-row items-center justify-center py-2 px-0 gap-[4px]">
                                     <Image
                                         className="h-6 w-6 relative overflow-hidden shrink-0"
@@ -146,7 +146,7 @@ const SalesModuleOrderManagement: FunctionComponent = () => {
                             </div>
                         </div>
                         <div className="self-stretch shadow-[0px_1px_3px_rgba(16,_24,_40,_0.1),_0px_1px_2px_rgba(16,_24,_40,_0.06)] rounded-xl bg-white flex flex-col items-start justify-start border-[1px] border-solid border-foundation-grey-grey-300">
-                            <form className="m-0 self-stretch bg-white flex flex-row items-start justify-center py-0 pr-1 pl-0 [row-gap:20px] mq1050:flex-wrap mq1050:pl-1 mq1050:pt-1 mq1050:pb-1 mq1050:box-border">
+                            <form className="m-0 self-stretch bg-white flex flex-row items-start justify-center py-0 pr-1 pl-0 [row-gap:20px] lg:flex-wrap lg:pl-1 lg:pt-1 lg:pb-1 lg:box-border">
                                 <div className="w-[88px] flex flex-col items-start justify-start">
                                     <button className="self-stretch h-[66px] bg-foundation-grey-grey-50 box-border flex flex-row items-center justify-start py-7 pr-[52px] pl-6 border-b-[1px] border-solid border-foundation-grey-grey-200">
                                         <div className="h-2.5 w-3 flex flex-row items-center justify-start">

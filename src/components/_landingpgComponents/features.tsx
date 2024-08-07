@@ -6,13 +6,13 @@ export default function Features() {
   return (
 		<section
 			id="features"
-			className="w-full h-[239px] mq750:h-auto align-middle flex text-center px-16 mq750:px-6"
+			className="w-full h-[239px] md:h-auto align-middle flex text-center px-16 md:px-6"
 		>
 			<div className="flex flex-1 flex-col flex-wrap justify-center align-middle items-center">
 				<h3 className="text-[20px] leading-[30px] font-semibold">
 					Over 32+ software company businesses Partner with XYZ
 				</h3>
-				<div className="flex flex-row flex-1 flex-wrap justify-center gap-[30px] items-center mq450:py-0 py-0">
+				<div className="flex flex-row flex-1 flex-wrap justify-center gap-[30px] items-center sm:py-0 py-0">
 					<Image
 						src={zepline}
 						alt=""

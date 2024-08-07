@@ -23,8 +23,8 @@ interface carouselItems {
 export default function CarouselData({img, content, contentName, contentTitle}: carouselItems) {
   return (
 		<div className="flex w-full justify-center h-full items-center">
-			<div className="flex flex-col mq850:flex-row mq850:justify-center w-[1058px] mq850:gap-0 gap-8 h-auto items-center align-middle justify-between">
-				<div className="container mq850:justify-start justify-center flex">
+			<div className="flex flex-col 2md:flex-row 2md:justify-center w-[1058px] 2md:gap-0 gap-8 h-auto items-center align-middle justify-between">
+				<div className="container 2md:justify-start justify-center flex">
 					{/* <Image
 						src={group269}
 						alt=""

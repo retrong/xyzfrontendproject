@@ -14,14 +14,14 @@ const SalesModuleLocation: FunctionComponent = () => {
     // location table
 
 	return (
-		<div className="w-full relative bg-white overflow-hidden flex flex-row items-start justify-start leading-[normal] tracking-[normal] [row-gap:20px] mq1125:flex-wrap">
-			<main className="flex-1 flex flex-col items-start justify-start gap-[32px] min-w-[673px] max-w-full mq750:gap-[16px] mq750:min-w-full">
-				<section className="self-stretch flex flex-row items-start justify-start py-0 px-12 box-border max-w-full text-left text-5xl text-foundation-black-black-400 font-text-xs-medium mq1050:pl-6 mq1050:pr-6 mq1050:box-border">
-					<div className="flex-1 flex flex-row items-start justify-start py-12 pr-[47px] pl-12 box-border relative min-h-[730px] max-w-full mq750:pt-[31px] mq750:pb-[31px] mq750:box-border mq1050:pl-6 mq1050:pr-[23px] mq1050:box-border">
+		<div className="w-full relative bg-white overflow-hidden flex flex-row items-start justify-start leading-[normal] tracking-[normal] [row-gap:20px] xl:flex-wrap">
+			<main className="flex-1 flex flex-col items-start justify-start gap-[32px] min-w-[673px] max-w-full md:gap-[16px] md:min-w-full">
+				<section className="self-stretch flex flex-row items-start justify-start py-0 px-12 box-border max-w-full text-left text-5xl text-foundation-black-black-400 font-text-xs-medium lg:pl-6 lg:pr-6 lg:box-border">
+					<div className="flex-1 flex flex-row items-start justify-start py-12 pr-[47px] pl-12 box-border relative min-h-[730px] max-w-full md:pt-[31px] md:pb-[31px] md:box-border lg:pl-6 lg:pr-[23px] lg:box-border">
 						<div className="h-full w-full absolute !m-[0] top-[0px] right-[0px] bottom-[0px] left-[0px] rounded-2xl bg-gray1-200" />
 						<div className="flex-1 overflow-hidden flex flex-col items-start justify-start gap-[9px] max-w-full z-[1]">
-							<div className="self-stretch flex flex-row items-center justify-between gap-[20px] mq450:flex-wrap">
-								<h2 className="m-0 relative text-inherit font-normal font-inherit mq450:text-lgi">
+							<div className="self-stretch flex flex-row items-center justify-between gap-[20px] sm:flex-wrap">
+								<h2 className="m-0 relative text-inherit font-normal font-inherit sm:text-lgi">
 									Sales Outlets
 								</h2>
 								<button className="cursor-pointer [border:none] py-2 px-0 bg-[transparent] rounded-2xl flex flex-row items-center justify-center gap-[4px]">
@@ -36,7 +36,7 @@ const SalesModuleLocation: FunctionComponent = () => {
 									</div>
 								</button>
 							</div>
-							<div className="self-stretch flex flex-row items-start justify-between gap-[20px] text-base text-foundation-purple-purple-400 mq450:flex-wrap">
+							<div className="self-stretch flex flex-row items-start justify-between gap-[20px] text-base text-foundation-purple-purple-400 sm:flex-wrap">
 								<div className="flex flex-row items-start justify-start gap-[16px]">
 									<div className="flex flex-row items-start justify-start">
 										<div className="flex flex-row items-center justify-start gap-[8px]">
@@ -80,7 +80,7 @@ const SalesModuleLocation: FunctionComponent = () => {
 							</div>
 							<div className="self-stretch flex flex-col items-start justify-start">
 								<div className="self-stretch shadow-[0px_1px_3px_rgba(16,_24,_40,_0.1),_0px_1px_2px_rgba(16,_24,_40,_0.06)] rounded-xl bg-white flex flex-col items-start justify-start border-[1px] border-solid border-foundation-grey-grey-300">
-									<form className="m-0 self-stretch bg-white flex flex-row items-start justify-center [row-gap:20px] mq1050:flex-wrap">
+									<form className="m-0 self-stretch bg-white flex flex-row items-start justify-center [row-gap:20px] lg:flex-wrap">
 										<div className="w-52 flex flex-col items-start justify-start">
 											<div className="self-stretch bg-foundation-grey-grey-50 flex flex-row items-center justify-start pt-6 px-6 pb-[22px] gap-[12px] border-b-[1px] border-solid border-foundation-grey-grey-200">
 												<div className="hidden flex-row items-center justify-center">

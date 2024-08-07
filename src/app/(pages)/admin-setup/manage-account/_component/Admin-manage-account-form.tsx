@@ -135,7 +135,7 @@ export default function AdminManageAccountForm() {
 	};
 
 	return (
-		<section className="w-full flex flex-col mq850:flex-col justify-between">
+		<section className="w-full flex flex-col 2md:flex-col justify-between">
 			<div className="stepper-container w-full flex-row flex gap-3">
 				{steps.map((step, index) => (
 					<div
@@ -647,7 +647,7 @@ export default function AdminManageAccountForm() {
 								Create your work profile as a professional in the company
 							</p>
 							<div className="mt-2 grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-6">
-								<div className="flex mq850:flex-row flex-col w-full gap-10">
+								<div className="flex 2md:flex-row flex-col w-full gap-10">
 									<InputElement
 										id="userFirstName"
 										label="First Name"
@@ -669,7 +669,7 @@ export default function AdminManageAccountForm() {
 								</div>
 
 								{/*middle name and mother name */}
-								<div className="flex mq850:flex-row flex-col w-full gap-10">
+								<div className="flex 2md:flex-row flex-col w-full gap-10">
 									<InputElement
 										id="userMiddleName"
 										label="Middle Name"
@@ -689,7 +689,7 @@ export default function AdminManageAccountForm() {
 								</div>
 
 								{/* Staff ID no and role*/}
-								<div className="flex mq850:flex-row flex-col w-full gap-10">
+								<div className="flex 2md:flex-row flex-col w-full gap-10">
 									<InputElement
 										id="userStaffId"
 										label="Staff I.D No."
@@ -710,7 +710,7 @@ export default function AdminManageAccountForm() {
 								</div>
 
 								{/* Email Adddress and gender*/}
-								<div className="flex mq850:flex-row flex-col w-full gap-10">
+								<div className="flex 2md:flex-row flex-col w-full gap-10">
 									<InputElement
 										id="userEmailAddress"
 										label="Email Address"
@@ -732,7 +732,7 @@ export default function AdminManageAccountForm() {
 
 								{/* Phone number and emergency number  */}
 
-								<div className="flex mq850:flex-row flex-col w-full gap-10">
+								<div className="flex 2md:flex-row flex-col w-full gap-10">
 									<InputElement
 										id="userPhoneNumber"
 										label="Phone Number"
@@ -753,7 +753,7 @@ export default function AdminManageAccountForm() {
 
 								{/* Current address */}
 
-								<div className="flex mq850:flex-row flex-col w-full gap-10">
+								<div className="flex 2md:flex-row flex-col w-full gap-10">
 									<InputElement
 										id="userAddress"
 										label="Current Address"
@@ -780,7 +780,7 @@ export default function AdminManageAccountForm() {
 							</p>
 							<div className="mt-2 grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-6">
 								{/* Tax consultant Name and Contact person */}
-								<div className="flex mq850:flex-row flex-col w-full gap-10">
+								<div className="flex 2md:flex-row flex-col w-full gap-10">
 									<SelectElement
 										id="userDepartment"
 										label="Department"
@@ -801,7 +801,7 @@ export default function AdminManageAccountForm() {
 								</div>
 
 								{/*middle name and mother name */}
-								<div className="flex mq850:flex-row flex-col w-full gap-10">
+								<div className="flex 2md:flex-row flex-col w-full gap-10">
 									<div className=" w-full">
 										<label
 											htmlFor="DateOfBirth"
@@ -853,7 +853,7 @@ export default function AdminManageAccountForm() {
 								</div>
 
 								{/* Staff ID no and role*/}
-								<div className="flex mq850:flex-row flex-col w-full gap-10">
+								<div className="flex 2md:flex-row flex-col w-full gap-10">
 									<SelectElement
 										id="maritalStatus"
 										label="Marital Status"
@@ -866,7 +866,7 @@ export default function AdminManageAccountForm() {
 								</div>
 
 								{/* Email Adddress and gender*/}
-								<div className="flex mq850:flex-row flex-col w-full gap-10">
+								<div className="flex 2md:flex-row flex-col w-full gap-10">
 									<InputElement
 										id="userPermanentAddress"
 										label="Permananet Address"
@@ -880,7 +880,7 @@ export default function AdminManageAccountForm() {
 
 								{/* Phone number and emergency number  */}
 
-								<div className="flex mq850:flex-row flex-col w-full gap-10">
+								<div className="flex 2md:flex-row flex-col w-full gap-10">
 									<InputElement
 										id="userQualification"
 										label="Qualification"
@@ -901,7 +901,7 @@ export default function AdminManageAccountForm() {
 
 								{/* Current address */}
 
-								<div className="flex mq850:flex-row flex-col w-full gap-10">
+								<div className="flex 2md:flex-row flex-col w-full gap-10">
 									<InputElement
 										id="otherInformation"
 										label="Other Information"
@@ -927,7 +927,7 @@ export default function AdminManageAccountForm() {
 								Enter the necessary details for your Next of Kin
 							</p>
 							<div className="mt-2 grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-6">
-								<div className="flex mq850:flex-row flex-col w-full gap-10">
+								<div className="flex 2md:flex-row flex-col w-full gap-10">
 									<InputElement
 										id="nameOfKin"
 										label="Name of Next of Kin"
@@ -947,7 +947,7 @@ export default function AdminManageAccountForm() {
 									/>
 								</div>
 								{/* Email Adddress and gender*/}
-								<div className="flex mq850:flex-row flex-col w-full gap-10">
+								<div className="flex 2md:flex-row flex-col w-full gap-10">
 									<InputElement
 										id="kinPermanentAddress"
 										label="Address of Next of Kin"
@@ -961,7 +961,7 @@ export default function AdminManageAccountForm() {
 
 								{/* Phone number and emergency number  */}
 
-								<div className="flex mq850:flex-row flex-col w-full gap-10">
+								<div className="flex 2md:flex-row flex-col w-full gap-10">
 									<InputElement
 										id="kinEmail"
 										label="Email Address"

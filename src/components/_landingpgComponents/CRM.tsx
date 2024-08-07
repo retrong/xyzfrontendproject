@@ -5,12 +5,12 @@ import { crmImage } from '../../../public';
 export default function Crm() {
 	return (
 		<div className="justify-center flex items-center align-middle">
-			<div className="flex flex-1 flex-col justify-between mq750:justify-center mq750:items-center items-center align-middle text-left text-[40px] px-16 mq1050:px-16 gap-6 mq850:flex-row mq750:px-6 py-6 max-w-[1200px]">
+			<div className="flex flex-1 flex-col justify-between md:justify-center md:items-center items-center align-middle text-left text-[40px] px-16 lg:px-16 gap-6 2md:flex-row md:px-6 py-6 max-w-[1200px]">
 				<div className="max-w-[605px] flex justify-start items-center align-middle relative h-[365px]">
 					<Image
 						src={crmImage}
 						alt=""
-						className="w-fit mq450:w-[350px] h-fit object-contain"
+						className="w-fit sm:w-[350px] h-fit object-contain"
 						loading="lazy"
 					/>
 				</div>

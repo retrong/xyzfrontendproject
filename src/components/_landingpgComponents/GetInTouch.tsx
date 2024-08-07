@@ -5,7 +5,7 @@ import NavButton from './navButton';
 
 export default function GetInTouch() {
   return (
-		<section className="w-full h-full py-14 px-16 mq750:px-6 flex justify-center items-center">
+		<section className="w-full h-full py-14 px-16 md:px-6 flex justify-center items-center">
 			<div className="item-center bg-foundation-grey-grey-50 w-full rounded-[26px] px-6 py-8 flex flex-col flex-wrap text-center justify-center text-foundation-black-black-500">
 				<div className=" self-stretch flex justify-center items-center align-middle">
 					<div className="w-full max-w-[768px] flex flex-col flex-wrap justify-center items-center gap-[28px] text-[24px]">

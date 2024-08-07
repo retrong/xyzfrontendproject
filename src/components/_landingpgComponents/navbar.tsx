@@ -1,6 +1,9 @@
+"use client"
+
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
+import { usePathname } from 'next/navigation';
+import React, { useEffect, useState } from 'react';
 import { logoxyz } from '../../../public';
 import NavButton from './navButton';
 import SideBar from './sideBar';
@@ -9,55 +12,71 @@ export const navLinks = [
 	{
 		title: 'Home',
 		link: '/',
-		id: '#',
+		id: '',
 	},
 	{
 		title: 'Features',
-		link: '',
+		link: '/',
 		id: '#features',
 	},
 	{
 		title: 'About Us',
 		link: '/aboutus',
-		id: '/aboutus',
+		id: '',
 	},
 	{
 		title: 'Pricing',
-		link: '',
+		link: '/',
         id: "#pricing",
 	},
 	{
 		title: 'FAQ',
-		link: '',
+		link: '/',
         id: "#faq",
 	},
 ];
 
 export default function Navbar() {
+    const pathname = usePathname();
+
+    const [activeId, setActiveId] = useState('');
+
+    useEffect(() => {
+        const handleHashChange = () => {
+            setActiveId(window.location.hash);
+        };
+
+        window.addEventListener('hashchange', handleHashChange);
+
+        // cleanup event listener on component unmount
+        return () => {
+            window.removeEventListener('hashchange', handleHashChange);
+        };
+    }, []);
   return (
 		<div className="w-full h-auto max-w-[1400px] justify-center items-center flex flex-wrap flex-1 align-middle text-left">
 			<div className="flex flex-row items-center align-middle justify-between w-[1200px]">
-                <Link href={"#"}>
+                <Link href={"/"}>
                     <Image
                         src={logoxyz}
                         alt=""
-                        className="mq850:w-[108px] w-[90px] h-auto object-contain"
+                        className="2md:w-[108px] w-[90px] h-auto object-contain"
                         loading="lazy"
                     />
                 </Link>
-				<div className="hidden flex-row justify-center item-center mq850:flex">
+				<div className="hidden flex-row justify-center item-center 2md:flex">
 					<ul className=" font-normal flex-row list-none w-full flex gap-[32px]">
 						{navLinks.map((nav, index) => (
 							<li
 								key={nav.title}
 								className="gap-[32px] flex hover:text-foundation-black-black-400 hover:font-bold text-foundation-black-black-400 cursor-pointer"
 							>
-								<a href={`${nav.id}`}>{nav.title}</a>
+								<a href={`${nav.link}${nav.id}`} className={`${nav.link === pathname && nav.id === activeId && "text-foundation-black-black-400 font-bold"} capitalize transition-all`}>{nav.title}</a>
 							</li>
 						))}
 					</ul>
 				</div>
-				<div className="mq850:flex hidden items-center justify-center text-white font-normal gap-[16px] ">
+				<div className="2md:flex hidden items-center justify-center text-white font-normal gap-[16px] ">
                     <Link href={'/signup'}>
                         <NavButton styles="bg-foundation-purple-purple-400 text-white hover:bg-foundation-purple-purple-200 active:hover:bg-foundation-purple-purple-100">
                             Sign Up
@@ -69,7 +88,7 @@ export default function Navbar() {
                         </NavButton>
                     </Link>
 				</div>
-				<div className=" mq850:hidden flex">
+				<div className=" 2md:hidden flex">
 					<SideBar />
 				</div>
 			</div>

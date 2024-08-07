@@ -11,17 +11,17 @@ import OtpInputField from '../../../../components/otpInput';
 export default function VerifyEmail() {
 	return (
 		<section className="min-h-screen bg-foundation-white-white-400 flex justify-center items-center text-gray-500">
-			<div className="max-w-[1400px] flex mq750:flex-col flex-row justify-center items-start gap-4 mq850:gap-0 py-6 px-6 mq750:px-6 w-full">
-				<div className="flex h-screen justify-between mq750:w-full flex-col w-1/2 items-start text-start px-6 mq750:px-0 py-2 mq750:py-0 container">
-					<div className=" mq850:mb-8 mb-4">
+			<div className="max-w-[1400px] flex md:flex-col flex-row justify-center items-start gap-4 2md:gap-0 py-6 px-6 md:px-6 w-full">
+				<div className="flex h-screen justify-between md:w-full flex-col w-1/2 items-start text-start px-6 md:px-0 py-2 md:py-0 container">
+					<div className=" 2md:mb-8 mb-4">
 						<Image
 							src={logoxyz}
 							alt=""
 							className="w-[98px] h-10 object-contain"
 						/>
 					</div>
-					<div className="flex flex-col w-full justify-center items-center text-base font-inter mq850:my-8 my-4">
-						<div className="max-w-[350px] mq750:w-full flex flex-col justify-start text-start items-center">
+					<div className="flex flex-col w-full justify-center items-center text-base font-inter 2md:my-8 my-4">
+						<div className="max-w-[350px] md:w-full flex flex-col justify-start text-start items-center">
 							<h2 className=" w-full font-normal text-start text-gray-700 mb-2">
 								Email Verification
 							</h2>
@@ -58,11 +58,11 @@ export default function VerifyEmail() {
 							</form>
 						</div>
 					</div>
-					<h3 className="mq850:w-[293px] flex align-bottom w-full leading-[24px] text-base font-normal text-wrap my-0 text-[#d0d0d0] mt-10">
+					<h3 className="2md:w-[293px] flex align-bottom w-full leading-[24px] text-base font-normal text-wrap my-0 text-[#d0d0d0] mt-10">
 						© 2024 XYZ. All rights reserved.
 					</h3>
 				</div>
-				<div className="mq850:w-1/2 w-full h-auto flex-1 bg-foundation-purple-purple-400 rounded-xl overflow-hidden container">
+				<div className="2md:w-1/2 w-full h-auto flex-1 bg-foundation-purple-purple-400 rounded-xl overflow-hidden container">
 					<Image
 						src={authImage}
 						alt=""

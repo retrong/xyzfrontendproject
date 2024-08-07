@@ -117,7 +117,7 @@ export default function SalesVolumeChart() {
 				</h3>
 			</div>
 			<div className="self-stretch flex flex-row items-start justify-start py-0 px-[18px] text-4xs text-foundation-grey-grey-800">
-				<div className="flex-1 flex flex-row items-start justify-start gap-[4px] mq450:flex-wrap">
+				<div className="flex-1 flex flex-row items-start justify-start gap-[4px] sm:flex-wrap">
 					<div className="flex flex-col items-start justify-start pt-[3px] px-0 pb-0">
 						<div className="w-3 h-3 relative rounded-[50%] bg-foundation-purple-purple-100 z-[1]" />
 					</div>

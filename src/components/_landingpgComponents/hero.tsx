@@ -6,12 +6,12 @@ import NavButton from './navButton';
 
 export default function Hero() {
   return (
-		<div className="w-full items-center justify-start text-foundation-black-black-400 py-[14px] mt-10 px-16 mq750:px-6">
-			<div className="flex flex-col flex-wrap items-center justify-start text-foundation-black-black-500 py-10 mq750:py-5">
-				<h1 className="inline-block text-center font-medium text-[56px] mq750:text-[40px] my-0">
+		<div className="w-full items-center justify-start text-foundation-black-black-400 py-[14px] mt-10 px-16 md:px-6">
+			<div className="flex flex-col flex-wrap items-center justify-start text-foundation-black-black-500 py-10 md:py-5 mt-5">
+				<h1 className="inline-block text-center font-normal text-[56px] md:text-[40px] my-0">
 					Welcome to XYZ Company!
 				</h1>
-				<p className=" inline-block text-center text-foundation-grey-grey-800 text-5xl mq750:text-[20px] flex-wrap max-w-[960px]">
+				<p className=" inline-block text-center text-foundation-grey-grey-800 text-5xl md:text-[20px] flex-wrap max-w-[960px]">
 					{"We're"} thrilled to have you here. At XYZ, {"we're"} dedicated to
 					providing innovative solutions that meet the needs of our customers.
 					Explore our wide range of products and services to discover how we can
@@ -26,7 +26,7 @@ export default function Hero() {
 				</div>
 			</div>
 			<div className="flex justify-center shrink flex-1 w-full">
-				<div className="w-[996px] relative h-[582px] overflow-hidden shrink-0 mq1050:hidden flex">
+				<div className="w-[996px] relative h-[582px] overflow-hidden shrink-0 lg:hidden flex">
 					<Image
 						className="absolute h-[1.08%] w-[101.7%] top-[98.69%] right-[-0.02%] bottom-[0.22%] left-[-1.68%] max-w-full overflow-hidden max-h-full object-cover"
 						alt=""
@@ -52,17 +52,17 @@ export default function Hero() {
 						loading="lazy"
 					/>
 					<Image
-						className="absolute h-[88.32%] w-[78.71%] top-[3.09%] right-[10.54%] bottom-[8.59%] left-[10.74%] max-w-full overflow-hidden max-h-full object-cover"
+						className="absolute h-[88.32%] w-[150%] top-[3.09%] right-0 bottom-[8.59%] left-0 max-w-full overflow-hidden max-h-full object-contain"
 						alt=""
 						src={mockscreen}
 						loading="lazy"
 					/>
 				</div>
-				<div className="w-[100%] h-[100%] overflow-hidden relative mq1050:flex hidden justify-center items-center">
+				<div className="w-[100%] h-[100%] overflow-hidden relative lg:flex hidden justify-center items-center">
 					<Image
 						src={macbookmock}
 						alt=""
-						className="w-[600px] mq750:w-[500px] mq450:w-[300px] h-auto object-contain"
+						className="w-[600px] md:w-[500px] sm:w-[300px] h-auto object-contain"
 						loading="lazy"
 					/>
 				</div>

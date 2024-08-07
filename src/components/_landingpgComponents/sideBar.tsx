@@ -18,7 +18,7 @@ export default function SideBar() {
 			setToggle(false);
 		}, [pathname]);
   return (
-		<div className="flex mq850:hidden flex-1 justify-end items-center">
+		<div className="flex 2md:hidden flex-1 justify-end items-center">
 			<Image
 				src={toggle ? closeButton : hamburger}
 				alt="Hamburger"

@@ -90,7 +90,7 @@ export default function AdminPricePaymentForm() {
 	};
 
 	return (
-		<section className=" w-full flex flex-col mq850:flex-col justify-between">
+		<section className=" w-full flex flex-col 2md:flex-col justify-between">
 			<div className="stepper-container w-full flex-row flex gap-3">
 				{steps.map((step, index) => (
 					<div
@@ -117,7 +117,7 @@ export default function AdminPricePaymentForm() {
 							</h2>
 
 							<div className="max-w-[450px] flex flex-row justify-between mt-2 mb-7">
-								<div className="flex flex-col mq850:flex-rowcol justify-center items-start text-start gap-2">
+								<div className="flex flex-col 2md:flex-rowcol justify-center items-start text-start gap-2">
 									<h4 className="m-0 text-sm font-normal leading-5 text-foundation-black-black-400 my-0">
 										Product Name
 									</h4>
@@ -125,7 +125,7 @@ export default function AdminPricePaymentForm() {
 										XYZ
 									</p>
 								</div>
-								<div className="flex flex-col mq850:flex-rowcol justify-center items-start text-start gap-2">
+								<div className="flex flex-col 2md:flex-rowcol justify-center items-start text-start gap-2">
 									<h4 className="m-0 text-sm font-normal leading-5 text-foundation-black-black-400 my-0">
 										Product Number
 									</h4>
@@ -133,7 +133,7 @@ export default function AdminPricePaymentForm() {
 										DES-125-1220
 									</p>
 								</div>
-								<div className="flex flex-col mq850:flex-rowcol justify-center items-start text-start gap-2">
+								<div className="flex flex-col 2md:flex-rowcol justify-center items-start text-start gap-2">
 									<h4 className="m-0 text-sm font-normal leading-5 text-foundation-black-black-400 my-0">
 										Customer ID
 									</h4>
@@ -143,9 +143,9 @@ export default function AdminPricePaymentForm() {
 								</div>
 							</div>
 
-							<div className="mt-2 grid flex-col mq850:flex-rowcols-1 gap-x-6 gap-y-6 sm:flex-col mq850:flex-rowcols-6">
+							<div className="mt-2 grid flex-col 2md:flex-rowcols-1 gap-x-6 gap-y-6 sm:flex-col 2md:flex-rowcols-6">
 								{/* Customer Plan and Number of users */}
-								<div className="flex flex-col mq850:flex-rowcol mq850:flex-row w-full gap-10">
+								<div className="flex flex-col 2md:flex-rowcol 2md:flex-row w-full gap-10">
 									<div className="w-full">
 										<SelectElement
 											id="customerPlan"
@@ -167,7 +167,7 @@ export default function AdminPricePaymentForm() {
 								</div>
 
 								{/* Payment plan and Payment method */}
-								<div className="flex flex-col mq850:flex-row w-full gap-10">
+								<div className="flex flex-col 2md:flex-row w-full gap-10">
 									<div className="w-full">
 										<SelectElement
 											id="paymentPlan"
@@ -189,7 +189,7 @@ export default function AdminPricePaymentForm() {
 								</div>
 
 								{/* Order History and Renewal Type */}
-								<div className="flex flex-col mq850:flex-row mq850:flex-rowcol w-full gap-10">
+								<div className="flex flex-col 2md:flex-row 2md:flex-rowcol w-full gap-10">
 									<div className="w-full">
 										<SelectElement
 											id="orderHistory"
@@ -212,7 +212,7 @@ export default function AdminPricePaymentForm() {
 
 								{/* Business Type and filling information */}
 								<div className="flex flex-col w-full gap-10">
-									<div className="w-full mq850:w-[47%]">
+									<div className="w-full 2md:w-[47%]">
 										<SelectElement
 											id="currencyType"
 											label="Currency Type"
