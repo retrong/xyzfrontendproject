@@ -22,11 +22,11 @@ export default function PriceAndPricing() {
 			className="w-full h-full py-14 px-16 md:px-6 flex justify-center items-center"
 		>
 			<div className="item-center flex flex-col flex-wrap text-center justify-start text-foundation-black-black-500">
-				<div className="max-w-[1197px] w-auto justify-center items-center flex-col flex text-center text-wrap gap-[14px] mb-12 md:mb-6">
-					<h2 className=" font-normal text-[32px] m-0 inline-block">
+				<div className="self-stretch justify-center items-center flex-col flex gap-[14px] mb-12 md:mb-6">
+					<h3 className=" font-normal text-[32px] sm:text-[26px] m-0">
 						Plans & Pricing
-					</h2>
-					<p className="max-w-[972px] w-auto text-center text-foundation-grey-grey-900 text-base inline-block m-0">
+					</h3>
+					<p className="max-w-[978px] w-auto text-center text-foundation-grey-grey-900 inline-block text-base m-0 ss:px-8 px-0">
 						Choose the pricing plan that best suits your business needs. With
 						XYZ Business Management Applications, you get a free 30-day trial to
 						explore our products and experience their full potential. After the

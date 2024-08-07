@@ -14,9 +14,9 @@ export default function Crm() {
 						loading="lazy"
 					/>
 				</div>
-				<div className="flex flex-row flex-wrap justify-start items-start">
+				<div className="flex flex-row flex-wrap justify-start items-start px-4">
 					<div className="flex flex-col items-start justify-start gap-[4px] text-[30px]">
-						<h3 className="max-w-[480px] font-normal inline-block my-0 py-2">
+						<h3 className="max-w-[480px] text-[40px] sm:text-[29px] font-normal my-0 py-2 text-wrap">
 							Customer Relationship Management (CRM)
 						</h3>
 						<p className="max-w-[460px] text-base text-foundation-grey-grey-800 my-0 py-2">

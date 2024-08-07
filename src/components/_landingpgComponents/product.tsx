@@ -27,9 +27,9 @@ export default function Product() {
 		<div className="w-full flex justify-center items-center text-left text-[40px] px-16 md:px-6">
 			<div className="flex flex-col items-center justify-start">
 				<div className="flex flex-col items-center justify-center gap-[16px]">
-					<div className=" text-foundation-black-black-400 text-center">
-						<h3 className="font-normal">{"Here's"} what XYZ can do for you</h3>
-						<h4 className="max-w-[1039px] text-foundation-grey-grey-900 text-base font-normal text-center w-full">
+					<div className=" text-foundation-black-black-400 text-center flex-wrap">
+						<h3 className="font-normal text-wrap text-[40px] sm:text-[28px]">{"Here's"} what XYZ can do for you</h3>
+						<h4 className="max-w-[1039px] text-foundation-grey-grey-900 text-base font-normal text-center w-full text-wrap">
 							Explore the robust features and capabilities of XYZ Business
 							Management Applications. Our suite of products is designed to
 							streamline your business processes, enhance productivity, and
@@ -39,11 +39,11 @@ export default function Product() {
 						</h4>
 					</div>
 				</div>
-				<div className="flex flex-row flex-wrap justify-start md:justify-center items-start gap-[32px] text-[26px] mt-10">
+				<div className="flex flex-row flex-wrap justify-between md:justify-center items-start gap-[32px] text-[26px] mt-10">
 					{featureCard.map((feature) => (
 						<div
 							key={feature.title}
-							className="w-[368px] rounded-lg relative bg-foundation-grey-grey-50 hover:bg-foundation-purple-purple-400 hover:text-foundation-grey-grey-300 h-[535px] flex flex-col items-center justify-center p-6 box-border text-center cursor-pointer"
+							className="max-w-[368px] rounded-lg relative bg-foundation-grey-grey-50 hover:bg-foundation-purple-purple-400 hover:text-foundation-grey-grey-300 h-[535px] flex flex-col items-center justify-center p-6 box-border text-center cursor-pointer text-wrap"
 						>
 							<Image
 								src={feature.image}

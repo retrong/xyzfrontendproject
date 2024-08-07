@@ -3,7 +3,7 @@ import React from 'react';
 export default function CTA() {
   return (
 		<section className="w-full h-full py-14 px-16 md:px-6 flex justify-center items-center">
-			<div className="item-center flex flex-col flex-wrap text-center justify-start gap-[24px] text-foundation-white-white-400 py-10 px-10">
+			<div className="item-center flex flex-col flex-wrap text-center justify-start gap-[24px] text-foundation-white-white-400 py-10 ">
 				<div className="self-stretch flex flex-col items-center justify-start gap-[24px]">
 					<h3 className="font-normal text-[32px] inline-block self-stretch m-0">
 						Get started with our 30-days free trial
