@@ -11,6 +11,7 @@ import React, { useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { TypeOf } from 'zod';
 import { authImage, facebookicon, googleicon, logoxyz, vector102 } from '../../../../../public';
+// import * as signup from '../../../../lib/api/signupApi';
 import * as signup from '../../../../lib/api/signupApi';
 import PasswordInput from '../_components/passwordInput';
 import { emailRegex } from '../RegexFile';
