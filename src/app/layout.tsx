@@ -23,13 +23,7 @@ export default function RootLayout({
 			<body className={inter.className}>
 				<StoreProvider>
 					<Provider>
-						<div className="bg-foundation-grey-grey-50 px-16 py-[10px] w-[100%] sm:px-6 fixed z-[998]">
-							<Navbar />
-						</div>
 						{children}
-						<div className="w-full bg-foundation-purple-purple-900 overflow-hidden">
-							<Footer />
-						</div>
 					</Provider>
 				</StoreProvider>
 			</body>

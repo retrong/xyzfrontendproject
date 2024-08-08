@@ -23,42 +23,54 @@ const sidebarItems = [
 		path: '/admin-setup/admin-dashboard',
 		// subTitle: 'Overview',
 		isActive: true,
-		content: 'Manage multiple paid modules',
 	},
 	{
 		icon: '/arrange-send-to-back-white.svg',
 		iconHover: '/arrange-send-to-back-purple.svg',
 		path: '/admin-setup/business-setup',
 		title: 'Business Setup & Info.',
-		content: 'Manage your business information',
 	},
 	{
 		icon: '/cash-multiple-white.svg',
 		iconHover: '/cash-multiple-purple.svg',
 		path: '/admin-setup/pricing-payment',
 		title: 'Pricing & Payments',
-		content: 'Payment for plans and payment methods',
 	},
 	{
 		icon: '/account-group-outline-white.svg',
 		iconHover: '/account-group-outline-purple.svg',
 		path: '/admin-setup/manage-account',
 		title: 'Manage your Account',
-		content: 'Your subscription and user type setup',
 	},
 	{
 		icon: '/account-cog-outline-white.svg',
 		iconHover: '/account-cog-outline-purple.svg',
 		path: '/admin-setup/business-account',
 		title: 'Business Accounts',
-		content: 'Manage multiple accounts',
+	},
+	{
+		icon: '/chart-box-outline-white.svg',
+		iconHover: '/chart-box-outline-purple.svg',
+		path: '/admin-setup/business-account',
+		title: 'Advanced Reporting',
 	},
 	{
 		icon: '/swap-horizontal-white.svg',
 		iconHover: '/swap-horizontal-purple.svg',
 		path: '#',
 		title: 'Change Theme',
-		content: 'Switch your app theme',
+	},
+	{
+		icon: '/cloud-upload-outline-white.svg',
+		iconHover: '/cloud-upload-outline-purple.svg',
+		path: '/admin-setup/business-account',
+		title: 'Data & Backup',
+	},
+	{
+		icon: '/help-circle-outline-white.svg',
+		iconHover: '/help-circle-outline-purple.svg',
+		path: '/admin-setup/business-account',
+		title: 'Support & FAQs',
 	},
 ];
 
@@ -211,13 +223,6 @@ export default function AdminSidebar() {
 													{item.title}{' '}
 												</span>
 											</h1>
-											<p
-												className={`m-0 text-[14px] leading-[20px] relative font-normal text-nowrap whitespace-nowrap ${
-													item.isActive ? 'font-medium' : ''
-												}`}
-											>
-												{item.content}
-											</p>
 										</div>
 									</div>
 								</Link>

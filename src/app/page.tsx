@@ -18,6 +18,9 @@ import { heroframe } from '../../public';
 export default function LandingPage() {
   return (
 		<section className=" bg-white w-full overflow-hidden h-full">
+			<div className="bg-foundation-grey-grey-50 px-16 py-[10px] w-[100%] sm:px-6 fixed z-[998]">
+				<Navbar />
+			</div>
 			<div className="flex flex-wrap relative">
 				<Image
 					src={heroframe}
@@ -58,7 +61,9 @@ export default function LandingPage() {
 			<div className="w-full bg-white overflow-hidden">
 				<GetInTouch />
 			</div>
-			
+			<div className="w-full bg-foundation-purple-purple-900 overflow-hidden">
+				<Footer />
+			</div>
 		</section>
 	);
 }

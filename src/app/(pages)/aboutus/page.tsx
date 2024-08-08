@@ -1,14 +1,18 @@
 import FAQ from '@/components/_landingpgComponents/FAQ';
+import Footer from '@/components/_landingpgComponents/footer';
 import GetInTouch from '@/components/_landingpgComponents/GetInTouch';
 import Navbar from '@/components/_landingpgComponents/navbar';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
-import { aboutusImg, heroAboutus, innovatewand, logoxyz, macbookmock, shieldLock, smiley, teamImage, valuesImage } from '../../../../public';
+import { heroAboutus, innovatewand, shieldLock, smiley, teamImage, valuesImage } from '../../../../public';
 
 export default function AboutUs() {
   return (
 		<section className="bg-white w-full overflow-hidden h-full">
+			<div className="bg-foundation-grey-grey-50 px-16 py-[10px] w-[100%] sm:px-6 fixed z-[998]">
+				<Navbar />
+			</div>
 			<div className="w-full items-start justify-start text-foundation-black-black-400 py-[14px] mt-14">
 				{/* hero section */}
 				<div className="flex flex-row lg:flex-col justify-between lg:justify-center items-start lg:items-center text-foundation-black-black-500 py-10 md:py-5 px-44 xl:px-16 md:px-6">
@@ -34,11 +38,11 @@ export default function AboutUs() {
 							</p>
 						</div>
 					</div>
-                    <Image
-                        src={heroAboutus}
-                        alt=""
-                        className="max-w-[450px] w-full rounded-lg h-auto object-contain"
-                    />
+					<Image
+						src={heroAboutus}
+						alt=""
+						className="max-w-[450px] w-full rounded-lg h-auto object-contain"
+					/>
 				</div>
 				<div className=" bg-foundation-purple-purple-400 py-12 !w-full text-white">
 					<h2 className=" text-[40px] font-normal leading-[48.41px] text-center">
@@ -138,6 +142,9 @@ export default function AboutUs() {
 				<div className="w-full bg-foundation-grey-grey-50 overflow-hidden">
 					<GetInTouch />
 				</div>
+			</div>
+			<div className="w-full bg-foundation-purple-purple-900 overflow-hidden">
+				<Footer />
 			</div>
 		</section>
 	);
