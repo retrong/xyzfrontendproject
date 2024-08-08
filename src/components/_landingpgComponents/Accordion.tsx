@@ -80,7 +80,7 @@ export default function AccordionExpandDefault() {
 						<Typography className="font-semibold">{faq.title}</Typography>
 					</AccordionSummary>
 					<AccordionDetails>
-						<Typography>{faq.answer}</Typography>
+						<Typography align='left'>{faq.answer}</Typography>
 					</AccordionDetails>
 				</Accordion>
 			))}

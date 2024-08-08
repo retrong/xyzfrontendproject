@@ -1,3 +1,4 @@
+import heroAboutus from './aboutus-hero.png';
 import aboutusImg from './aboutUs.png';
 import alerticon from './alerticon.svg';
 import apostrophy from './apostrophy.svg';
@@ -43,6 +44,7 @@ import inputProcess from './input-processor.svg';
 import linkimg from './link.svg';
 import herologo from './logo@2x.png';
 import mackbooklogo from './macbook-pro-16@2x.png';
+import innovatewand from './magicwand.svg';
 import mapmarker from './mapmarkeroutline.svg';
 import minuscircle from './minuscircle.svg';
 import call2action from './morevertical.svg';
@@ -56,10 +58,14 @@ import mockscreen from './screenMockup.png';
 import monday from './segment.svg';
 import setupLogo from './setuplogo.svg';
 import heroshadow from './shadow@2x.png';
+import shieldLock from './shield-lock.svg';
+import smiley from './smiley.svg';
 import sort from './sort.svg';
 import stars from './stars.svg';
+import teamImage from './team.png';
 import treeRoot from './tree-root-x.svg';
 import valueTransformer from './value-transformer-chain-x.svg';
+import valuesImage from './values.png';
 import vector102 from './vector-102.svg';
 import vector161 from './vector-16-1.svg';
 import vector1610 from './vector-16-10.svg';
@@ -85,11 +91,8 @@ import logoxyz from './xyz3.svg';
 import zepline from './zepline.svg';
 
 export {
-    aboutusImg, accountChart, alerticon,
-    alertnotificatonicon,
-    apostrophy,
-    arrow,
-    arrowexpand,
+    aboutusImg, accountChart, alerticon, alertnotificatonicon,
+    apostrophy, arrow, arrowexpand,
     authImage, avatar,
     call2action, cameralogo,
     cart,
@@ -112,12 +115,10 @@ export {
     group11,
     group269,
     guageChart,
-    hamburger,
-    heroframe,
+    hamburger, heroAboutus, heroframe,
     herologo,
     heroshadow,
-    imagetes,
-    inputProcess,
+    imagetes, innovatewand, inputProcess,
     linkimg,
     logoxyz,
     macbookmock,
@@ -135,11 +136,9 @@ export {
     proton,
     rightArrow,
     samsung,
-    segment, setupLogo, sort,
-    stars,
-    treeRoot,
-    valueTransformer,
-    vector,
+    segment, setupLogo, shieldLock, smiley, sort,
+    stars, teamImage, treeRoot,
+    valueTransformer, valuesImage, vector,
     vector102,
     vector161,
     vector1610,
