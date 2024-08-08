@@ -34,13 +34,11 @@ export default function AboutUs() {
 							</p>
 						</div>
 					</div>
-					<div className="rounded-lg">
-						<Image
-							src={heroAboutus}
-							alt=""
-							className="max-w-[450px] w-full h-auto object-contain"
-						/>
-					</div>
+                    <Image
+                        src={heroAboutus}
+                        alt=""
+                        className="max-w-[450px] w-full rounded-lg h-auto object-contain"
+                    />
 				</div>
 				<div className=" bg-foundation-purple-purple-400 py-12 !w-full text-white">
 					<h2 className=" text-[40px] font-normal leading-[48.41px] text-center">
