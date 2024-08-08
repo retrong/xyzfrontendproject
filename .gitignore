@@ -37,5 +37,3 @@ next-env.d.ts
 
 
 src/app/(pages)/setup/_setupComponets/testTable.tsx
-
-src/lib/api
